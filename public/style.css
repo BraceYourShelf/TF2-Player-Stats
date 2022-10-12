@@ -62,6 +62,12 @@ div.dataTables_filter input {
     border: 1px solid #ddd;
     margin-bottom: 6px;
 }
+
+div.dtsb-searchBuilder {
+    width: 1000px;
+    display: inline-block;
+}
+
 button {
   border: none;
   padding: 15px 32px;
