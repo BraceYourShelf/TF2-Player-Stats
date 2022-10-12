@@ -4,41 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
+    <title>TF2 S10 Main Player Stats</title>
     <link rel="stylesheet" href="style.css">
     <script src="sort-table.min.js"></script>
     <script src="index.js"></script>
   </head>
   <body>
 	<div id="output"></div>
-    <h1>TF2 Stats</h1>
-    <p>Stats taken from Main matches through Week 2</p>
+    <h1>TF2 S10 Main Player Stats</h1>
+    <p>Stats taken from matches through Week 2</p>
+
+    <h4>Filter</h4>
+    <input type="text" id="filter" onkeyup="filterTable()" placeholder="Filter...">
+    <select name="filterCategory" id="filterCategory" onchange="filterTable()">
+      <option value="0">Steam ID</option>
+      <option value="1">Aliases</option>
+      <option value="2">Kills</option>
+      <option value="3">Deaths</option>
+      <option value="4">Assists</option>
+      <option value="5">DPM</option>
+      <option value="6">K/D</option>
+      <option value="7">KA/D</option>
+      <option value="8">Total Damage</option>
+      <option value="9">Total Time</option>
+      <option value="10">Logs</option>
+    </select>
+    <p>Useful Filter Queries:
+      <br>
+      
+    </p>
+    <br>
+
     <div>
-      <button onClick="toggleClassTable('scout')">Scout</button>
-      <button onClick="toggleClassTable('soldier')">Soldier</button>
-      <button onClick="toggleClassTable('pyro')">Pyro</button>
-      <button onClick="toggleClassTable('demoman')">Demoman</button>
-      <button onClick="toggleClassTable('heavyweapons')">Heavy</button>
-      <button onClick="toggleClassTable('engineer')">Engineer</button>
-      <button onClick="toggleClassTable('medic')">Medic</button>
-      <button onClick="toggleClassTable('sniper')">Sniper</button>
-      <button onClick="toggleClassTable('spy')">Spy</button>
+      <button onClick="toggleClassTable('scout');filterTable()">Scout</button>
+      <button onClick="toggleClassTable('soldier');filterTable()">Soldier</button>
+      <button onClick="toggleClassTable('pyro');filterTable()">Pyro</button>
+      <button onClick="toggleClassTable('demoman');filterTable()">Demoman</button>
+      <button onClick="toggleClassTable('heavyweapons');filterTable()">Heavy</button>
+      <button onClick="toggleClassTable('engineer');filterTable()">Engineer</button>
+      <button onClick="toggleClassTable('medic');filterTable()">Medic</button>
+      <button onClick="toggleClassTable('sniper');filterTable()">Sniper</button>
+      <button onClick="toggleClassTable('spy');filterTable()">Spy</button>
     </div>
+
     <div id="scout" class="table-shown">
       <table id="scoutStats" class="js-sort-table">
       <thead>
         <tr>
-          <td class="js-sort-number">Steam ID</td>
-          <td class="js-sort-number">Aliases</td>
-          <td class="js-sort-number">Kills</td>
-          <td class="js-sort-number">Deaths</td>
-          <td class="js-sort-number">Assists</td>
-          <td class="js-sort-number">DPM</td>
-          <td class="js-sort-number">K/D</td>
-          <td class="js-sort-number">KA/D</td>
-          <td class="js-sort-number">Total Damage</td>
-          <td class="js-sort-number">Total Time</td>
-          <td class="js-sort-number">Logs</td>
+          <th class="js-sort-number">Steam ID</td>
+          <th class="js-sort-number">Aliases</td>
+          <th class="js-sort-number">Kills</td>
+          <th class="js-sort-number">Deaths</td>
+          <th class="js-sort-number">Assists</td>
+          <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">K/D</td>
+          <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">Total Damage</td>
+          <th class="js-sort-number">Total Time</td>
+          <th class="js-sort-number">Logs</td>
         </tr>
       </thead>
       <tbody>
@@ -726,17 +749,17 @@
       <table id="soldierStats" class="js-sort-table">
       <thead>
         <tr>
-          <td class="js-sort-number">Steam ID</td>
-          <td class="js-sort-number">Aliases</td>
-          <td class="js-sort-number">Kills</td>
-          <td class="js-sort-number">Deaths</td>
-          <td class="js-sort-number">Assists</td>
-          <td class="js-sort-number">DPM</td>
-          <td class="js-sort-number">K/D</td>
-          <td class="js-sort-number">KA/D</td>
-          <td class="js-sort-number">Total Damage</td>
-          <td class="js-sort-number">Total Time</td>
-          <td class="js-sort-number">Logs</td>
+          <th class="js-sort-number">Steam ID</td>
+          <th class="js-sort-number">Aliases</td>
+          <th class="js-sort-number">Kills</td>
+          <th class="js-sort-number">Deaths</td>
+          <th class="js-sort-number">Assists</td>
+          <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">K/D</td>
+          <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">Total Damage</td>
+          <th class="js-sort-number">Total Time</td>
+          <th class="js-sort-number">Logs</td>
         </tr>
       </thead>
       <tbody>
@@ -1424,17 +1447,17 @@
       <table id="pyroStats" class="js-sort-table">
       <thead>
         <tr>
-          <td class="js-sort-number">Steam ID</td>
-          <td class="js-sort-number">Aliases</td>
-          <td class="js-sort-number">Kills</td>
-          <td class="js-sort-number">Deaths</td>
-          <td class="js-sort-number">Assists</td>
-          <td class="js-sort-number">DPM</td>
-          <td class="js-sort-number">K/D</td>
-          <td class="js-sort-number">KA/D</td>
-          <td class="js-sort-number">Total Damage</td>
-          <td class="js-sort-number">Total Time</td>
-          <td class="js-sort-number">Logs</td>
+          <th class="js-sort-number">Steam ID</td>
+          <th class="js-sort-number">Aliases</td>
+          <th class="js-sort-number">Kills</td>
+          <th class="js-sort-number">Deaths</td>
+          <th class="js-sort-number">Assists</td>
+          <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">K/D</td>
+          <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">Total Damage</td>
+          <th class="js-sort-number">Total Time</td>
+          <th class="js-sort-number">Logs</td>
         </tr>
       </thead>
       <tbody>
@@ -1888,17 +1911,17 @@
       <table id="demomanStats" class="js-sort-table">
       <thead>
         <tr>
-          <td class="js-sort-number">Steam ID</td>
-          <td class="js-sort-number">Aliases</td>
-          <td class="js-sort-number">Kills</td>
-          <td class="js-sort-number">Deaths</td>
-          <td class="js-sort-number">Assists</td>
-          <td class="js-sort-number">DPM</td>
-          <td class="js-sort-number">K/D</td>
-          <td class="js-sort-number">KA/D</td>
-          <td class="js-sort-number">Total Damage</td>
-          <td class="js-sort-number">Total Time</td>
-          <td class="js-sort-number">Logs</td>
+          <th class="js-sort-number">Steam ID</td>
+          <th class="js-sort-number">Aliases</td>
+          <th class="js-sort-number">Kills</td>
+          <th class="js-sort-number">Deaths</td>
+          <th class="js-sort-number">Assists</td>
+          <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">K/D</td>
+          <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">Total Damage</td>
+          <th class="js-sort-number">Total Time</td>
+          <th class="js-sort-number">Logs</td>
         </tr>
       </thead>
       <tbody>
@@ -2300,17 +2323,17 @@
       <table id="heavyweaponsStats" class="js-sort-table">
       <thead>
         <tr>
-          <td class="js-sort-number">Steam ID</td>
-          <td class="js-sort-number">Aliases</td>
-          <td class="js-sort-number">Kills</td>
-          <td class="js-sort-number">Deaths</td>
-          <td class="js-sort-number">Assists</td>
-          <td class="js-sort-number">DPM</td>
-          <td class="js-sort-number">K/D</td>
-          <td class="js-sort-number">KA/D</td>
-          <td class="js-sort-number">Total Damage</td>
-          <td class="js-sort-number">Total Time</td>
-          <td class="js-sort-number">Logs</td>
+          <th class="js-sort-number">Steam ID</td>
+          <th class="js-sort-number">Aliases</td>
+          <th class="js-sort-number">Kills</td>
+          <th class="js-sort-number">Deaths</td>
+          <th class="js-sort-number">Assists</td>
+          <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">K/D</td>
+          <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">Total Damage</td>
+          <th class="js-sort-number">Total Time</td>
+          <th class="js-sort-number">Logs</td>
         </tr>
       </thead>
       <tbody>
@@ -2764,17 +2787,17 @@
       <table id="engineerStats" class="js-sort-table">
       <thead>
         <tr>
-          <td class="js-sort-number">Steam ID</td>
-          <td class="js-sort-number">Aliases</td>
-          <td class="js-sort-number">Kills</td>
-          <td class="js-sort-number">Deaths</td>
-          <td class="js-sort-number">Assists</td>
-          <td class="js-sort-number">DPM</td>
-          <td class="js-sort-number">K/D</td>
-          <td class="js-sort-number">KA/D</td>
-          <td class="js-sort-number">Total Damage</td>
-          <td class="js-sort-number">Total Time</td>
-          <td class="js-sort-number">Logs</td>
+          <th class="js-sort-number">Steam ID</td>
+          <th class="js-sort-number">Aliases</td>
+          <th class="js-sort-number">Kills</td>
+          <th class="js-sort-number">Deaths</td>
+          <th class="js-sort-number">Assists</td>
+          <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">K/D</td>
+          <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">Total Damage</td>
+          <th class="js-sort-number">Total Time</td>
+          <th class="js-sort-number">Logs</td>
         </tr>
       </thead>
       <tbody>
@@ -3176,17 +3199,17 @@
       <table id="medicStats" class="js-sort-table">
       <thead>
         <tr>
-          <td class="js-sort-number">Steam ID</td>
-          <td class="js-sort-number">Aliases</td>
-          <td class="js-sort-number">Kills</td>
-          <td class="js-sort-number">Deaths</td>
-          <td class="js-sort-number">Assists</td>
-          <td class="js-sort-number">DPM</td>
-          <td class="js-sort-number">K/D</td>
-          <td class="js-sort-number">KA/D</td>
-          <td class="js-sort-number">Total Damage</td>
-          <td class="js-sort-number">Total Time</td>
-          <td class="js-sort-number">Logs</td>
+          <th class="js-sort-number">Steam ID</td>
+          <th class="js-sort-number">Aliases</td>
+          <th class="js-sort-number">Kills</td>
+          <th class="js-sort-number">Deaths</td>
+          <th class="js-sort-number">Assists</td>
+          <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">K/D</td>
+          <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">Total Damage</td>
+          <th class="js-sort-number">Total Time</td>
+          <th class="js-sort-number">Logs</td>
         </tr>
       </thead>
       <tbody>
@@ -3562,17 +3585,17 @@
       <table id="sniperStats" class="js-sort-table">
       <thead>
         <tr>
-          <td class="js-sort-number">Steam ID</td>
-          <td class="js-sort-number">Aliases</td>
-          <td class="js-sort-number">Kills</td>
-          <td class="js-sort-number">Deaths</td>
-          <td class="js-sort-number">Assists</td>
-          <td class="js-sort-number">DPM</td>
-          <td class="js-sort-number">K/D</td>
-          <td class="js-sort-number">KA/D</td>
-          <td class="js-sort-number">Total Damage</td>
-          <td class="js-sort-number">Total Time</td>
-          <td class="js-sort-number">Logs</td>
+          <th class="js-sort-number">Steam ID</td>
+          <th class="js-sort-number">Aliases</td>
+          <th class="js-sort-number">Kills</td>
+          <th class="js-sort-number">Deaths</td>
+          <th class="js-sort-number">Assists</td>
+          <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">K/D</td>
+          <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">Total Damage</td>
+          <th class="js-sort-number">Total Time</td>
+          <th class="js-sort-number">Logs</td>
         </tr>
       </thead>
       <tbody>
@@ -4091,17 +4114,17 @@
       <table id="spyStats" class="js-sort-table">
       <thead>
         <tr>
-          <td class="js-sort-number">Steam ID</td>
-          <td class="js-sort-number">Aliases</td>
-          <td class="js-sort-number">Kills</td>
-          <td class="js-sort-number">Deaths</td>
-          <td class="js-sort-number">Assists</td>
-          <td class="js-sort-number">DPM</td>
-          <td class="js-sort-number">K/D</td>
-          <td class="js-sort-number">KA/D</td>
-          <td class="js-sort-number">Total Damage</td>
-          <td class="js-sort-number">Total Time</td>
-          <td class="js-sort-number">Logs</td>
+          <th class="js-sort-number">Steam ID</td>
+          <th class="js-sort-number">Aliases</td>
+          <th class="js-sort-number">Kills</td>
+          <th class="js-sort-number">Deaths</td>
+          <th class="js-sort-number">Assists</td>
+          <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">K/D</td>
+          <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">Total Damage</td>
+          <th class="js-sort-number">Total Time</td>
+          <th class="js-sort-number">Logs</td>
         </tr>
       </thead>
       <tbody>
