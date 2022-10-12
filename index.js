@@ -40,8 +40,13 @@ const calculatePlayerStats = async () => {
                         deaths: currentClass.deaths,
                         assists: currentClass.assists,
                         avgDpm: (currentClass.dmg / (currentClass.total_time / 60)).toFixed(2),
+                        avgDtm: (log.players[playerKey].dt / (currentClass.total_time / 60)).toFixed(2),
+                        deltaDmg: (currentClass.dmg / (currentClass.total_time / 60)).toFixed(2) - (log.players[playerKey].dt / (currentClass.total_time / 60)).toFixed(2),
                         "K/D": (currentClass.kills / currentClass.deaths).toFixed(2),
                         "KA/D": ((currentClass.kills + currentClass.assists) / currentClass.deaths).toFixed(2),
+                        "K/30": (currentClass.kills / (currentClass.total_time / 60) * 30).toFixed(2),
+                        "D/30": (currentClass.deaths / (currentClass.total_time / 60) * 30).toFixed(2),
+                        totalDamageTaken: log.players[playerKey].dt,
                         totalDamage: currentClass.dmg,
                         totalTime: currentClass.total_time,
                         logs: (log.logId).toString()
@@ -51,11 +56,15 @@ const calculatePlayerStats = async () => {
                     playerStats[currentClass.type][playerKey].deaths += currentClass.deaths;
                     playerStats[currentClass.type][playerKey].assists += currentClass.assists;
                     playerStats[currentClass.type][playerKey].totalDamage += currentClass.dmg;
+                    playerStats[currentClass.type][playerKey].totalDamageTaken += log.players[playerKey].dt;
                     playerStats[currentClass.type][playerKey].totalTime += currentClass.total_time;
 
                     let totalDmg = playerStats[currentClass.type][playerKey].totalDamage;
+                    let totalDmgTaken = playerStats[currentClass.type][playerKey].totalDamageTaken;
                     let totalTime = playerStats[currentClass.type][playerKey].totalTime;
                     playerStats[currentClass.type][playerKey].avgDpm = (totalDmg / (totalTime / 60)).toFixed(2);
+                    playerStats[currentClass.type][playerKey].avgDtm = (totalDmgTaken / (totalTime / 60)).toFixed(2);
+                    playerStats[currentClass.type][playerKey].deltaDamage = (playerStats[currentClass.type][playerKey].avgDpm - playerStats[currentClass.type][playerKey].avgDtm).toFixed(2);
 
                     let totalKills = playerStats[currentClass.type][playerKey].kills;
                     let totalAssists = playerStats[currentClass.type][playerKey].assists;
@@ -63,12 +72,13 @@ const calculatePlayerStats = async () => {
 
                     playerStats[currentClass.type][playerKey]["K/D"] = (totalKills / totalDeaths).toFixed(2);
                     playerStats[currentClass.type][playerKey]["KA/D"] = ((totalKills + totalAssists) / totalDeaths).toFixed(2);
+                    playerStats[currentClass.type][playerKey]["K/30"] = (totalKills / (totalTime / 60) * 30).toFixed(2);
+                    playerStats[currentClass.type][playerKey]["D/30"] = (totalDeaths / (totalTime / 60) * 30).toFixed(2);
 
                     let aliases = playerStats[currentClass.type][playerKey].aliases.split(', ');
                     if (!aliases.includes(playerAlias)) {
                         playerStats[currentClass.type][playerKey].aliases += `, ${playerAlias}`;
                     }
-                    
 
                     playerStats[currentClass.type][playerKey].logs += `, ${log.logId}`;
                     if (!playerStats[currentClass.type][playerKey].aliases[playerAlias]) {

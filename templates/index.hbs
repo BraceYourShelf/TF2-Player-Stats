@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TF2 S10 Main Player Stats</title>
-
     
     <link rel="stylesheet" href="https://cdn.datatables.net/searchbuilder/1.3.4/css/searchBuilder.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
@@ -201,6 +200,8 @@
           <th class="js-sort-number">DPM</td>
           <th class="js-sort-number">K/D</td>
           <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">K/30m</th>
+          <th class="js-sort-number">D/30m</th>
           <th class="js-sort-number">Total Damage</td>
           <th class="js-sort-number">Total Time</td>
           <th class="js-sort-number">Logs</td>
@@ -357,8 +358,12 @@
           <th class="js-sort-number">Deaths</td>
           <th class="js-sort-number">Assists</td>
           <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">DTM</td>
+          <th class="js-sort-number">DPM - DTM</td>
           <th class="js-sort-number">K/D</td>
           <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">K/30m</th>
+          <th class="js-sort-number">D/30m</th>
           <th class="js-sort-number">Total Damage</td>
           <th class="js-sort-number">Total Time</td>
           <th class="js-sort-number">Logs</td>
@@ -373,8 +378,12 @@
             <td class="">{{deaths}}</td>
             <td class="">{{assists}}</td>
             <td class="">{{avgDpm}}</td>
+            <td class="">{{avgDtm}}</td>
+            <td class="">{{deltaDmg}}</td>
             <td class="">{{"K/D"}}</td>
             <td class="">{{"KA/D"}}</td>
+            <td class="">{{"K/30"}}</td>
+            <td class="">{{"D/30"}}</td>
             <td class="">{{totalDamage}}</td>
             <td class="">{{totalTime}}</td>
             <td class="">{{logs}}</td>
@@ -395,8 +404,12 @@
           <th class="js-sort-number">Deaths</td>
           <th class="js-sort-number">Assists</td>
           <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">DTM</td>
+          <th class="js-sort-number">DPM - DTM</td>
           <th class="js-sort-number">K/D</td>
           <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">K/30m</th>
+          <th class="js-sort-number">D/30m</th>
           <th class="js-sort-number">Total Damage</td>
           <th class="js-sort-number">Total Time</td>
           <th class="js-sort-number">Logs</td>
@@ -411,8 +424,12 @@
             <td class="">{{deaths}}</td>
             <td class="">{{assists}}</td>
             <td class="">{{avgDpm}}</td>
+            <td class="">{{avgDtm}}</td>
+            <td class="">{{deltaDmg}}</td>
             <td class="">{{"K/D"}}</td>
             <td class="">{{"KA/D"}}</td>
+            <td class="">{{"K/30"}}</td>
+            <td class="">{{"D/30"}}</td>
             <td class="">{{totalDamage}}</td>
             <td class="">{{totalTime}}</td>
             <td class="">{{logs}}</td>
@@ -433,8 +450,12 @@
           <th class="js-sort-number">Deaths</td>
           <th class="js-sort-number">Assists</td>
           <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">DTM</td>
+          <th class="js-sort-number">DPM - DTM</td>
           <th class="js-sort-number">K/D</td>
           <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">K/30m</th>
+          <th class="js-sort-number">D/30m</th>
           <th class="js-sort-number">Total Damage</td>
           <th class="js-sort-number">Total Time</td>
           <th class="js-sort-number">Logs</td>
@@ -449,8 +470,12 @@
             <td class="">{{deaths}}</td>
             <td class="">{{assists}}</td>
             <td class="">{{avgDpm}}</td>
+            <td class="">{{avgDtm}}</td>
+            <td class="">{{deltaDmg}}</td>
             <td class="">{{"K/D"}}</td>
             <td class="">{{"KA/D"}}</td>
+            <td class="">{{"K/30"}}</td>
+            <td class="">{{"D/30"}}</td>
             <td class="">{{totalDamage}}</td>
             <td class="">{{totalTime}}</td>
             <td class="">{{logs}}</td>
@@ -471,8 +496,12 @@
           <th class="js-sort-number">Deaths</td>
           <th class="js-sort-number">Assists</td>
           <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">DTM</td>
+          <th class="js-sort-number">DPM - DTM</td>
           <th class="js-sort-number">K/D</td>
           <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">K/30m</th>
+          <th class="js-sort-number">D/30m</th>
           <th class="js-sort-number">Total Damage</td>
           <th class="js-sort-number">Total Time</td>
           <th class="js-sort-number">Logs</td>
@@ -487,8 +516,12 @@
             <td class="">{{deaths}}</td>
             <td class="">{{assists}}</td>
             <td class="">{{avgDpm}}</td>
+            <td class="">{{avgDtm}}</td>
+            <td class="">{{deltaDmg}}</td>
             <td class="">{{"K/D"}}</td>
             <td class="">{{"KA/D"}}</td>
+            <td class="">{{"K/30"}}</td>
+            <td class="">{{"D/30"}}</td>
             <td class="">{{totalDamage}}</td>
             <td class="">{{totalTime}}</td>
             <td class="">{{logs}}</td>
@@ -509,8 +542,12 @@
           <th class="js-sort-number">Deaths</td>
           <th class="js-sort-number">Assists</td>
           <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">DTM</td>
+          <th class="js-sort-number">DPM - DTM</td>
           <th class="js-sort-number">K/D</td>
           <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">K/30m</th>
+          <th class="js-sort-number">D/30m</th>
           <th class="js-sort-number">Total Damage</td>
           <th class="js-sort-number">Total Time</td>
           <th class="js-sort-number">Logs</td>
@@ -525,8 +562,12 @@
             <td class="">{{deaths}}</td>
             <td class="">{{assists}}</td>
             <td class="">{{avgDpm}}</td>
+            <td class="">{{avgDtm}}</td>
+            <td class="">{{deltaDmg}}</td>
             <td class="">{{"K/D"}}</td>
             <td class="">{{"KA/D"}}</td>
+            <td class="">{{"K/30"}}</td>
+            <td class="">{{"D/30"}}</td>
             <td class="">{{totalDamage}}</td>
             <td class="">{{totalTime}}</td>
             <td class="">{{logs}}</td>
@@ -547,8 +588,12 @@
           <th class="js-sort-number">Deaths</td>
           <th class="js-sort-number">Assists</td>
           <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">DTM</td>
+          <th class="js-sort-number">DPM - DTM</td>
           <th class="js-sort-number">K/D</td>
           <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">K/30m</th>
+          <th class="js-sort-number">D/30m</th>
           <th class="js-sort-number">Total Damage</td>
           <th class="js-sort-number">Total Time</td>
           <th class="js-sort-number">Logs</td>
@@ -563,8 +608,12 @@
             <td class="">{{deaths}}</td>
             <td class="">{{assists}}</td>
             <td class="">{{avgDpm}}</td>
+            <td class="">{{avgDtm}}</td>
+            <td class="">{{deltaDmg}}</td>
             <td class="">{{"K/D"}}</td>
             <td class="">{{"KA/D"}}</td>
+            <td class="">{{"K/30"}}</td>
+            <td class="">{{"D/30"}}</td>
             <td class="">{{totalDamage}}</td>
             <td class="">{{totalTime}}</td>
             <td class="">{{logs}}</td>
@@ -585,8 +634,12 @@
           <th class="js-sort-number">Deaths</td>
           <th class="js-sort-number">Assists</td>
           <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">DTM</td>
+          <th class="js-sort-number">DPM - DTM</td>
           <th class="js-sort-number">K/D</td>
           <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">K/30m</th>
+          <th class="js-sort-number">D/30m</th>
           <th class="js-sort-number">Total Damage</td>
           <th class="js-sort-number">Total Time</td>
           <th class="js-sort-number">Logs</td>
@@ -601,8 +654,12 @@
             <td class="">{{deaths}}</td>
             <td class="">{{assists}}</td>
             <td class="">{{avgDpm}}</td>
+            <td class="">{{avgDtm}}</td>
+            <td class="">{{deltaDmg}}</td>
             <td class="">{{"K/D"}}</td>
             <td class="">{{"KA/D"}}</td>
+            <td class="">{{"K/30"}}</td>
+            <td class="">{{"D/30"}}</td>
             <td class="">{{totalDamage}}</td>
             <td class="">{{totalTime}}</td>
             <td class="">{{logs}}</td>
@@ -623,8 +680,12 @@
           <th class="js-sort-number">Deaths</td>
           <th class="js-sort-number">Assists</td>
           <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">DTM</td>
+          <th class="js-sort-number">DPM - DTM</td>
           <th class="js-sort-number">K/D</td>
           <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">K/30m</th>
+          <th class="js-sort-number">D/30m</th>
           <th class="js-sort-number">Total Damage</td>
           <th class="js-sort-number">Total Time</td>
           <th class="js-sort-number">Logs</td>
@@ -639,8 +700,12 @@
             <td class="">{{deaths}}</td>
             <td class="">{{assists}}</td>
             <td class="">{{avgDpm}}</td>
+            <td class="">{{avgDtm}}</td>
+            <td class="">{{deltaDmg}}</td>
             <td class="">{{"K/D"}}</td>
             <td class="">{{"KA/D"}}</td>
+            <td class="">{{"K/30"}}</td>
+            <td class="">{{"D/30"}}</td>
             <td class="">{{totalDamage}}</td>
             <td class="">{{totalTime}}</td>
             <td class="">{{logs}}</td>
@@ -661,8 +726,12 @@
           <th class="js-sort-number">Deaths</td>
           <th class="js-sort-number">Assists</td>
           <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">DTM</td>
+          <th class="js-sort-number">DPM - DTM</td>
           <th class="js-sort-number">K/D</td>
           <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">K/30m</th>
+          <th class="js-sort-number">D/30m</th>
           <th class="js-sort-number">Total Damage</td>
           <th class="js-sort-number">Total Time</td>
           <th class="js-sort-number">Logs</td>
@@ -677,8 +746,12 @@
             <td class="">{{deaths}}</td>
             <td class="">{{assists}}</td>
             <td class="">{{avgDpm}}</td>
+            <td class="">{{avgDtm}}</td>
+            <td class="">{{deltaDmg}}</td>
             <td class="">{{"K/D"}}</td>
             <td class="">{{"KA/D"}}</td>
+            <td class="">{{"K/30"}}</td>
+            <td class="">{{"D/30"}}</td>
             <td class="">{{totalDamage}}</td>
             <td class="">{{totalTime}}</td>
             <td class="">{{logs}}</td>
