@@ -41,7 +41,7 @@ const calculatePlayerStats = async () => {
                         assists: currentClass.assists,
                         avgDpm: (currentClass.dmg / (currentClass.total_time / 60)).toFixed(2),
                         avgDtm: (log.players[playerKey].dt / (currentClass.total_time / 60)).toFixed(2),
-                        deltaDmg: (currentClass.dmg / (currentClass.total_time / 60)).toFixed(2) - (log.players[playerKey].dt / (currentClass.total_time / 60)).toFixed(2),
+                        deltaDmg: ((currentClass.dmg / (currentClass.total_time / 60)).toFixed(2) - (log.players[playerKey].dt / (currentClass.total_time / 60)).toFixed(2)).toFixed(2),
                         "K/D": (currentClass.kills / currentClass.deaths).toFixed(2),
                         "KA/D": ((currentClass.kills + currentClass.assists) / currentClass.deaths).toFixed(2),
                         "K/30": (currentClass.kills / (currentClass.total_time / 60) * 30).toFixed(2),
