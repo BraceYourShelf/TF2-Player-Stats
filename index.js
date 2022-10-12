@@ -64,7 +64,7 @@ const calculatePlayerStats = async () => {
                     let totalTime = playerStats[currentClass.type][playerKey].totalTime;
                     playerStats[currentClass.type][playerKey].avgDpm = (totalDmg / (totalTime / 60)).toFixed(2);
                     playerStats[currentClass.type][playerKey].avgDtm = (totalDmgTaken / (totalTime / 60)).toFixed(2);
-                    playerStats[currentClass.type][playerKey].deltaDamage = (playerStats[currentClass.type][playerKey].avgDpm - playerStats[currentClass.type][playerKey].avgDtm).toFixed(2);
+                    playerStats[currentClass.type][playerKey].deltaDmg = (totalDmg / (totalTime / 60) - (totalDmgTaken / (totalTime / 60))).toFixed(2);
 
                     let totalKills = playerStats[currentClass.type][playerKey].kills;
                     let totalAssists = playerStats[currentClass.type][playerKey].assists;
