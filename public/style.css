@@ -40,7 +40,28 @@ tbody tr:hover {
 .table-hidden {
     display: none;
 }
+.inline {
+    display: inline;
+}
+div.dataTables_filter {
+    margin-bottom: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+div.dataTables_filter label {
+    font-size: 16px;
+    padding: 12px 0px 12px 0px;
+    margin-right: 5px;
+    margin-bottom: 6px;
+}
 
+div.dataTables_filter input {
+    width: 40%;
+    font-size: 16px;
+    padding: 12px 20px 12px 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 6px;
+}
 button {
   border: none;
   padding: 15px 32px;

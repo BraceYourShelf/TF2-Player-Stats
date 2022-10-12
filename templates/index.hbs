@@ -5,49 +5,349 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TF2 S10 Main Player Stats</title>
+
+    
+    <link rel="stylesheet" href="https://cdn.datatables.net/searchbuilder/1.3.4/css/searchBuilder.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+    <link rel="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="style.css">
+
     <script src="sort-table.min.js"></script>
     <script src="index.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/searchbuilder/1.3.4/js/dataTables.searchBuilder.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        let table = $('#scoutStats').DataTable({
+          language: {
+            searchBuilder: {
+                title: ''
+            },
+            search: "Search: "
+          },
+          titles:[
+              'SearchBuilder'
+          ],
+          paging: false,
+          dom: 'Qlfrtip'
+        });
+        table.searchBuilder.container().addClass('inline');
+        table.searchBuilder.container().prependTo(table.table().container());
+
+        table = $('#soldierStats').DataTable({
+          language: {
+            searchBuilder: {
+                title: ''
+            },
+            search: "Search: "
+          },
+          titles:[
+              'SearchBuilder'
+          ],
+          paging: false,
+          dom: 'Qlfrtip'
+        });
+        table.searchBuilder.container().addClass('inline');
+        table.searchBuilder.container().prependTo(table.table().container());
+
+        table = $('#pyroStats').DataTable({
+          language: {
+            searchBuilder: {
+                title: ''
+            },
+            search: "Search: "
+          },
+          titles:[
+              'SearchBuilder'
+          ],
+          paging: false,
+          dom: 'Qlfrtip'
+        });
+        table.searchBuilder.container().addClass('inline');
+        table.searchBuilder.container().prependTo(table.table().container());
+
+        table = $('#demomanStats').DataTable({
+          language: {
+            searchBuilder: {
+                title: ''
+            },
+            search: "Search: "
+          },
+          titles:[
+              'SearchBuilder'
+          ],
+          paging: false,
+          dom: 'Qlfrtip'
+        });
+        table.searchBuilder.container().addClass('inline');
+        table.searchBuilder.container().prependTo(table.table().container());
+
+        table = $('#heavyweaponsStats').DataTable({
+          language: {
+            searchBuilder: {
+                title: ''
+            },
+            search: "Search: "
+          },
+          titles:[
+              'SearchBuilder'
+          ],
+          paging: false,
+          dom: 'Qlfrtip'
+        });
+        table.searchBuilder.container().addClass('inline');
+        table.searchBuilder.container().prependTo(table.table().container());
+
+        table = $('#engineerStats').DataTable({
+          language: {
+            searchBuilder: {
+                title: ''
+            },
+            search: "Search: "
+          },
+          titles:[
+              'SearchBuilder'
+          ],
+          paging: false,
+          dom: 'Qlfrtip'
+        });
+        table.searchBuilder.container().addClass('inline');
+        table.searchBuilder.container().prependTo(table.table().container());
+
+        table = $('#medicStats').DataTable({
+          language: {
+            searchBuilder: {
+                title: ''
+            },
+            search: "Search: "
+          },
+          titles:[
+              'SearchBuilder'
+          ],
+          paging: false,
+          dom: 'Qlfrtip'
+        });
+        table.searchBuilder.container().addClass('inline');
+        table.searchBuilder.container().prependTo(table.table().container());
+
+        table = $('#sniperStats').DataTable({
+          language: {
+            searchBuilder: {
+                title: ''
+            },
+            search: "Search: "
+          },
+          titles:[
+              'SearchBuilder'
+          ],
+          paging: false,
+          dom: 'Qlfrtip'
+        });
+        table.searchBuilder.container().addClass('inline');
+        table.searchBuilder.container().prependTo(table.table().container());
+
+        table = $('#spyStats').DataTable({
+          language: {
+            searchBuilder: {
+                title: ''
+            },
+            search: "Search: "
+          },
+          titles:[
+              'SearchBuilder'
+          ],
+          paging: false,
+          dom: 'Qlfrtip'
+        });
+        table.searchBuilder.container().addClass('inline');
+        table.searchBuilder.container().prependTo(table.table().container());
+    });
+    </script>
   </head>
   <body>
 	<div id="output"></div>
     <h1>TF2 S10 Main Player Stats</h1>
     <p>Stats taken from matches through Week 2</p>
 
-    <h4>Filter</h4>
-    <input type="text" id="filter" onkeyup="filterTable()" placeholder="Filter...">
-    <select name="filterCategory" id="filterCategory" onchange="filterTable()">
-      <option value="0">Steam ID</option>
-      <option value="1">Aliases</option>
-      <option value="2">Kills</option>
-      <option value="3">Deaths</option>
-      <option value="4">Assists</option>
-      <option value="5">DPM</option>
-      <option value="6">K/D</option>
-      <option value="7">KA/D</option>
-      <option value="8">Total Damage</option>
-      <option value="9">Total Time</option>
-      <option value="10">Logs</option>
-    </select>
-    <p>Useful Filter Queries:
-      <br>
-      
-    </p>
-    <br>
-
+    <h2>Class Select</h2>
     <div>
-      <button onClick="toggleClassTable('scout');filterTable()">Scout</button>
-      <button onClick="toggleClassTable('soldier');filterTable()">Soldier</button>
-      <button onClick="toggleClassTable('pyro');filterTable()">Pyro</button>
-      <button onClick="toggleClassTable('demoman');filterTable()">Demoman</button>
-      <button onClick="toggleClassTable('heavyweapons');filterTable()">Heavy</button>
-      <button onClick="toggleClassTable('engineer');filterTable()">Engineer</button>
-      <button onClick="toggleClassTable('medic');filterTable()">Medic</button>
-      <button onClick="toggleClassTable('sniper');filterTable()">Sniper</button>
-      <button onClick="toggleClassTable('spy');filterTable()">Spy</button>
+      <button style="display: none" onClick="toggleClassTable('allClasses')">All</button>
+      <button onClick="toggleClassTable('scout')">Scout</button>
+      <button onClick="toggleClassTable('soldier')">Soldier</button>
+      <button onClick="toggleClassTable('pyro')">Pyro</button>
+      <button onClick="toggleClassTable('demoman')">Demoman</button>
+      <button onClick="toggleClassTable('heavyweapons')">Heavy</button>
+      <button onClick="toggleClassTable('engineer')">Engineer</button>
+      <button onClick="toggleClassTable('medic')">Medic</button>
+      <button onClick="toggleClassTable('sniper')">Sniper</button>
+      <button onClick="toggleClassTable('spy')">Spy</button>
+    </div>
+
+    <div id="allClasses" class="table-hidden">
+      <h3>All</h3>
+      <table id="allClassesStats" class="js-sort-table">
+      <thead>
+        <tr>
+          <th class="js-sort-number">Steam ID</td>
+          <th class="js-sort-number">Aliases</td>
+          <th class="js-sort-number">Kills</td>
+          <th class="js-sort-number">Deaths</td>
+          <th class="js-sort-number">Assists</td>
+          <th class="js-sort-number">DPM</td>
+          <th class="js-sort-number">K/D</td>
+          <th class="js-sort-number">KA/D</td>
+          <th class="js-sort-number">Total Damage</td>
+          <th class="js-sort-number">Total Time</td>
+          <th class="js-sort-number">Logs</td>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each scout}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+        {{/each}}
+        {{#each soldier}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+        {{/each}}
+        {{#each pyro}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+        {{/each}}
+        {{#each demoman}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+        {{/each}}
+        {{#each heavyweapons}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+        {{/each}}
+        {{#each engineer}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+        {{/each}}
+        {{#each medic}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+        {{/each}}
+        {{#each sniper}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+        {{/each}}
+        {{#each spy}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+      </table>
     </div>
 
     <div id="scout" class="table-shown">
+      <h3>Scouts</h3>
       <table id="scoutStats" class="js-sort-table">
       <thead>
         <tr>
@@ -85,6 +385,7 @@
     </div>
 
     <div id="soldier" class="table-hidden">
+      <h3>Soldier</h3>
       <table id="soldierStats" class="js-sort-table">
       <thead>
         <tr>
@@ -122,6 +423,7 @@
     </div>
 
     <div id="pyro" class="table-hidden">
+      <h3>Pyro</h3>
       <table id="pyroStats" class="js-sort-table">
       <thead>
         <tr>
@@ -159,6 +461,7 @@
     </div>
 
     <div id="demoman" class="table-hidden">
+      <h3>Demoman</h3>
       <table id="demomanStats" class="js-sort-table">
       <thead>
         <tr>
@@ -196,6 +499,7 @@
     </div>
 
     <div id="heavyweapons" class="table-hidden">
+      <h3>Heavy</h3>
       <table id="heavyweaponsStats" class="js-sort-table">
       <thead>
         <tr>
@@ -233,6 +537,7 @@
     </div>
 
     <div id="engineer" class="table-hidden">
+      <h3>Engineer</h3>
       <table id="engineerStats" class="js-sort-table">
       <thead>
         <tr>
@@ -270,6 +575,7 @@
     </div>
 
     <div id="medic" class="table-hidden">
+      <h3>Medic</h3>
       <table id="medicStats" class="js-sort-table">
       <thead>
         <tr>
@@ -307,6 +613,7 @@
     </div>
 
     <div id="sniper" class="table-hidden">
+      <h3>Sniper</h3>
       <table id="sniperStats" class="js-sort-table">
       <thead>
         <tr>
@@ -344,6 +651,7 @@
     </div>
 
     <div id="spy" class="table-hidden">
+      <h3>Spy</h3>
       <table id="spyStats" class="js-sort-table">
       <thead>
         <tr>
