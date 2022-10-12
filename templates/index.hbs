@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="sort-table.min.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+	<div id="output"></div>
+    <h1>TF2 Stats</h1>
+    <p>Stats taken from Main matches through Week 2</p>
+    <div>
+      <button onClick="toggleClassTable('scout')">Scout</button>
+      <button onClick="toggleClassTable('soldier')">Soldier</button>
+      <button onClick="toggleClassTable('pyro')">Pyro</button>
+      <button onClick="toggleClassTable('demoman')">Demoman</button>
+      <button onClick="toggleClassTable('heavyweapons')">Heavy</button>
+      <button onClick="toggleClassTable('engineer')">Engineer</button>
+      <button onClick="toggleClassTable('medic')">Medic</button>
+      <button onClick="toggleClassTable('sniper')">Sniper</button>
+      <button onClick="toggleClassTable('spy')">Spy</button>
+    </div>
+    <div id="scout" class="table-shown">
+      <table id="scoutStats" class="js-sort-table">
+      <thead>
+        <tr>
+          <td class="js-sort-number">Steam ID</td>
+          <td class="js-sort-number">Aliases</td>
+          <td class="js-sort-number">Kills</td>
+          <td class="js-sort-number">Deaths</td>
+          <td class="js-sort-number">Assists</td>
+          <td class="js-sort-number">DPM</td>
+          <td class="js-sort-number">K/D</td>
+          <td class="js-sort-number">KA/D</td>
+          <td class="js-sort-number">Total Damage</td>
+          <td class="js-sort-number">Total Time</td>
+          <td class="js-sort-number">Logs</td>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each scout}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+      {{/each}}
+      </tbody>
+      </table>
+    </div>
+
+    <div id="soldier" class="table-hidden">
+      <table id="soldierStats" class="js-sort-table">
+      <thead>
+        <tr>
+          <td class="js-sort-number">Steam ID</td>
+          <td class="js-sort-number">Aliases</td>
+          <td class="js-sort-number">Kills</td>
+          <td class="js-sort-number">Deaths</td>
+          <td class="js-sort-number">Assists</td>
+          <td class="js-sort-number">DPM</td>
+          <td class="js-sort-number">K/D</td>
+          <td class="js-sort-number">KA/D</td>
+          <td class="js-sort-number">Total Damage</td>
+          <td class="js-sort-number">Total Time</td>
+          <td class="js-sort-number">Logs</td>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each soldier}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+      {{/each}}
+      </tbody>
+      </table>
+    </div>
+
+    <div id="pyro" class="table-hidden">
+      <table id="pyroStats" class="js-sort-table">
+      <thead>
+        <tr>
+          <td class="js-sort-number">Steam ID</td>
+          <td class="js-sort-number">Aliases</td>
+          <td class="js-sort-number">Kills</td>
+          <td class="js-sort-number">Deaths</td>
+          <td class="js-sort-number">Assists</td>
+          <td class="js-sort-number">DPM</td>
+          <td class="js-sort-number">K/D</td>
+          <td class="js-sort-number">KA/D</td>
+          <td class="js-sort-number">Total Damage</td>
+          <td class="js-sort-number">Total Time</td>
+          <td class="js-sort-number">Logs</td>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each pyro}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+      {{/each}}
+      </tbody>
+      </table>
+    </div>
+
+    <div id="demoman" class="table-hidden">
+      <table id="demomanStats" class="js-sort-table">
+      <thead>
+        <tr>
+          <td class="js-sort-number">Steam ID</td>
+          <td class="js-sort-number">Aliases</td>
+          <td class="js-sort-number">Kills</td>
+          <td class="js-sort-number">Deaths</td>
+          <td class="js-sort-number">Assists</td>
+          <td class="js-sort-number">DPM</td>
+          <td class="js-sort-number">K/D</td>
+          <td class="js-sort-number">KA/D</td>
+          <td class="js-sort-number">Total Damage</td>
+          <td class="js-sort-number">Total Time</td>
+          <td class="js-sort-number">Logs</td>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each demoman}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+      {{/each}}
+      </tbody>
+      </table>
+    </div>
+
+    <div id="heavyweapons" class="table-hidden">
+      <table id="heavyweaponsStats" class="js-sort-table">
+      <thead>
+        <tr>
+          <td class="js-sort-number">Steam ID</td>
+          <td class="js-sort-number">Aliases</td>
+          <td class="js-sort-number">Kills</td>
+          <td class="js-sort-number">Deaths</td>
+          <td class="js-sort-number">Assists</td>
+          <td class="js-sort-number">DPM</td>
+          <td class="js-sort-number">K/D</td>
+          <td class="js-sort-number">KA/D</td>
+          <td class="js-sort-number">Total Damage</td>
+          <td class="js-sort-number">Total Time</td>
+          <td class="js-sort-number">Logs</td>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each heavyweapons}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+      {{/each}}
+      </tbody>
+      </table>
+    </div>
+
+    <div id="engineer" class="table-hidden">
+      <table id="engineerStats" class="js-sort-table">
+      <thead>
+        <tr>
+          <td class="js-sort-number">Steam ID</td>
+          <td class="js-sort-number">Aliases</td>
+          <td class="js-sort-number">Kills</td>
+          <td class="js-sort-number">Deaths</td>
+          <td class="js-sort-number">Assists</td>
+          <td class="js-sort-number">DPM</td>
+          <td class="js-sort-number">K/D</td>
+          <td class="js-sort-number">KA/D</td>
+          <td class="js-sort-number">Total Damage</td>
+          <td class="js-sort-number">Total Time</td>
+          <td class="js-sort-number">Logs</td>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each engineer}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+      {{/each}}
+      </tbody>
+      </table>
+    </div>
+
+    <div id="medic" class="table-hidden">
+      <table id="medicStats" class="js-sort-table">
+      <thead>
+        <tr>
+          <td class="js-sort-number">Steam ID</td>
+          <td class="js-sort-number">Aliases</td>
+          <td class="js-sort-number">Kills</td>
+          <td class="js-sort-number">Deaths</td>
+          <td class="js-sort-number">Assists</td>
+          <td class="js-sort-number">DPM</td>
+          <td class="js-sort-number">K/D</td>
+          <td class="js-sort-number">KA/D</td>
+          <td class="js-sort-number">Total Damage</td>
+          <td class="js-sort-number">Total Time</td>
+          <td class="js-sort-number">Logs</td>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each medic}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+      {{/each}}
+      </tbody>
+      </table>
+    </div>
+
+    <div id="sniper" class="table-hidden">
+      <table id="sniperStats" class="js-sort-table">
+      <thead>
+        <tr>
+          <td class="js-sort-number">Steam ID</td>
+          <td class="js-sort-number">Aliases</td>
+          <td class="js-sort-number">Kills</td>
+          <td class="js-sort-number">Deaths</td>
+          <td class="js-sort-number">Assists</td>
+          <td class="js-sort-number">DPM</td>
+          <td class="js-sort-number">K/D</td>
+          <td class="js-sort-number">KA/D</td>
+          <td class="js-sort-number">Total Damage</td>
+          <td class="js-sort-number">Total Time</td>
+          <td class="js-sort-number">Logs</td>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each sniper}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+      {{/each}}
+      </tbody>
+      </table>
+    </div>
+
+    <div id="spy" class="table-hidden">
+      <table id="spyStats" class="js-sort-table">
+      <thead>
+        <tr>
+          <td class="js-sort-number">Steam ID</td>
+          <td class="js-sort-number">Aliases</td>
+          <td class="js-sort-number">Kills</td>
+          <td class="js-sort-number">Deaths</td>
+          <td class="js-sort-number">Assists</td>
+          <td class="js-sort-number">DPM</td>
+          <td class="js-sort-number">K/D</td>
+          <td class="js-sort-number">KA/D</td>
+          <td class="js-sort-number">Total Damage</td>
+          <td class="js-sort-number">Total Time</td>
+          <td class="js-sort-number">Logs</td>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each spy}}
+          <tr>
+            <td class="">{{steam3id}}</td>
+            <td class="">{{aliases}}</td>
+            <td class="">{{kills}}</td>
+            <td class="">{{deaths}}</td>
+            <td class="">{{assists}}</td>
+            <td class="">{{avgDpm}}</td>
+            <td class="">{{"K/D"}}</td>
+            <td class="">{{"KA/D"}}</td>
+            <td class="">{{totalDamage}}</td>
+            <td class="">{{totalTime}}</td>
+            <td class="">{{logs}}</td>
+          </tr>
+      {{/each}}
+      </tbody>
+      </table>
+    </div>
+  </body>
+</html>

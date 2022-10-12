@@ -1,0 +1,156 @@
+{
+  "ShadowFenix": {
+    "medicId": "[U:1:226541387]",
+    "hpm": "1144.79",
+    "drops": "0.83",
+    "ubers": "12.27",
+    "deaths": "8.37"
+  },
+  "millie": {
+    "medicId": "[U:1:255294112]",
+    "hpm": "1100.96",
+    "drops": "0.21",
+    "ubers": "15.36",
+    "deaths": "5.50"
+  },
+  "dinko": {
+    "medicId": "[U:1:193807220]",
+    "hpm": "1124.14",
+    "drops": "0.97",
+    "ubers": "15.09",
+    "deaths": "6.92"
+  },
+  "yate": {
+    "medicId": "[U:1:350738311]",
+    "hpm": "1118.36",
+    "drops": "0.24",
+    "ubers": "14.85",
+    "deaths": "7.33"
+  },
+  "Aifx": {
+    "medicId": "[U:1:438002921]",
+    "hpm": "1113.91",
+    "drops": "0.73",
+    "ubers": "13.00",
+    "deaths": "7.36"
+  },
+  "fuzze": {
+    "medicId": "[U:1:254196047]",
+    "hpm": "1129.20",
+    "drops": "0.00",
+    "ubers": "12.18",
+    "deaths": "10.14"
+  },
+  "ghadilli": {
+    "medicId": "[U:1:85573106]",
+    "hpm": "1097.41",
+    "drops": "0.24",
+    "ubers": "13.57",
+    "deaths": "10.77"
+  },
+  "milkblood": {
+    "medicId": "[U:1:1202317473]",
+    "hpm": "962.49",
+    "drops": "0.78",
+    "ubers": "13.19",
+    "deaths": "9.27"
+  },
+  "pom": {
+    "medicId": "[U:1:108821041]",
+    "hpm": "1091.95",
+    "drops": "1.25",
+    "ubers": "12.93",
+    "deaths": "10.84"
+  },
+  "optimisticdude": {
+    "medicId": "[U:1:213858425]",
+    "hpm": "997.33",
+    "drops": "0.57",
+    "ubers": "12.61",
+    "deaths": "10.76"
+  },
+  "finman": {
+    "medicId": "[U:1:167374185]",
+    "hpm": "1067.01",
+    "drops": "0.92",
+    "ubers": "11.93",
+    "deaths": "13.73"
+  },
+  "CH4RIOT": {
+    "medicId": "[U:1:352052370]",
+    "hpm": "1188.04",
+    "drops": "0.27",
+    "ubers": "14.41",
+    "deaths": "6.64"
+  },
+  "Gabe": {
+    "medicId": "[U:1:440196377]",
+    "hpm": "1233.28",
+    "drops": "0.32",
+    "ubers": "14.05",
+    "deaths": "6.19"
+  },
+  "Theo": {
+    "medicId": "[U:1:113694093]",
+    "hpm": "961.66",
+    "drops": "0.15",
+    "ubers": "11.91",
+    "deaths": "17.25"
+  },
+  "mattylight": {
+    "medicId": "[U:1:2497748]",
+    "hpm": "1011.98",
+    "drops": "0.84",
+    "ubers": "13.38",
+    "deaths": "13.65"
+  },
+  "DubThink": {
+    "medicId": "[U:1:171769009]",
+    "hpm": "983.45",
+    "drops": "0.67",
+    "ubers": "10.23",
+    "deaths": "15.79"
+  },
+  "Slav": {
+    "medicId": "[U:1:130289070]",
+    "hpm": "1037.98",
+    "drops": "0.19",
+    "ubers": "15.61",
+    "deaths": "12.18"
+  },
+  "visa": {
+    "medicId": "[U:1:34183440]",
+    "hpm": "1032.03",
+    "drops": "0.98",
+    "ubers": "13.04",
+    "deaths": "8.82"
+  },
+  "Blindsfell": {
+    "medicId": "[U:1:29086594]",
+    "hpm": "1006.83",
+    "drops": "0.43",
+    "ubers": "12.73",
+    "deaths": "10.67"
+  },
+  "rmx": {
+    "medicId": "[U:1:1513298]",
+    "hpm": "761.00",
+    "drops": "0.56",
+    "ubers": "9.25",
+    "deaths": "18.73"
+  },
+  "moss_untitld": {
+    "medicId": "[U:1:154627863]",
+    "hpm": "810.62",
+    "drops": "0.91",
+    "ubers": "11.43",
+    "deaths": "9.63"
+  },
+  "Sunnyy": {
+    "medicId": "[U:1:110395964]",
+    "hpm": "1049.30",
+    "drops": "1.10",
+    "ubers": "10.79",
+    "deaths": "18.95"
+  }
+}
