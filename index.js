@@ -51,6 +51,15 @@ const calculatePlayerStats = async () => {
                         totalTime: currentClass.total_time,
                         logs: (log.logId).toString()
                     }
+
+                    if (currentClass.type === 'medic') {
+                        playerStats[currentClass.type][playerKey].ubers = log.players[playerKey].ubers;
+                        playerStats[currentClass.type][playerKey].totalHealing = log.players[playerKey].heal;
+                        playerStats[currentClass.type][playerKey].drops = log.players[playerKey].drops;
+                        playerStats[currentClass.type][playerKey].avgHpm = (log.players[playerKey].heal / (currentClass.total_time / 60)).toFixed(2);
+                        playerStats[currentClass.type][playerKey]["Ubers/30"] = (log.players[playerKey].ubers / (currentClass.total_time / 60) * 30).toFixed(2);
+                        playerStats[currentClass.type][playerKey]["Drops/30"] = (log.players[playerKey].drops / (currentClass.total_time / 60) * 30).toFixed(2);
+                    }
                 } else {
                     playerStats[currentClass.type][playerKey].kills += currentClass.kills;
                     playerStats[currentClass.type][playerKey].deaths += currentClass.deaths;
@@ -74,6 +83,20 @@ const calculatePlayerStats = async () => {
                     playerStats[currentClass.type][playerKey]["KA/D"] = ((totalKills + totalAssists) / totalDeaths).toFixed(2);
                     playerStats[currentClass.type][playerKey]["K/30"] = (totalKills / (totalTime / 60) * 30).toFixed(2);
                     playerStats[currentClass.type][playerKey]["D/30"] = (totalDeaths / (totalTime / 60) * 30).toFixed(2);
+
+                    if (currentClass.type === 'medic') {
+                        playerStats[currentClass.type][playerKey].ubers += log.players[playerKey].ubers;
+                        playerStats[currentClass.type][playerKey].totalHealing += log.players[playerKey].heal;
+                        playerStats[currentClass.type][playerKey].drops += log.players[playerKey].drops;
+
+                        let totalHealing = playerStats[currentClass.type][playerKey].totalHealing;
+                        let ubers = playerStats[currentClass.type][playerKey].ubers;
+                        let drops = playerStats[currentClass.type][playerKey].drops;
+
+                        playerStats[currentClass.type][playerKey].avgHpm = (totalHealing / (totalTime / 60)).toFixed(2);
+                        playerStats[currentClass.type][playerKey]["Ubers/30"] = (ubers / (totalTime / 60) * 30).toFixed(2);
+                        playerStats[currentClass.type][playerKey]["Drops/30"] = (drops / (totalTime / 60) * 30).toFixed(2);
+                    }
 
                     let aliases = playerStats[currentClass.type][playerKey].aliases.split(', ');
                     if (!aliases.includes(playerAlias)) {
