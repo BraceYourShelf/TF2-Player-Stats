@@ -22,149 +22,113 @@
 
     <script>
       $(document).ready(function() {
-        let table = $('#scoutStats').DataTable({
+        let dataTableConfig = {
           language: {
             searchBuilder: {
                 title: ''
             },
             search: "Search: "
           },
+          "columnDefs": [
+            { "orderable": false, "searchable": false, "targets": 0 }
+          ],
           titles:[
               'SearchBuilder'
           ],
           paging: false,
+          order: [[1, 'asc']],
           dom: 'Qlfrtip'
-        });
-        table.searchBuilder.container().addClass('inline');
-        table.searchBuilder.container().prependTo(table.table().container());
+        };
+        
+        var scoutTable = $('#scoutStats').DataTable(dataTableConfig);
+        scoutTable.on('order.dt search.dt', function () {
+            let i = 1;
+            scoutTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        scoutTable.searchBuilder.container().addClass('inline');
+        scoutTable.searchBuilder.container().prependTo(scoutTable.table().container());
 
-        table = $('#soldierStats').DataTable({
-          language: {
-            searchBuilder: {
-                title: ''
-            },
-            search: "Search: "
-          },
-          titles:[
-              'SearchBuilder'
-          ],
-          paging: false,
-          dom: 'Qlfrtip'
-        });
-        table.searchBuilder.container().addClass('inline');
-        table.searchBuilder.container().prependTo(table.table().container());
+        var soldierTable = $('#soldierStats').DataTable(dataTableConfig);
+        soldierTable.on('order.dt search.dt', function () {
+            let i = 1;
+            soldierTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        soldierTable.searchBuilder.container().addClass('inline');
+        soldierTable.searchBuilder.container().prependTo(soldierTable.table().container());
 
-        table = $('#pyroStats').DataTable({
-          language: {
-            searchBuilder: {
-                title: ''
-            },
-            search: "Search: "
-          },
-          titles:[
-              'SearchBuilder'
-          ],
-          paging: false,
-          dom: 'Qlfrtip'
-        });
-        table.searchBuilder.container().addClass('inline');
-        table.searchBuilder.container().prependTo(table.table().container());
+        var pyroTable = $('#pyroStats').DataTable(dataTableConfig);
+        pyroTable.on('order.dt search.dt', function () {
+            let i = 1;
+            pyroTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        pyroTable.searchBuilder.container().addClass('inline');
+        pyroTable.searchBuilder.container().prependTo(pyroTable.table().container());
 
-        table = $('#demomanStats').DataTable({
-          language: {
-            searchBuilder: {
-                title: ''
-            },
-            search: "Search: "
-          },
-          titles:[
-              'SearchBuilder'
-          ],
-          paging: false,
-          dom: 'Qlfrtip'
-        });
-        table.searchBuilder.container().addClass('inline');
-        table.searchBuilder.container().prependTo(table.table().container());
+        var demomanTable = $('#demomanStats').DataTable(dataTableConfig);
+        demomanTable.on('order.dt search.dt', function () {
+            let i = 1;
+            demomanTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        demomanTable.searchBuilder.container().addClass('inline');
+        demomanTable.searchBuilder.container().prependTo(demomanTable.table().container());
 
-        table = $('#heavyweaponsStats').DataTable({
-          language: {
-            searchBuilder: {
-                title: ''
-            },
-            search: "Search: "
-          },
-          titles:[
-              'SearchBuilder'
-          ],
-          paging: false,
-          dom: 'Qlfrtip'
-        });
-        table.searchBuilder.container().addClass('inline');
-        table.searchBuilder.container().prependTo(table.table().container());
+        var heavyTable = $('#heavyweaponsStats').DataTable(dataTableConfig);
+        heavyTable.on('order.dt search.dt', function () {
+            let i = 1;
+            heavyTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        heavyTable.searchBuilder.container().addClass('inline');
+        heavyTable.searchBuilder.container().prependTo(heavyTable.table().container());
 
-        table = $('#engineerStats').DataTable({
-          language: {
-            searchBuilder: {
-                title: ''
-            },
-            search: "Search: "
-          },
-          titles:[
-              'SearchBuilder'
-          ],
-          paging: false,
-          dom: 'Qlfrtip'
-        });
-        table.searchBuilder.container().addClass('inline');
-        table.searchBuilder.container().prependTo(table.table().container());
+        var engineerTable = $('#engineerStats').DataTable(dataTableConfig);
+        engineerTable.on('order.dt search.dt', function () {
+            let i = 1;
+            engineerTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        engineerTable.searchBuilder.container().addClass('inline');
+        engineerTable.searchBuilder.container().prependTo(engineerTable.table().container());
 
-        table = $('#medicStats').DataTable({
-          language: {
-            searchBuilder: {
-                title: ''
-            },
-            search: "Search: "
-          },
-          titles:[
-              'SearchBuilder'
-          ],
-          paging: false,
-          dom: 'Qlfrtip'
-        });
-        table.searchBuilder.container().addClass('inline');
-        table.searchBuilder.container().prependTo(table.table().container());
+        var medicTable = $('#medicStats').DataTable(dataTableConfig);
+        medicTable.on('order.dt search.dt', function () {
+            let i = 1;
+            medicTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        medicTable.searchBuilder.container().addClass('inline');
+        medicTable.searchBuilder.container().prependTo(medicTable.table().container());
 
-        table = $('#sniperStats').DataTable({
-          language: {
-            searchBuilder: {
-                title: ''
-            },
-            search: "Search: "
-          },
-          titles:[
-              'SearchBuilder'
-          ],
-          paging: false,
-          dom: 'Qlfrtip'
-        });
-        table.searchBuilder.container().addClass('inline');
-        table.searchBuilder.container().prependTo(table.table().container());
+        var sniperTable = $('#sniperStats').DataTable(dataTableConfig);
+        sniperTable.on('order.dt search.dt', function () {
+            let i = 1;
+            sniperTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        sniperTable.searchBuilder.container().addClass('inline');
+        sniperTable.searchBuilder.container().prependTo(sniperTable.table().container());
 
-        table = $('#spyStats').DataTable({
-          language: {
-            searchBuilder: {
-                title: ''
-            },
-            search: "Search: "
-          },
-          titles:[
-              'SearchBuilder'
-          ],
-          paging: false,
-          dom: 'Qlfrtip'
-        });
-        table.searchBuilder.container().addClass('inline');
-        table.searchBuilder.container().prependTo(table.table().container());
+        var spyTable = $('#spyStats').DataTable(dataTableConfig);
+        spyTable.on('order.dt search.dt', function () {
+            let i = 1;
+            spyTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        spyTable.searchBuilder.container().addClass('inline');
+        spyTable.searchBuilder.container().prependTo(spyTable.table().container());
     });
     </script>
   </head>
@@ -192,6 +156,7 @@
       <table id="allClassesStats" class="js-sort-table">
       <thead>
         <tr>
+          <th></th>
           <th class="js-sort-number">Steam ID</td>
           <th class="js-sort-number">Aliases</td>
           <th class="js-sort-number">Kills</td>
@@ -209,6 +174,7 @@
       </thead>
       <tbody>
           <tr>
+            <td></td>
             <td class="">[U:1:208463880]</td>
             <td class="">ChristianKing787</td>
             <td class="">122</td>
@@ -222,6 +188,7 @@
             <td class="">3278093, 3276856, 3281516, 3282478, 3282454, 3285698, 3285730, 3286253</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1416218980]</td>
             <td class="">kola PURRRR</td>
             <td class="">138</td>
@@ -235,6 +202,7 @@
             <td class="">3278093, 3276886, 3282499, 3281450, 3285288</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1140565447]</td>
             <td class="">anna, anna PURRRR, thinmint, bong PURRRR</td>
             <td class="">163</td>
@@ -248,6 +216,7 @@
             <td class="">3278093, 3276886, 3282499, 3281450, 3285288</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:74354839]</td>
             <td class="">VXIOW, T1, Powerpuker, Snap his choker :3</td>
             <td class="">127</td>
@@ -261,6 +230,7 @@
             <td class="">3278093, 3276856, 3281516, 3282478, 3282454, 3285698, 3285730, 3286253</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:179585629]</td>
             <td class="">SLIPPY whisky, guitar, SLICK guitar, LATHERED whisky,  LATHERED whisky</td>
             <td class="">159</td>
@@ -274,6 +244,7 @@
             <td class="">3282502, 3276909, 3277470, 3281465, 3285288, 3286235</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:91304212]</td>
             <td class="">SLIPPY afx, aefax, SLICK aefax, LATHERED afx,  LATHERED afx</td>
             <td class="">214</td>
@@ -287,6 +258,7 @@
             <td class="">3282502, 3276909, 3277470, 3281465, 3285288, 3286235</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:97296227]</td>
             <td class="">fy_iceworld, cyberspace eminem, eljefe cyberspace eminem</td>
             <td class="">90</td>
@@ -300,6 +272,7 @@
             <td class="">3282502, 3276866, 3281434, 3278077, 3285297, 3286253</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:149892152]</td>
             <td class="">bigbigboy12, eljefe bigbigboy12, yuengling fiend</td>
             <td class="">34</td>
@@ -313,6 +286,7 @@
             <td class="">3282502, 3278077, 3285297</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:217627615]</td>
             <td class="">TOXIC charrrrrrrrrrrrr, char, papa pulpo, 1 penguineat fan, couple racks (aye), wL Prime Sharty</td>
             <td class="">149</td>
@@ -326,6 +300,7 @@
             <td class="">3276895, 3278094, 3282513, 3281434, 3285268, 3286252</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:39110213]</td>
             <td class="">turnip alert!, the alex smith of main, the alex smith of main alert!</td>
             <td class="">173</td>
@@ -339,6 +314,7 @@
             <td class="">3276895, 3278061, 3281479, 3282503, 3285267, 3286239</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:180428816]</td>
             <td class="">trees alert!</td>
             <td class="">148</td>
@@ -352,6 +328,7 @@
             <td class="">3276895, 3278061, 3281479, 3282503, 3285267, 3286239</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:317714123]</td>
             <td class="">gullywash flank scout, teddy inc., ki, satellite, zero and nine, whitelight</td>
             <td class="">126</td>
@@ -365,6 +342,7 @@
             <td class="">3276895, 3278094, 3282513, 3281434, 3285268, 3286252</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:80264053]</td>
             <td class="">b4nnyminioncarnagejohnsonbowlin</td>
             <td class="">150</td>
@@ -378,6 +356,7 @@
             <td class="">3278061, 3282513, 3281424, 3281402, 3276885, 3285698, 3285730, 3286171, 3286196</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1024346761]</td>
             <td class="">goku&gt;, yight yagami</td>
             <td class="">30</td>
@@ -391,6 +370,7 @@
             <td class="">3278061, 3276885</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1145838988]</td>
             <td class="">the locksmith, friend, template romance manga, INTERWORLDS</td>
             <td class="">176</td>
@@ -404,6 +384,7 @@
             <td class="">3281479, 3282527, 3278094, 3276885, 3285276, 3286221</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:123870274]</td>
             <td class="">thehogslammer</td>
             <td class="">163</td>
@@ -417,6 +398,7 @@
             <td class="">3281479, 3282527, 3278094, 3276885, 3285276, 3286221</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:93702050]</td>
             <td class="">C.C.C.O., monster math</td>
             <td class="">112</td>
@@ -430,6 +412,7 @@
             <td class="">3282503, 3276856, 3278087, 3281472, 3285722, 3286246</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:159413592]</td>
             <td class="">money, $.$.$., SeverelyFadedThanAHoAtPopeyes, F.I.L.O.</td>
             <td class="">113</td>
@@ -443,6 +426,7 @@
             <td class="">3282503, 3276856, 3278087, 3281472, 3285722, 3286246</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:193452647]</td>
             <td class="">dragomborn11</td>
             <td class="">73</td>
@@ -456,6 +440,7 @@
             <td class="">3278087, 3277474, 3282509, 3281424, 3281402</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:240618091]</td>
             <td class="">Alexis, cereal fan, ales</td>
             <td class="">107</td>
@@ -469,6 +454,7 @@
             <td class="">3278087, 3277474, 3282509, 3281424, 3281402</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:114412545]</td>
             <td class="">&gt;:T, the squirt scientist, ROPE SHOOTER IN THE BUILDING</td>
             <td class="">138</td>
@@ -482,6 +468,7 @@
             <td class="">3281472, 3282527, 3278028, 3276866, 3285292, 3285734</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:109897685]</td>
             <td class="">throne, squirt is pee</td>
             <td class="">110</td>
@@ -495,6 +482,7 @@
             <td class="">3281472, 3282527, 3278028, 3285292</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:249149572]</td>
             <td class="">Mr. FlareD, FlareD, ✯Mr. FlareD✯</td>
             <td class="">87</td>
@@ -508,6 +496,7 @@
             <td class="">3282492, 3281443, 3278078, 3276879, 3285279</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:421791356]</td>
             <td class="">✯ ✯MR KING ✯ ✯, 2x, J&#x60;UU, MDsioM</td>
             <td class="">142</td>
@@ -521,6 +510,7 @@
             <td class="">3282492, 3281443, 3278078, 3276879, 3285279, 3286221</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:330003400]</td>
             <td class="">BULK.sasuke, BULK.raygun</td>
             <td class="">160</td>
@@ -534,6 +524,7 @@
             <td class="">3282492, 3281464, 3276886, 3278088, 3285267, 3285734</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:84963494]</td>
             <td class="">BULK. MIGHT GUY, BULK. DURZO (Certified)</td>
             <td class="">138</td>
@@ -547,6 +538,7 @@
             <td class="">3282492, 3281464, 3276886, 3278088, 3285267, 3285734</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:74444421]</td>
             <td class="">negasora, his strange capping technique</td>
             <td class="">71</td>
@@ -560,6 +552,7 @@
             <td class="">3281464, 3282529, 3278043</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:147518283]</td>
             <td class="">rain, yin, bloodlust, ktmz, princess</td>
             <td class="">126</td>
@@ -573,6 +566,7 @@
             <td class="">3281464, 3282529, 3276878, 3285279, 3286246</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:249379140]</td>
             <td class="">Yomama Chandelure, warm and powerful, Yamagishi</td>
             <td class="">207</td>
@@ -586,6 +580,7 @@
             <td class="">3278088, 3282488, 3282452, 3281459, 3277474, 3285722, 3286252</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:83643663]</td>
             <td class="">NUG gigamonster405, FaZe hitmonlee, trapstarpoobear</td>
             <td class="">58</td>
@@ -599,6 +594,7 @@
             <td class="">3278088, 3282488, 3277474, 3286252</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:144408382]</td>
             <td class="">(503) GT0-LeCrum,  (503) GT0-LeCrum, (five-oh-tree) LeCrumble</td>
             <td class="">76</td>
@@ -612,6 +608,7 @@
             <td class="">3278028, 3276912, 3282478, 3282454, 3281450</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:210673562]</td>
             <td class="">cayorne,  cayorne, (503)GHNATGFrostyii.AGGTO#DLF61, a large cayorne with no pickles, (503) GHNA cayorne.NFS #DLF</td>
             <td class="">112</td>
@@ -625,6 +622,7 @@
             <td class="">3278028, 3276912, 3282478, 3282454, 3281450, 3285268</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:216238243]</td>
             <td class="">coughinshade, f4r4d4y c4ge, -{HR]- childsoldier1984</td>
             <td class="">54</td>
@@ -638,6 +636,7 @@
             <td class="">3276866, 3281434, 3286253</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:35913780]</td>
             <td class="">xyz</td>
             <td class="">11</td>
@@ -651,6 +650,7 @@
             <td class="">3276866</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:181216424]</td>
             <td class="">Tec________________________WANG</td>
             <td class="">190</td>
@@ -664,6 +664,7 @@
             <td class="">3276910, 3278091, 3282488, 3282452, 3281447, 3278068, 3285292, 3286239</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:179340824]</td>
             <td class="">Ellie________________________WA, Ellie :3, Holly___________________WANG, Holly________________WANG</td>
             <td class="">224</td>
@@ -677,6 +678,7 @@
             <td class="">3276910, 3278091, 3282488, 3282452, 3281447, 3278068, 3285292, 3286239</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:17011247]</td>
             <td class="">coupe</td>
             <td class="">105</td>
@@ -690,6 +692,7 @@
             <td class="">3276910, 3281443, 3282529, 3277470, 3285269, 3286219</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:122204454]</td>
             <td class="">mild</td>
             <td class="">2</td>
@@ -703,6 +706,7 @@
             <td class="">3276910</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:164211839]</td>
             <td class="">Bunt</td>
             <td class="">125</td>
@@ -716,6 +720,7 @@
             <td class="">3276910, 3281443, 3282529, 3277470, 3285269, 3286219</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:163617933]</td>
             <td class="">rasta &quot;Josh S.&quot; ronald</td>
             <td class="">50</td>
@@ -729,6 +734,7 @@
             <td class="">3278091, 3276909, 3278068</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:151299353]</td>
             <td class="">jsmil101@harvard.edu, josh, wise ass tree,  josh, kujikawa</td>
             <td class="">102</td>
@@ -742,6 +748,7 @@
             <td class="">3278091, 3281459, 3276909, 3278068, 3282029, 3286225</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:146334357]</td>
             <td class="">TheMadTroller1999, m1chael, Stealthpilled Thiefcel</td>
             <td class="">56</td>
@@ -755,6 +762,7 @@
             <td class="">3282488, 3282452, 3281459, 3285722</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:234875493]</td>
             <td class="">o_o, unwrander,  o_o,  unwrander,  wrndr,  heliov</td>
             <td class="">125</td>
@@ -768,6 +776,7 @@
             <td class="">3281447, 3276912, 3282029, 3278077, 3285751, 3286235</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:118783237]</td>
             <td class="">personification of evil, unCrutch,  personification of evil,  Crutch, tunneltown,  tunneltown</td>
             <td class="">145</td>
@@ -781,6 +790,7 @@
             <td class="">3281447, 3276912, 3282029, 3278077, 3285751, 3286235</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:165986855]</td>
             <td class="">K1ngT1gr, T1gr</td>
             <td class="">141</td>
@@ -794,6 +804,7 @@
             <td class="">3278078, 3276878, 3282499, 3281516, 3285269, 3286225</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:347251003]</td>
             <td class="">SpockLSD, [FREE] SpockASD, wize fifty</td>
             <td class="">146</td>
@@ -807,6 +818,7 @@
             <td class="">3278078, 3276878, 3282499, 3281516, 3285269, 3286225</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:155448756]</td>
             <td class="">mr, night, coffee black, Heavy in bugatti, Midnight</td>
             <td class="">117</td>
@@ -820,6 +832,7 @@
             <td class="">3276879, 3278043, 3281465, 3282509, 3285297, 3286171, 3286196</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:89897890]</td>
             <td class="">✫P∀nck∈✫, P4B ✫P∀nck∈✫</td>
             <td class="">117</td>
@@ -833,6 +846,7 @@
             <td class="">3276879, 3278043, 3281465, 3282509, 3285297, 3286171, 3286196</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:131704728]</td>
             <td class="">his strange fighting pose UU&#x60;, UU&#x60;J</td>
             <td class="">110</td>
@@ -846,6 +860,7 @@
             <td class="">3276878, 3278043, 3285279, 3286246</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:86604563]</td>
             <td class="">bumblecheeks,  bumblecheeks #Savethekids</td>
             <td class="">126</td>
@@ -859,6 +874,7 @@
             <td class="">3281459, 3282029, 3285276, 3286225</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:65591156]</td>
             <td class="">SomethingAmazing</td>
             <td class="">60</td>
@@ -872,6 +888,7 @@
             <td class="">3282513, 3281424, 3281402, 3285698, 3285730, 3286171, 3286196</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:80405405]</td>
             <td class=""> Se_Rious</td>
             <td class="">5</td>
@@ -885,6 +902,7 @@
             <td class="">3282029</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:42954103]</td>
             <td class=""> art vandelay</td>
             <td class="">38</td>
@@ -898,6 +916,7 @@
             <td class="">3285751</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1161366408]</td>
             <td class=""> shitty bastard :o3</td>
             <td class="">22</td>
@@ -911,6 +930,7 @@
             <td class="">3285751</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:214149442]</td>
             <td class="">(503) nYxia- ♥</td>
             <td class="">17</td>
@@ -924,6 +944,7 @@
             <td class="">3285268, 3286219</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:242905621]</td>
             <td class="">freddo.</td>
             <td class="">21</td>
@@ -937,6 +958,7 @@
             <td class="">3285276</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:107450401]</td>
             <td class="">(503) lean iwokura cu@ATL</td>
             <td class="">6</td>
@@ -950,6 +972,7 @@
             <td class="">3286219</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:90130240]</td>
             <td class="">MIDAS</td>
             <td class="">14</td>
@@ -963,6 +986,7 @@
             <td class="">3286218</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:483032880]</td>
             <td class="">GREMLIN MAN</td>
             <td class="">8</td>
@@ -976,6 +1000,7 @@
             <td class="">3286218</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:340919188]</td>
             <td class="">Boy Princess</td>
             <td class="">26</td>
@@ -989,6 +1014,7 @@
             <td class="">3286218</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:149518001]</td>
             <td class="">snow-水</td>
             <td class="">14</td>
@@ -1002,6 +1028,7 @@
             <td class="">3286218</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1202317473]</td>
             <td class="">dreamscape</td>
             <td class="">0</td>
@@ -1015,6 +1042,7 @@
             <td class="">3286221</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:254196047]</td>
             <td class="">fuzze</td>
             <td class="">15</td>
@@ -1028,6 +1056,7 @@
             <td class="">3286221</td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:108227175]</td>
             <td class="">displace</td>
             <td class="">26</td>
@@ -5703,6 +5732,7 @@
       <table id="scoutStats" class="js-sort-table">
       <thead>
         <tr>
+          <th></th>
           <th class="js-sort-number">Steam ID</td>
           <th class="js-sort-number">Aliases</td>
           <th class="js-sort-number">Kills</td>
@@ -5722,6 +5752,7 @@
       </thead>
       <tbody>
           <tr>
+            <td></td>
             <td class="">[U:1:208463880]</td>
             <td class="">ChristianKing787</td>
             <td class="">122</td>
@@ -5739,6 +5770,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3281516">3281516</a>, <a href="https://logs.tf/3282478">3282478</a>, <a href="https://logs.tf/3282454">3282454</a>, <a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3285730">3285730</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1416218980]</td>
             <td class="">kola PURRRR</td>
             <td class="">138</td>
@@ -5756,6 +5788,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276886">3276886</a>, <a href="https://logs.tf/3282499">3282499</a>, <a href="https://logs.tf/3281450">3281450</a>, <a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1140565447]</td>
             <td class="">anna, anna PURRRR, thinmint, bong PURRRR</td>
             <td class="">163</td>
@@ -5773,6 +5806,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276886">3276886</a>, <a href="https://logs.tf/3282499">3282499</a>, <a href="https://logs.tf/3281450">3281450</a>, <a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:74354839]</td>
             <td class="">VXIOW, T1, Powerpuker, Snap his choker :3</td>
             <td class="">127</td>
@@ -5790,6 +5824,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3281516">3281516</a>, <a href="https://logs.tf/3282478">3282478</a>, <a href="https://logs.tf/3282454">3282454</a>, <a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3285730">3285730</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:179585629]</td>
             <td class="">SLIPPY whisky, guitar, SLICK guitar, LATHERED whisky,  LATHERED whisky</td>
             <td class="">159</td>
@@ -5807,6 +5842,7 @@
             <td class=""><a href="https://logs.tf/3282502">3282502</a>, <a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3281465">3281465</a>, <a href="https://logs.tf/3285288">3285288</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:91304212]</td>
             <td class="">SLIPPY afx, aefax, SLICK aefax, LATHERED afx,  LATHERED afx</td>
             <td class="">214</td>
@@ -5824,6 +5860,7 @@
             <td class=""><a href="https://logs.tf/3282502">3282502</a>, <a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3281465">3281465</a>, <a href="https://logs.tf/3285288">3285288</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:97296227]</td>
             <td class="">fy_iceworld, cyberspace eminem, eljefe cyberspace eminem</td>
             <td class="">90</td>
@@ -5841,6 +5878,7 @@
             <td class=""><a href="https://logs.tf/3282502">3282502</a>, <a href="https://logs.tf/3276866">3276866</a>, <a href="https://logs.tf/3281434">3281434</a>, <a href="https://logs.tf/3278077">3278077</a>, <a href="https://logs.tf/3285297">3285297</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:149892152]</td>
             <td class="">bigbigboy12, eljefe bigbigboy12, yuengling fiend</td>
             <td class="">34</td>
@@ -5858,6 +5896,7 @@
             <td class=""><a href="https://logs.tf/3282502">3282502</a>, <a href="https://logs.tf/3278077">3278077</a>, <a href="https://logs.tf/3285297">3285297</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:217627615]</td>
             <td class="">TOXIC charrrrrrrrrrrrr, char, papa pulpo, 1 penguineat fan, couple racks (aye), wL Prime Sharty</td>
             <td class="">149</td>
@@ -5875,6 +5914,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3282513">3282513</a>, <a href="https://logs.tf/3281434">3281434</a>, <a href="https://logs.tf/3285268">3285268</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:39110213]</td>
             <td class="">turnip alert!, the alex smith of main, the alex smith of main alert!</td>
             <td class="">173</td>
@@ -5892,6 +5932,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3281479">3281479</a>, <a href="https://logs.tf/3282503">3282503</a>, <a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:180428816]</td>
             <td class="">trees alert!</td>
             <td class="">148</td>
@@ -5909,6 +5950,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3281479">3281479</a>, <a href="https://logs.tf/3282503">3282503</a>, <a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:317714123]</td>
             <td class="">gullywash flank scout, teddy inc., ki, satellite, zero and nine, whitelight</td>
             <td class="">126</td>
@@ -5926,6 +5968,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3282513">3282513</a>, <a href="https://logs.tf/3281434">3281434</a>, <a href="https://logs.tf/3285268">3285268</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:80264053]</td>
             <td class="">b4nnyminioncarnagejohnsonbowlin</td>
             <td class="">150</td>
@@ -5943,6 +5986,7 @@
             <td class=""><a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3282513">3282513</a>, <a href="https://logs.tf/3281424">3281424</a>, <a href="https://logs.tf/3281402">3281402</a>, <a href="https://logs.tf/3276885">3276885</a>, <a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3285730">3285730</a>, <a href="https://logs.tf/3286171">3286171</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1024346761]</td>
             <td class="">goku&gt;, yight yagami</td>
             <td class="">30</td>
@@ -5960,6 +6004,7 @@
             <td class=""><a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3276885">3276885</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1145838988]</td>
             <td class="">the locksmith, friend, template romance manga, INTERWORLDS</td>
             <td class="">176</td>
@@ -5977,6 +6022,7 @@
             <td class=""><a href="https://logs.tf/3281479">3281479</a>, <a href="https://logs.tf/3282527">3282527</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3276885">3276885</a>, <a href="https://logs.tf/3285276">3285276</a>, <a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:123870274]</td>
             <td class="">thehogslammer</td>
             <td class="">163</td>
@@ -5994,6 +6040,7 @@
             <td class=""><a href="https://logs.tf/3281479">3281479</a>, <a href="https://logs.tf/3282527">3282527</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3276885">3276885</a>, <a href="https://logs.tf/3285276">3285276</a>, <a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:93702050]</td>
             <td class="">C.C.C.O., monster math</td>
             <td class="">112</td>
@@ -6011,6 +6058,7 @@
             <td class=""><a href="https://logs.tf/3282503">3282503</a>, <a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3281472">3281472</a>, <a href="https://logs.tf/3285722">3285722</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:159413592]</td>
             <td class="">money, $.$.$., SeverelyFadedThanAHoAtPopeyes, F.I.L.O.</td>
             <td class="">113</td>
@@ -6028,6 +6076,7 @@
             <td class=""><a href="https://logs.tf/3282503">3282503</a>, <a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3281472">3281472</a>, <a href="https://logs.tf/3285722">3285722</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:193452647]</td>
             <td class="">dragomborn11</td>
             <td class="">73</td>
@@ -6045,6 +6094,7 @@
             <td class=""><a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3277474">3277474</a>, <a href="https://logs.tf/3282509">3282509</a>, <a href="https://logs.tf/3281424">3281424</a>, <a href="https://logs.tf/3281402">3281402</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:240618091]</td>
             <td class="">Alexis, cereal fan, ales</td>
             <td class="">107</td>
@@ -6062,6 +6112,7 @@
             <td class=""><a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3277474">3277474</a>, <a href="https://logs.tf/3282509">3282509</a>, <a href="https://logs.tf/3281424">3281424</a>, <a href="https://logs.tf/3281402">3281402</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:114412545]</td>
             <td class="">&gt;:T, the squirt scientist, ROPE SHOOTER IN THE BUILDING</td>
             <td class="">138</td>
@@ -6079,6 +6130,7 @@
             <td class=""><a href="https://logs.tf/3281472">3281472</a>, <a href="https://logs.tf/3282527">3282527</a>, <a href="https://logs.tf/3278028">3278028</a>, <a href="https://logs.tf/3276866">3276866</a>, <a href="https://logs.tf/3285292">3285292</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:109897685]</td>
             <td class="">throne, squirt is pee</td>
             <td class="">110</td>
@@ -6096,6 +6148,7 @@
             <td class=""><a href="https://logs.tf/3281472">3281472</a>, <a href="https://logs.tf/3282527">3282527</a>, <a href="https://logs.tf/3278028">3278028</a>, <a href="https://logs.tf/3285292">3285292</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:249149572]</td>
             <td class="">Mr. FlareD, FlareD, ✯Mr. FlareD✯</td>
             <td class="">87</td>
@@ -6113,6 +6166,7 @@
             <td class=""><a href="https://logs.tf/3282492">3282492</a>, <a href="https://logs.tf/3281443">3281443</a>, <a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3285279">3285279</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:421791356]</td>
             <td class="">✯ ✯MR KING ✯ ✯, 2x, J&#x60;UU, MDsioM</td>
             <td class="">142</td>
@@ -6130,6 +6184,7 @@
             <td class=""><a href="https://logs.tf/3282492">3282492</a>, <a href="https://logs.tf/3281443">3281443</a>, <a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3285279">3285279</a>, <a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:330003400]</td>
             <td class="">BULK.sasuke, BULK.raygun</td>
             <td class="">160</td>
@@ -6147,6 +6202,7 @@
             <td class=""><a href="https://logs.tf/3282492">3282492</a>, <a href="https://logs.tf/3281464">3281464</a>, <a href="https://logs.tf/3276886">3276886</a>, <a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:84963494]</td>
             <td class="">BULK. MIGHT GUY, BULK. DURZO (Certified)</td>
             <td class="">138</td>
@@ -6164,6 +6220,7 @@
             <td class=""><a href="https://logs.tf/3282492">3282492</a>, <a href="https://logs.tf/3281464">3281464</a>, <a href="https://logs.tf/3276886">3276886</a>, <a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:74444421]</td>
             <td class="">negasora, his strange capping technique</td>
             <td class="">71</td>
@@ -6181,6 +6238,7 @@
             <td class=""><a href="https://logs.tf/3281464">3281464</a>, <a href="https://logs.tf/3282529">3282529</a>, <a href="https://logs.tf/3278043">3278043</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:147518283]</td>
             <td class="">rain, yin, bloodlust, ktmz, princess</td>
             <td class="">126</td>
@@ -6198,6 +6256,7 @@
             <td class=""><a href="https://logs.tf/3281464">3281464</a>, <a href="https://logs.tf/3282529">3282529</a>, <a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3285279">3285279</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:249379140]</td>
             <td class="">Yomama Chandelure, warm and powerful, Yamagishi</td>
             <td class="">207</td>
@@ -6215,6 +6274,7 @@
             <td class=""><a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3282452">3282452</a>, <a href="https://logs.tf/3281459">3281459</a>, <a href="https://logs.tf/3277474">3277474</a>, <a href="https://logs.tf/3285722">3285722</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:83643663]</td>
             <td class="">NUG gigamonster405, FaZe hitmonlee, trapstarpoobear</td>
             <td class="">58</td>
@@ -6232,6 +6292,7 @@
             <td class=""><a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3277474">3277474</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:144408382]</td>
             <td class="">(503) GT0-LeCrum,  (503) GT0-LeCrum, (five-oh-tree) LeCrumble</td>
             <td class="">76</td>
@@ -6249,6 +6310,7 @@
             <td class=""><a href="https://logs.tf/3278028">3278028</a>, <a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3282478">3282478</a>, <a href="https://logs.tf/3282454">3282454</a>, <a href="https://logs.tf/3281450">3281450</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:210673562]</td>
             <td class="">cayorne,  cayorne, (503)GHNATGFrostyii.AGGTO#DLF61, a large cayorne with no pickles, (503) GHNA cayorne.NFS #DLF</td>
             <td class="">112</td>
@@ -6266,6 +6328,7 @@
             <td class=""><a href="https://logs.tf/3278028">3278028</a>, <a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3282478">3282478</a>, <a href="https://logs.tf/3282454">3282454</a>, <a href="https://logs.tf/3281450">3281450</a>, <a href="https://logs.tf/3285268">3285268</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:216238243]</td>
             <td class="">coughinshade, f4r4d4y c4ge, -{HR]- childsoldier1984</td>
             <td class="">54</td>
@@ -6283,6 +6346,7 @@
             <td class=""><a href="https://logs.tf/3276866">3276866</a>, <a href="https://logs.tf/3281434">3281434</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:35913780]</td>
             <td class="">xyz</td>
             <td class="">11</td>
@@ -6300,6 +6364,7 @@
             <td class=""><a href="https://logs.tf/3276866">3276866</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:181216424]</td>
             <td class="">Tec________________________WANG</td>
             <td class="">190</td>
@@ -6317,6 +6382,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3282452">3282452</a>, <a href="https://logs.tf/3281447">3281447</a>, <a href="https://logs.tf/3278068">3278068</a>, <a href="https://logs.tf/3285292">3285292</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:179340824]</td>
             <td class="">Ellie________________________WA, Ellie :3, Holly___________________WANG, Holly________________WANG</td>
             <td class="">224</td>
@@ -6334,6 +6400,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3282452">3282452</a>, <a href="https://logs.tf/3281447">3281447</a>, <a href="https://logs.tf/3278068">3278068</a>, <a href="https://logs.tf/3285292">3285292</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:17011247]</td>
             <td class="">coupe</td>
             <td class="">105</td>
@@ -6351,6 +6418,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3281443">3281443</a>, <a href="https://logs.tf/3282529">3282529</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286219">3286219</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:122204454]</td>
             <td class="">mild</td>
             <td class="">2</td>
@@ -6368,6 +6436,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:164211839]</td>
             <td class="">Bunt</td>
             <td class="">125</td>
@@ -6385,6 +6454,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3281443">3281443</a>, <a href="https://logs.tf/3282529">3282529</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286219">3286219</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:163617933]</td>
             <td class="">rasta &quot;Josh S.&quot; ronald</td>
             <td class="">50</td>
@@ -6402,6 +6472,7 @@
             <td class=""><a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3278068">3278068</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:151299353]</td>
             <td class="">jsmil101@harvard.edu, josh, wise ass tree,  josh, kujikawa</td>
             <td class="">102</td>
@@ -6419,6 +6490,7 @@
             <td class=""><a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3281459">3281459</a>, <a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3278068">3278068</a>, <a href="https://logs.tf/3282029">3282029</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:146334357]</td>
             <td class="">TheMadTroller1999, m1chael, Stealthpilled Thiefcel</td>
             <td class="">56</td>
@@ -6436,6 +6508,7 @@
             <td class=""><a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3282452">3282452</a>, <a href="https://logs.tf/3281459">3281459</a>, <a href="https://logs.tf/3285722">3285722</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:234875493]</td>
             <td class="">o_o, unwrander,  o_o,  unwrander,  wrndr,  heliov</td>
             <td class="">125</td>
@@ -6453,6 +6526,7 @@
             <td class=""><a href="https://logs.tf/3281447">3281447</a>, <a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3282029">3282029</a>, <a href="https://logs.tf/3278077">3278077</a>, <a href="https://logs.tf/3285751">3285751</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:118783237]</td>
             <td class="">personification of evil, unCrutch,  personification of evil,  Crutch, tunneltown,  tunneltown</td>
             <td class="">145</td>
@@ -6470,6 +6544,7 @@
             <td class=""><a href="https://logs.tf/3281447">3281447</a>, <a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3282029">3282029</a>, <a href="https://logs.tf/3278077">3278077</a>, <a href="https://logs.tf/3285751">3285751</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:165986855]</td>
             <td class="">K1ngT1gr, T1gr</td>
             <td class="">141</td>
@@ -6487,6 +6562,7 @@
             <td class=""><a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3282499">3282499</a>, <a href="https://logs.tf/3281516">3281516</a>, <a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:347251003]</td>
             <td class="">SpockLSD, [FREE] SpockASD, wize fifty</td>
             <td class="">146</td>
@@ -6504,6 +6580,7 @@
             <td class=""><a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3282499">3282499</a>, <a href="https://logs.tf/3281516">3281516</a>, <a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:155448756]</td>
             <td class="">mr, night, coffee black, Heavy in bugatti, Midnight</td>
             <td class="">117</td>
@@ -6521,6 +6598,7 @@
             <td class=""><a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3278043">3278043</a>, <a href="https://logs.tf/3281465">3281465</a>, <a href="https://logs.tf/3282509">3282509</a>, <a href="https://logs.tf/3285297">3285297</a>, <a href="https://logs.tf/3286171">3286171</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:89897890]</td>
             <td class="">✫P∀nck∈✫, P4B ✫P∀nck∈✫</td>
             <td class="">117</td>
@@ -6538,6 +6616,7 @@
             <td class=""><a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3278043">3278043</a>, <a href="https://logs.tf/3281465">3281465</a>, <a href="https://logs.tf/3282509">3282509</a>, <a href="https://logs.tf/3285297">3285297</a>, <a href="https://logs.tf/3286171">3286171</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:131704728]</td>
             <td class="">his strange fighting pose UU&#x60;, UU&#x60;J</td>
             <td class="">110</td>
@@ -6555,6 +6634,7 @@
             <td class=""><a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3278043">3278043</a>, <a href="https://logs.tf/3285279">3285279</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:86604563]</td>
             <td class="">bumblecheeks,  bumblecheeks #Savethekids</td>
             <td class="">126</td>
@@ -6572,6 +6652,7 @@
             <td class=""><a href="https://logs.tf/3281459">3281459</a>, <a href="https://logs.tf/3282029">3282029</a>, <a href="https://logs.tf/3285276">3285276</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:65591156]</td>
             <td class="">SomethingAmazing</td>
             <td class="">60</td>
@@ -6589,6 +6670,7 @@
             <td class=""><a href="https://logs.tf/3282513">3282513</a>, <a href="https://logs.tf/3281424">3281424</a>, <a href="https://logs.tf/3281402">3281402</a>, <a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3285730">3285730</a>, <a href="https://logs.tf/3286171">3286171</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:80405405]</td>
             <td class=""> Se_Rious</td>
             <td class="">5</td>
@@ -6606,6 +6688,7 @@
             <td class=""><a href="https://logs.tf/3282029">3282029</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:42954103]</td>
             <td class=""> art vandelay</td>
             <td class="">38</td>
@@ -6623,6 +6706,7 @@
             <td class=""><a href="https://logs.tf/3285751">3285751</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1161366408]</td>
             <td class=""> shitty bastard :o3</td>
             <td class="">22</td>
@@ -6640,6 +6724,7 @@
             <td class=""><a href="https://logs.tf/3285751">3285751</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:214149442]</td>
             <td class="">(503) nYxia- ♥</td>
             <td class="">17</td>
@@ -6657,6 +6742,7 @@
             <td class=""><a href="https://logs.tf/3285268">3285268</a>, <a href="https://logs.tf/3286219">3286219</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:242905621]</td>
             <td class="">freddo.</td>
             <td class="">21</td>
@@ -6674,6 +6760,7 @@
             <td class=""><a href="https://logs.tf/3285276">3285276</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:107450401]</td>
             <td class="">(503) lean iwokura cu@ATL</td>
             <td class="">6</td>
@@ -6691,6 +6778,7 @@
             <td class=""><a href="https://logs.tf/3286219">3286219</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:90130240]</td>
             <td class="">MIDAS</td>
             <td class="">14</td>
@@ -6708,6 +6796,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:483032880]</td>
             <td class="">GREMLIN MAN</td>
             <td class="">8</td>
@@ -6725,6 +6814,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:340919188]</td>
             <td class="">Boy Princess</td>
             <td class="">26</td>
@@ -6742,6 +6832,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:149518001]</td>
             <td class="">snow-水</td>
             <td class="">14</td>
@@ -6759,6 +6850,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1202317473]</td>
             <td class="">dreamscape</td>
             <td class="">0</td>
@@ -6776,6 +6868,7 @@
             <td class=""><a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:254196047]</td>
             <td class="">fuzze</td>
             <td class="">15</td>
@@ -6793,6 +6886,7 @@
             <td class=""><a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:108227175]</td>
             <td class="">displace</td>
             <td class="">26</td>
@@ -6818,6 +6912,7 @@
       <table id="soldierStats" class="js-sort-table">
       <thead>
         <tr>
+          <th></th>
           <th class="js-sort-number">Steam ID</td>
           <th class="js-sort-number">Aliases</td>
           <th class="js-sort-number">Kills</td>
@@ -6837,6 +6932,7 @@
       </thead>
       <tbody>
           <tr>
+            <td></td>
             <td class="">[U:1:108272745]</td>
             <td class="">CeigeBirb</td>
             <td class="">118</td>
@@ -6854,6 +6950,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3281516">3281516</a>, <a href="https://logs.tf/3282478">3282478</a>, <a href="https://logs.tf/3282454">3282454</a>, <a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3285730">3285730</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:98487326]</td>
             <td class="">Soalabe, Soala</td>
             <td class="">74</td>
@@ -6871,6 +6968,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3281516">3281516</a>, <a href="https://logs.tf/3282478">3282478</a>, <a href="https://logs.tf/3282454">3282454</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:136473263]</td>
             <td class="">radio2_10, gabby PURRRR</td>
             <td class="">93</td>
@@ -6888,6 +6986,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276886">3276886</a>, <a href="https://logs.tf/3282499">3282499</a>, <a href="https://logs.tf/3281450">3281450</a>, <a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:408450141]</td>
             <td class="">mur, murrrr PURRRR, MURRRR</td>
             <td class="">104</td>
@@ -6905,6 +7004,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276886">3276886</a>, <a href="https://logs.tf/3282499">3282499</a>, <a href="https://logs.tf/3281450">3281450</a>, <a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:178908705]</td>
             <td class="">SLIPPY Cambonieboo, Cam, SLICK Cambonieboo, LATHERED Cambonieboo</td>
             <td class="">126</td>
@@ -6922,6 +7022,7 @@
             <td class=""><a href="https://logs.tf/3282502">3282502</a>, <a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3281465">3281465</a>, <a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:94261775]</td>
             <td class="">SLIPPY chateau, SLICK chateau, LATHERED chateau,  LATHERED chateau</td>
             <td class="">104</td>
@@ -6939,6 +7040,7 @@
             <td class=""><a href="https://logs.tf/3282502">3282502</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3281465">3281465</a>, <a href="https://logs.tf/3285288">3285288</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:110504641]</td>
             <td class="">BB Shadow master michael, eljefe BB Shadow master michael, flava jason 365</td>
             <td class="">94</td>
@@ -6956,6 +7058,7 @@
             <td class=""><a href="https://logs.tf/3282502">3282502</a>, <a href="https://logs.tf/3276866">3276866</a>, <a href="https://logs.tf/3281434">3281434</a>, <a href="https://logs.tf/3278077">3278077</a>, <a href="https://logs.tf/3285297">3285297</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:69284001]</td>
             <td class="">b♥bb[Y!], eljefe b♥bb[Y!]</td>
             <td class="">74</td>
@@ -6973,6 +7076,7 @@
             <td class=""><a href="https://logs.tf/3282502">3282502</a>, <a href="https://logs.tf/3276866">3276866</a>, <a href="https://logs.tf/3281434">3281434</a>, <a href="https://logs.tf/3278077">3278077</a>, <a href="https://logs.tf/3285297">3285297</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:140676484]</td>
             <td class="">JNCC, Pride0</td>
             <td class="">120</td>
@@ -6990,6 +7094,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3282513">3282513</a>, <a href="https://logs.tf/3281434">3281434</a>, <a href="https://logs.tf/3285268">3285268</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:89419479]</td>
             <td class="">mac alert!, asdf, schmobs alert!, babble alert!, blonky alert!, schlurp alert!</td>
             <td class="">137</td>
@@ -7007,6 +7112,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3281479">3281479</a>, <a href="https://logs.tf/3282503">3282503</a>, <a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:83930987]</td>
             <td class="">TOXIC Penguineat, Penguineat</td>
             <td class="">131</td>
@@ -7024,6 +7130,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3282513">3282513</a>, <a href="https://logs.tf/3281434">3281434</a>, <a href="https://logs.tf/3285268">3285268</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:119169619]</td>
             <td class="">NOOT!</td>
             <td class="">119</td>
@@ -7041,6 +7148,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3281479">3281479</a>, <a href="https://logs.tf/3282503">3282503</a>, <a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:80100251]</td>
             <td class="">KA-CHOW</td>
             <td class="">41</td>
@@ -7058,6 +7166,7 @@
             <td class=""><a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3276885">3276885</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:315124678]</td>
             <td class="">StaraptorAmatin</td>
             <td class="">93</td>
@@ -7075,6 +7184,7 @@
             <td class=""><a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3281465">3281465</a>, <a href="https://logs.tf/3276885">3276885</a>, <a href="https://logs.tf/3285297">3285297</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:204344441]</td>
             <td class="">los pollos hermanos, MoisDMMMMMMMMMM, MoisDM</td>
             <td class="">136</td>
@@ -7092,6 +7202,7 @@
             <td class=""><a href="https://logs.tf/3281479">3281479</a>, <a href="https://logs.tf/3282527">3282527</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3276885">3276885</a>, <a href="https://logs.tf/3285276">3285276</a>, <a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:89871068]</td>
             <td class="">S, v$S</td>
             <td class="">162</td>
@@ -7109,6 +7220,7 @@
             <td class=""><a href="https://logs.tf/3281479">3281479</a>, <a href="https://logs.tf/3282527">3282527</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3276885">3276885</a>, <a href="https://logs.tf/3285276">3285276</a>, <a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:119238860]</td>
             <td class="">zzzz, ._., (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧, (◣_◢)</td>
             <td class="">123</td>
@@ -7126,6 +7238,7 @@
             <td class=""><a href="https://logs.tf/3282503">3282503</a>, <a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3281472">3281472</a>, <a href="https://logs.tf/3285722">3285722</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:143242759]</td>
             <td class="">BIG TURK, JOHN_COMBAT, cheesemaster663, beerguy</td>
             <td class="">128</td>
@@ -7143,6 +7256,7 @@
             <td class=""><a href="https://logs.tf/3282503">3282503</a>, <a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3281472">3281472</a>, <a href="https://logs.tf/3285722">3285722</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1513298]</td>
             <td class="">rmx^-^</td>
             <td class="">4</td>
@@ -7160,6 +7274,7 @@
             <td class=""><a href="https://logs.tf/3276856">3276856</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:88513379]</td>
             <td class="">zyehac</td>
             <td class="">151</td>
@@ -7177,6 +7292,7 @@
             <td class=""><a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3277474">3277474</a>, <a href="https://logs.tf/3282509">3282509</a>, <a href="https://logs.tf/3281424">3281424</a>, <a href="https://logs.tf/3281402">3281402</a>, <a href="https://logs.tf/3285751">3285751</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:60959017]</td>
             <td class="">pel,  pele</td>
             <td class="">81</td>
@@ -7194,6 +7310,7 @@
             <td class=""><a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3277474">3277474</a>, <a href="https://logs.tf/3282509">3282509</a>, <a href="https://logs.tf/3281424">3281424</a>, <a href="https://logs.tf/3281402">3281402</a>, <a href="https://logs.tf/3285751">3285751</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:108227175]</td>
             <td class="">displace</td>
             <td class="">62</td>
@@ -7211,6 +7328,7 @@
             <td class=""><a href="https://logs.tf/3281472">3281472</a>, <a href="https://logs.tf/3282527">3282527</a>, <a href="https://logs.tf/3278028">3278028</a>, <a href="https://logs.tf/3276866">3276866</a>, <a href="https://logs.tf/3285292">3285292</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:83500673]</td>
             <td class="">e39 chassis, i got this lil thing i do</td>
             <td class="">114</td>
@@ -7228,6 +7346,7 @@
             <td class=""><a href="https://logs.tf/3281472">3281472</a>, <a href="https://logs.tf/3282527">3282527</a>, <a href="https://logs.tf/3278028">3278028</a>, <a href="https://logs.tf/3276866">3276866</a>, <a href="https://logs.tf/3285292">3285292</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:229402223]</td>
             <td class="">🎃Mr.Causa🎃, ✯Mr.Causa Peruvian Chicken✯, ✯Mr.Causa✯, Pogo</td>
             <td class="">104</td>
@@ -7245,6 +7364,7 @@
             <td class=""><a href="https://logs.tf/3282492">3282492</a>, <a href="https://logs.tf/3281443">3281443</a>, <a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3285279">3285279</a>, <a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:157883802]</td>
             <td class="">✯Mr.Jay✯, Mr.Jay, ✯Mr.Sagejay✯, sagejay, ffam</td>
             <td class="">112</td>
@@ -7262,6 +7382,7 @@
             <td class=""><a href="https://logs.tf/3282492">3282492</a>, <a href="https://logs.tf/3281443">3281443</a>, <a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3285279">3285279</a>, <a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:180403249]</td>
             <td class="">BULK.ITACHI, BULK.CHELL, BULK.hinata</td>
             <td class="">104</td>
@@ -7279,6 +7400,7 @@
             <td class=""><a href="https://logs.tf/3282492">3282492</a>, <a href="https://logs.tf/3281464">3281464</a>, <a href="https://logs.tf/3276886">3276886</a>, <a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:110210987]</td>
             <td class="">-{wgg}- Bulk.I’m Vengeance_KH, -{wgg}- Bulk.Dragivex_KH, -{wgg}- BULK.Kakashi_fist</td>
             <td class="">165</td>
@@ -7296,6 +7418,7 @@
             <td class=""><a href="https://logs.tf/3282492">3282492</a>, <a href="https://logs.tf/3281464">3281464</a>, <a href="https://logs.tf/3276886">3276886</a>, <a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:80813879]</td>
             <td class="">winston(inprotest), trogdorBURNINATING, trogdorBURNINATOR</td>
             <td class="">109</td>
@@ -7313,6 +7436,7 @@
             <td class=""><a href="https://logs.tf/3281464">3281464</a>, <a href="https://logs.tf/3282529">3282529</a>, <a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3278043">3278043</a>, <a href="https://logs.tf/3285279">3285279</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:196484519]</td>
             <td class="">BRODY SKY REBNE 8/11/1995, its on principle</td>
             <td class="">131</td>
@@ -7330,6 +7454,7 @@
             <td class=""><a href="https://logs.tf/3281464">3281464</a>, <a href="https://logs.tf/3282529">3282529</a>, <a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3278043">3278043</a>, <a href="https://logs.tf/3285279">3285279</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:96705335]</td>
             <td class="">Cowboy Dan</td>
             <td class="">48</td>
@@ -7347,6 +7472,7 @@
             <td class=""><a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3277474">3277474</a>, <a href="https://logs.tf/3282513">3282513</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:435500579]</td>
             <td class="">Liquid GENGAR, Woosh288 #werememberliaaammm, wG Prime Sanity</td>
             <td class="">123</td>
@@ -7364,6 +7490,7 @@
             <td class=""><a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3282452">3282452</a>, <a href="https://logs.tf/3281459">3281459</a>, <a href="https://logs.tf/3277474">3277474</a>, <a href="https://logs.tf/3285722">3285722</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:320393313]</td>
             <td class="">Allahgator,  Allahgator, froGG Catalyst</td>
             <td class="">110</td>
@@ -7381,6 +7508,7 @@
             <td class=""><a href="https://logs.tf/3278028">3278028</a>, <a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3282478">3282478</a>, <a href="https://logs.tf/3282454">3282454</a>, <a href="https://logs.tf/3281450">3281450</a>, <a href="https://logs.tf/3285268">3285268</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:119196042]</td>
             <td class="">(503) BcnBltz,  (503) BcnBltz</td>
             <td class="">92</td>
@@ -7398,6 +7526,7 @@
             <td class=""><a href="https://logs.tf/3278028">3278028</a>, <a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3282478">3282478</a>, <a href="https://logs.tf/3282454">3282454</a>, <a href="https://logs.tf/3281450">3281450</a>, <a href="https://logs.tf/3285268">3285268</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:160046804]</td>
             <td class="">b0nes____________________WANG</td>
             <td class="">126</td>
@@ -7415,6 +7544,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3282452">3282452</a>, <a href="https://logs.tf/3281447">3281447</a>, <a href="https://logs.tf/3278068">3278068</a>, <a href="https://logs.tf/3285292">3285292</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:282045356]</td>
             <td class="">onion</td>
             <td class="">139</td>
@@ -7432,6 +7562,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3281443">3281443</a>, <a href="https://logs.tf/3282529">3282529</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286219">3286219</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:17011247]</td>
             <td class="">coupe</td>
             <td class="">1</td>
@@ -7449,6 +7580,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3285269">3285269</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:126986021]</td>
             <td class="">Fireball7d7________________WANG,  Fireball7d7________________WAN</td>
             <td class="">160</td>
@@ -7466,6 +7598,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3282452">3282452</a>, <a href="https://logs.tf/3281447">3281447</a>, <a href="https://logs.tf/3278068">3278068</a>, <a href="https://logs.tf/3285292">3285292</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:122204454]</td>
             <td class="">mild, liebestraum</td>
             <td class="">153</td>
@@ -7483,6 +7616,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3281443">3281443</a>, <a href="https://logs.tf/3282529">3282529</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286219">3286219</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:80405405]</td>
             <td class="">Se_Rious,  Se_Rious</td>
             <td class="">118</td>
@@ -7500,6 +7634,7 @@
             <td class=""><a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3281459">3281459</a>, <a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3278068">3278068</a>, <a href="https://logs.tf/3282029">3282029</a>, <a href="https://logs.tf/3285276">3285276</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:48897782]</td>
             <td class="">KutchKutch,  KutchKutch</td>
             <td class="">143</td>
@@ -7517,6 +7652,7 @@
             <td class=""><a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3281459">3281459</a>, <a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3278068">3278068</a>, <a href="https://logs.tf/3282029">3282029</a>, <a href="https://logs.tf/3285276">3285276</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:146334357]</td>
             <td class="">TheMadTroller1999, Stealthpilled Thiefcel</td>
             <td class="">18</td>
@@ -7534,6 +7670,7 @@
             <td class=""><a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:83643663]</td>
             <td class="">NUG gigamonster405, liaaammm, lazygangsta</td>
             <td class="">43</td>
@@ -7551,6 +7688,7 @@
             <td class=""><a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3282452">3282452</a>, <a href="https://logs.tf/3281459">3281459</a>, <a href="https://logs.tf/3285722">3285722</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:441902418]</td>
             <td class="">xero, unxero,  xero,  unxero</td>
             <td class="">120</td>
@@ -7568,6 +7706,7 @@
             <td class=""><a href="https://logs.tf/3281447">3281447</a>, <a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3282029">3282029</a>, <a href="https://logs.tf/3278077">3278077</a>, <a href="https://logs.tf/3285751">3285751</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:376632465]</td>
             <td class=""> Whisper_Equinox, ununtamed,  bird up!,  tameeeඞ,  3125</td>
             <td class="">145</td>
@@ -7585,6 +7724,7 @@
             <td class=""><a href="https://logs.tf/3281447">3281447</a>, <a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3282029">3282029</a>, <a href="https://logs.tf/3278077">3278077</a>, <a href="https://logs.tf/3285751">3285751</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:219622414]</td>
             <td class="">Zoe Indarious, [FREE] Zoe Indarious, Zoe Indarious (kaczynski arc), [FREE] Zoe Indarious (White wom, Zoe Indarious (Hotep Arc)</td>
             <td class="">131</td>
@@ -7602,6 +7742,7 @@
             <td class=""><a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3282499">3282499</a>, <a href="https://logs.tf/3281516">3281516</a>, <a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:111068434]</td>
             <td class="">mac_cheese, [FREE] mac_cheese</td>
             <td class="">128</td>
@@ -7619,6 +7760,7 @@
             <td class=""><a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3282499">3282499</a>, <a href="https://logs.tf/3281516">3281516</a>, <a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:140069453]</td>
             <td class="">cortex, C4B cortex</td>
             <td class="">91</td>
@@ -7636,6 +7778,7 @@
             <td class=""><a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3278043">3278043</a>, <a href="https://logs.tf/3281465">3281465</a>, <a href="https://logs.tf/3282509">3282509</a>, <a href="https://logs.tf/3285297">3285297</a>, <a href="https://logs.tf/3286171">3286171</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:139944350]</td>
             <td class="">AvoidJoker, P4B AvoidJoker</td>
             <td class="">43</td>
@@ -7653,6 +7796,7 @@
             <td class=""><a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3282509">3282509</a>, <a href="https://logs.tf/3286171">3286171</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:83344404]</td>
             <td class="">MogulSoap</td>
             <td class="">6</td>
@@ -7670,6 +7814,7 @@
             <td class=""><a href="https://logs.tf/3278043">3278043</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:109142667]</td>
             <td class="">Soupy,  Soupy</td>
             <td class="">49</td>
@@ -7687,6 +7832,7 @@
             <td class=""><a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:184206731]</td>
             <td class="">ChUM bucket connoisseur, jems, dickies</td>
             <td class="">82</td>
@@ -7704,6 +7850,7 @@
             <td class=""><a href="https://logs.tf/3282513">3282513</a>, <a href="https://logs.tf/3281424">3281424</a>, <a href="https://logs.tf/3281402">3281402</a>, <a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3285730">3285730</a>, <a href="https://logs.tf/3286171">3286171</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:205115982]</td>
             <td class="">ᵗᶦᶰʸ, RAVE_AC</td>
             <td class="">62</td>
@@ -7721,6 +7868,7 @@
             <td class=""><a href="https://logs.tf/3281424">3281424</a>, <a href="https://logs.tf/3281402">3281402</a>, <a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3285730">3285730</a>, <a href="https://logs.tf/3286171">3286171</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:38645555]</td>
             <td class="">Ray Alex Rodriguez</td>
             <td class="">24</td>
@@ -7738,6 +7886,7 @@
             <td class=""><a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3285730">3285730</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:167517704]</td>
             <td class="">shadowrealmshinobi427</td>
             <td class="">5</td>
@@ -7755,6 +7904,7 @@
             <td class=""><a href="https://logs.tf/3286219">3286219</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:144408382]</td>
             <td class="">[503] Lecrum</td>
             <td class="">4</td>
@@ -7772,6 +7922,7 @@
             <td class=""><a href="https://logs.tf/3286219">3286219</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:275564062]</td>
             <td class="">grant</td>
             <td class="">5</td>
@@ -7789,6 +7940,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:168741694]</td>
             <td class="">xFactr</td>
             <td class="">13</td>
@@ -7806,6 +7958,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:156440371]</td>
             <td class="">rocky</td>
             <td class="">14</td>
@@ -7823,6 +7976,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:468494252]</td>
             <td class="">Frank</td>
             <td class="">14</td>
@@ -7840,6 +7994,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:107838459]</td>
             <td class="">Joey Lemons</td>
             <td class="">3</td>
@@ -7857,6 +8012,7 @@
             <td class=""><a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:151659980]</td>
             <td class="">homosexual rigamarole</td>
             <td class="">6</td>
@@ -7874,6 +8030,7 @@
             <td class=""><a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:109897685]</td>
             <td class="">throne</td>
             <td class="">12</td>
@@ -7899,6 +8056,7 @@
       <table id="pyroStats" class="js-sort-table">
       <thead>
         <tr>
+          <th></th>
           <th class="js-sort-number">Steam ID</td>
           <th class="js-sort-number">Aliases</td>
           <th class="js-sort-number">Kills</td>
@@ -7918,6 +8076,7 @@
       </thead>
       <tbody>
           <tr>
+            <td></td>
             <td class="">[U:1:1416218980]</td>
             <td class="">kola PURRRR</td>
             <td class="">0</td>
@@ -7935,6 +8094,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276886">3276886</a>, <a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1140565447]</td>
             <td class="">anna, anna PURRRR</td>
             <td class="">2</td>
@@ -7952,6 +8112,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276886">3276886</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:408450141]</td>
             <td class="">mur</td>
             <td class="">0</td>
@@ -7969,6 +8130,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:74354839]</td>
             <td class="">VXIOW</td>
             <td class="">2</td>
@@ -7986,6 +8148,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276856">3276856</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:217627615]</td>
             <td class="">TOXIC charrrrrrrrrrrrr, char, wL Prime Sharty</td>
             <td class="">0</td>
@@ -8003,6 +8166,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:180428816]</td>
             <td class="">trees alert!</td>
             <td class="">4</td>
@@ -8020,6 +8184,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278061">3278061</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:317714123]</td>
             <td class="">gullywash flank scout, teddy inc.</td>
             <td class="">7</td>
@@ -8037,6 +8202,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278094">3278094</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:80264053]</td>
             <td class="">b4nnyminioncarnagejohnsonbowlin</td>
             <td class="">2</td>
@@ -8054,6 +8220,7 @@
             <td class=""><a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3276885">3276885</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:93702050]</td>
             <td class="">C.C.C.O., monster math</td>
             <td class="">7</td>
@@ -8071,6 +8238,7 @@
             <td class=""><a href="https://logs.tf/3282503">3282503</a>, <a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3281472">3281472</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:208463880]</td>
             <td class="">ChristianKing787</td>
             <td class="">2</td>
@@ -8088,6 +8256,7 @@
             <td class=""><a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:143242759]</td>
             <td class="">JOHN_COMBAT</td>
             <td class="">0</td>
@@ -8105,6 +8274,7 @@
             <td class=""><a href="https://logs.tf/3276856">3276856</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:159413592]</td>
             <td class="">$.$.$., F.I.L.O.</td>
             <td class="">5</td>
@@ -8122,6 +8292,7 @@
             <td class=""><a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:240618091]</td>
             <td class="">Alexis</td>
             <td class="">0</td>
@@ -8139,6 +8310,7 @@
             <td class=""><a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3277474">3277474</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:83643663]</td>
             <td class="">NUG gigamonster405, FaZe hitmonlee</td>
             <td class="">0</td>
@@ -8156,6 +8328,7 @@
             <td class=""><a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3277474">3277474</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:330003400]</td>
             <td class="">BULK.sasuke</td>
             <td class="">3</td>
@@ -8173,6 +8346,7 @@
             <td class=""><a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:181216424]</td>
             <td class="">Tec________________________WANG</td>
             <td class="">0</td>
@@ -8190,6 +8364,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:179340824]</td>
             <td class="">Ellie________________________WA</td>
             <td class="">2</td>
@@ -8207,6 +8382,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:17011247]</td>
             <td class="">coupe</td>
             <td class="">1</td>
@@ -8224,6 +8400,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3285269">3285269</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:164211839]</td>
             <td class="">Bunt</td>
             <td class="">0</td>
@@ -8241,6 +8418,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3285269">3285269</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:163617933]</td>
             <td class="">rasta &quot;Josh S.&quot; ronald</td>
             <td class="">14</td>
@@ -8258,6 +8436,7 @@
             <td class=""><a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3278068">3278068</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:151299353]</td>
             <td class="">jsmil101@harvard.edu, josh, wise ass tree</td>
             <td class="">2</td>
@@ -8275,6 +8454,7 @@
             <td class=""><a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3281459">3281459</a>, <a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3278068">3278068</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:146334357]</td>
             <td class="">TheMadTroller1999, Stealthpilled Thiefcel</td>
             <td class="">0</td>
@@ -8292,6 +8472,7 @@
             <td class=""><a href="https://logs.tf/3282452">3282452</a>, <a href="https://logs.tf/3285722">3285722</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:421791356]</td>
             <td class="">✯ ✯MR KING ✯ ✯, 2x</td>
             <td class="">2</td>
@@ -8309,6 +8490,7 @@
             <td class=""><a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3276879">3276879</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:249149572]</td>
             <td class="">FlareD</td>
             <td class="">1</td>
@@ -8326,6 +8508,7 @@
             <td class=""><a href="https://logs.tf/3276879">3276879</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:89897890]</td>
             <td class="">✫P∀nck∈✫</td>
             <td class="">1</td>
@@ -8343,6 +8526,7 @@
             <td class=""><a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3278043">3278043</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:347251003]</td>
             <td class="">[FREE] SpockASD</td>
             <td class="">0</td>
@@ -8360,6 +8544,7 @@
             <td class=""><a href="https://logs.tf/3276878">3276878</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:147518283]</td>
             <td class="">bloodlust</td>
             <td class="">0</td>
@@ -8377,6 +8562,7 @@
             <td class=""><a href="https://logs.tf/3276878">3276878</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:154627863]</td>
             <td class="">jose.gonzales2006</td>
             <td class="">0</td>
@@ -8394,6 +8580,7 @@
             <td class=""><a href="https://logs.tf/3278043">3278043</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:123870274]</td>
             <td class="">thehogslammer</td>
             <td class="">3</td>
@@ -8411,6 +8598,7 @@
             <td class=""><a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3276885">3276885</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:91304212]</td>
             <td class="">aefax, SLICK aefax,  LATHERED afx</td>
             <td class="">2</td>
@@ -8428,6 +8616,7 @@
             <td class=""><a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:193452647]</td>
             <td class="">dragomborn11</td>
             <td class="">2</td>
@@ -8445,6 +8634,7 @@
             <td class=""><a href="https://logs.tf/3277474">3277474</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:118783237]</td>
             <td class="">unCrutch</td>
             <td class="">4</td>
@@ -8462,6 +8652,7 @@
             <td class=""><a href="https://logs.tf/3276912">3276912</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:210673562]</td>
             <td class=""> cayorne</td>
             <td class="">0</td>
@@ -8479,6 +8670,7 @@
             <td class=""><a href="https://logs.tf/3276912">3276912</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1145838988]</td>
             <td class="">template romance manga</td>
             <td class="">0</td>
@@ -8496,6 +8688,7 @@
             <td class=""><a href="https://logs.tf/3276885">3276885</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:149892152]</td>
             <td class="">yuengling fiend</td>
             <td class="">4</td>
@@ -8513,6 +8706,7 @@
             <td class=""><a href="https://logs.tf/3285297">3285297</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:178908705]</td>
             <td class="">LATHERED Cambonieboo</td>
             <td class="">0</td>
@@ -8530,6 +8724,7 @@
             <td class=""><a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:48897782]</td>
             <td class="">KutchKutch</td>
             <td class="">0</td>
@@ -8547,6 +8742,7 @@
             <td class=""><a href="https://logs.tf/3285276">3285276</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:84963494]</td>
             <td class="">BULK. MIGHT GUY</td>
             <td class="">1</td>
@@ -8564,6 +8760,7 @@
             <td class=""><a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:69284001]</td>
             <td class="">b♥bb[Y!]</td>
             <td class="">2</td>
@@ -8581,6 +8778,7 @@
             <td class=""><a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:107450401]</td>
             <td class="">(503) lean iwokura cu@ATL</td>
             <td class="">1</td>
@@ -8598,6 +8796,7 @@
             <td class=""><a href="https://logs.tf/3286219">3286219</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:114412545]</td>
             <td class="">ROPE SHOOTER IN THE BUILDING</td>
             <td class="">2</td>
@@ -8615,6 +8814,7 @@
             <td class=""><a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:107838459]</td>
             <td class="">Joey Lemons</td>
             <td class="">0</td>
@@ -8640,6 +8840,7 @@
       <table id="demomanStats" class="js-sort-table">
       <thead>
         <tr>
+          <th></th>
           <th class="js-sort-number">Steam ID</td>
           <th class="js-sort-number">Aliases</td>
           <th class="js-sort-number">Kills</td>
@@ -8659,6 +8860,7 @@
       </thead>
       <tbody>
           <tr>
+            <td></td>
             <td class="">[U:1:77252918]</td>
             <td class="">tate disciple, ⸸, ¥, glory boy</td>
             <td class="">134</td>
@@ -8676,6 +8878,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3281516">3281516</a>, <a href="https://logs.tf/3282478">3282478</a>, <a href="https://logs.tf/3282454">3282454</a>, <a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:106663791]</td>
             <td class="">cereaI, cereaI PURRRR</td>
             <td class="">26</td>
@@ -8693,6 +8896,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276886">3276886</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:55062161]</td>
             <td class="">Slippy GOD888, left left BOX, SLICK 888, SLIPPY 888, Lathered Greg Jennings(real)</td>
             <td class="">74</td>
@@ -8710,6 +8914,7 @@
             <td class=""><a href="https://logs.tf/3282502">3282502</a>, <a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3281465">3281465</a>, <a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:155280002]</td>
             <td class="">brainsforshit, ChadTHUNDERCOCK, eljefe ChadTHUNDERCOCK, ELLIOTrodgerTHERAPISTedition</td>
             <td class="">98</td>
@@ -8727,6 +8932,7 @@
             <td class=""><a href="https://logs.tf/3282502">3282502</a>, <a href="https://logs.tf/3276866">3276866</a>, <a href="https://logs.tf/3281434">3281434</a>, <a href="https://logs.tf/3278077">3278077</a>, <a href="https://logs.tf/3285297">3285297</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:144799579]</td>
             <td class="">Durag Connoisseur, babaeat, clockwork elves, baba, Babae</td>
             <td class="">139</td>
@@ -8744,6 +8950,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3282513">3282513</a>, <a href="https://logs.tf/3281434">3281434</a>, <a href="https://logs.tf/3285268">3285268</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:255902053]</td>
             <td class="">Andruu alert!, Andrew alert!</td>
             <td class="">115</td>
@@ -8761,6 +8968,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3281479">3281479</a>, <a href="https://logs.tf/3282503">3282503</a>, <a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:85815930]</td>
             <td class="">quank</td>
             <td class="">28</td>
@@ -8778,6 +8986,7 @@
             <td class=""><a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3276885">3276885</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:128828742]</td>
             <td class="">earl</td>
             <td class="">96</td>
@@ -8795,6 +9004,7 @@
             <td class=""><a href="https://logs.tf/3281479">3281479</a>, <a href="https://logs.tf/3282527">3282527</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3285276">3285276</a>, <a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:106127991]</td>
             <td class="">Wild_Rumpus</td>
             <td class="">115</td>
@@ -8812,6 +9022,7 @@
             <td class=""><a href="https://logs.tf/3282503">3282503</a>, <a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3281472">3281472</a>, <a href="https://logs.tf/3285722">3285722</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:190116967]</td>
             <td class="">clumsy by fergie, TheMemeAnt, Meme Ant, meme ant colony,  ttv/impropah</td>
             <td class="">105</td>
@@ -8829,6 +9040,7 @@
             <td class=""><a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3277474">3277474</a>, <a href="https://logs.tf/3282509">3282509</a>, <a href="https://logs.tf/3281424">3281424</a>, <a href="https://logs.tf/3281402">3281402</a>, <a href="https://logs.tf/3285751">3285751</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:151659980]</td>
             <td class="">homosexual rigamarole, home sang yong</td>
             <td class="">91</td>
@@ -8846,6 +9058,7 @@
             <td class=""><a href="https://logs.tf/3281472">3281472</a>, <a href="https://logs.tf/3278028">3278028</a>, <a href="https://logs.tf/3276866">3276866</a>, <a href="https://logs.tf/3285292">3285292</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:420556089]</td>
             <td class="">✯Mr. S.O.U.P.C.A.N✯, Mr. S.O.U.P.C.A.N, S.O.U.P.C.A.N, lrea</td>
             <td class="">134</td>
@@ -8863,6 +9076,7 @@
             <td class=""><a href="https://logs.tf/3282492">3282492</a>, <a href="https://logs.tf/3281443">3281443</a>, <a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3285279">3285279</a>, <a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:166359895]</td>
             <td class="">BULK.GAARA, Chronos of The Desert, Bulk.Shino Aburame, BULK. Shino, Chronos</td>
             <td class="">108</td>
@@ -8880,6 +9094,7 @@
             <td class=""><a href="https://logs.tf/3282492">3282492</a>, <a href="https://logs.tf/3281464">3281464</a>, <a href="https://logs.tf/3276886">3276886</a>, <a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:81990136]</td>
             <td class="">Lieutenant Lemons, squiggle giggle</td>
             <td class="">121</td>
@@ -8897,6 +9112,7 @@
             <td class=""><a href="https://logs.tf/3281464">3281464</a>, <a href="https://logs.tf/3282529">3282529</a>, <a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3278043">3278043</a>, <a href="https://logs.tf/3285279">3285279</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:100146668]</td>
             <td class="">Kowolski, WallyWaterpolo1998, OpTiC | Piplup, Chowder</td>
             <td class="">118</td>
@@ -8914,6 +9130,7 @@
             <td class=""><a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3281459">3281459</a>, <a href="https://logs.tf/3277474">3277474</a>, <a href="https://logs.tf/3285722">3285722</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:122029495]</td>
             <td class="">dt</td>
             <td class="">27</td>
@@ -8931,6 +9148,7 @@
             <td class=""><a href="https://logs.tf/3282527">3282527</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:123709328]</td>
             <td class="">(503) GTO- WEEEEEEEN,  (503) GTO- WEEEEEEEN, (503) xXxDARK_SASUKExXx | IKON, PARTY *:･ﾟ✧ PERSON, (503) GTO- PARTY *:･ﾟ✧ PE</td>
             <td class="">74</td>
@@ -8948,6 +9166,7 @@
             <td class=""><a href="https://logs.tf/3278028">3278028</a>, <a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3282478">3282478</a>, <a href="https://logs.tf/3282454">3282454</a>, <a href="https://logs.tf/3281450">3281450</a>, <a href="https://logs.tf/3285268">3285268</a>, <a href="https://logs.tf/3286219">3286219</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:914240935]</td>
             <td class="">Zhong Cena, Glob, Glo, Gab, Gab________________________WANG</td>
             <td class="">172</td>
@@ -8965,6 +9184,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3282452">3282452</a>, <a href="https://logs.tf/3281447">3281447</a>, <a href="https://logs.tf/3278068">3278068</a>, <a href="https://logs.tf/3285292">3285292</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:161656685]</td>
             <td class="">Juustin, BUNT Juustin</td>
             <td class="">117</td>
@@ -8982,6 +9202,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3281443">3281443</a>, <a href="https://logs.tf/3282529">3282529</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286219">3286219</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:86604563]</td>
             <td class="">bumblecheeks, mousecake</td>
             <td class="">61</td>
@@ -8999,6 +9220,7 @@
             <td class=""><a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3278068">3278068</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:368047030]</td>
             <td class="">woosh</td>
             <td class="">25</td>
@@ -9016,6 +9238,7 @@
             <td class=""><a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3282452">3282452</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:10886711]</td>
             <td class="">Jaguar, unjaguar,  Jaguar,  unJaguar,  unjaguar</td>
             <td class="">123</td>
@@ -9033,6 +9256,7 @@
             <td class=""><a href="https://logs.tf/3281447">3281447</a>, <a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3282029">3282029</a>, <a href="https://logs.tf/3278077">3278077</a>, <a href="https://logs.tf/3285751">3285751</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:235452183]</td>
             <td class="">momichis, [FROYO] fetus, ay mi pochoclito, squid game, froyo.yuushou</td>
             <td class="">111</td>
@@ -9050,6 +9274,7 @@
             <td class=""><a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3282499">3282499</a>, <a href="https://logs.tf/3281516">3281516</a>, <a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:38645555]</td>
             <td class="">badlands KING</td>
             <td class="">24</td>
@@ -9067,6 +9292,7 @@
             <td class=""><a href="https://logs.tf/3276879">3276879</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:131972625]</td>
             <td class="">DeathToCats</td>
             <td class="">7</td>
@@ -9084,6 +9310,7 @@
             <td class=""><a href="https://logs.tf/3278043">3278043</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:163617933]</td>
             <td class="">rasta &quot;Josh S.&quot; ronald,  rasta &quot;Josh S.&quot; ronald, YODIELAND</td>
             <td class="">62</td>
@@ -9101,6 +9328,7 @@
             <td class=""><a href="https://logs.tf/3281459">3281459</a>, <a href="https://logs.tf/3282029">3282029</a>, <a href="https://logs.tf/3285276">3285276</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:64779014]</td>
             <td class="">Jojo</td>
             <td class="">33</td>
@@ -9118,6 +9346,7 @@
             <td class=""><a href="https://logs.tf/3282499">3282499</a>, <a href="https://logs.tf/3281450">3281450</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:131575240]</td>
             <td class="">Matthew Phong I, sLamborghini lft</td>
             <td class="">74</td>
@@ -9135,6 +9364,7 @@
             <td class=""><a href="https://logs.tf/3282513">3282513</a>, <a href="https://logs.tf/3281424">3281424</a>, <a href="https://logs.tf/3281402">3281402</a>, <a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3285730">3285730</a>, <a href="https://logs.tf/3286171">3286171</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:71257651]</td>
             <td class="">power rangers spd enjoyer, shanker?, let that sink in, P4B shanker?</td>
             <td class="">66</td>
@@ -9152,6 +9382,7 @@
             <td class=""><a href="https://logs.tf/3281465">3281465</a>, <a href="https://logs.tf/3282509">3282509</a>, <a href="https://logs.tf/3285297">3285297</a>, <a href="https://logs.tf/3286171">3286171</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:106878327]</td>
             <td class="">Sychke</td>
             <td class="">23</td>
@@ -9169,6 +9400,7 @@
             <td class=""><a href="https://logs.tf/3276885">3276885</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:156752614]</td>
             <td class="">glassmachine, glassmuncher #ondagrind</td>
             <td class="">60</td>
@@ -9186,6 +9418,7 @@
             <td class=""><a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3285730">3285730</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:172845330]</td>
             <td class="">Azula&#x27;s #1 Fan</td>
             <td class="">14</td>
@@ -9203,6 +9436,7 @@
             <td class=""><a href="https://logs.tf/3285267">3285267</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:842830053]</td>
             <td class="">knorhS</td>
             <td class="">14</td>
@@ -9220,6 +9454,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:205163219]</td>
             <td class="">mace</td>
             <td class="">9</td>
@@ -9237,6 +9472,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:178908705]</td>
             <td class=""> Cambonieboo</td>
             <td class="">25</td>
@@ -9254,6 +9490,7 @@
             <td class=""><a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:242905621]</td>
             <td class="">freddo.</td>
             <td class="">21</td>
@@ -9271,6 +9508,7 @@
             <td class=""><a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:109897685]</td>
             <td class="">throne</td>
             <td class="">4</td>
@@ -9296,6 +9534,7 @@
       <table id="heavyweaponsStats" class="js-sort-table">
       <thead>
         <tr>
+          <th></th>
           <th class="js-sort-number">Steam ID</td>
           <th class="js-sort-number">Aliases</td>
           <th class="js-sort-number">Kills</td>
@@ -9315,6 +9554,7 @@
       </thead>
       <tbody>
           <tr>
+            <td></td>
             <td class="">[U:1:208463880]</td>
             <td class="">ChristianKing787</td>
             <td class="">6</td>
@@ -9332,6 +9572,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3285698">3285698</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1416218980]</td>
             <td class="">kola PURRRR</td>
             <td class="">1</td>
@@ -9349,6 +9590,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1140565447]</td>
             <td class="">anna, anna PURRRR</td>
             <td class="">3</td>
@@ -9366,6 +9608,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:74354839]</td>
             <td class="">VXIOW, Snap his choker :3</td>
             <td class="">7</td>
@@ -9383,6 +9626,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:217627615]</td>
             <td class="">TOXIC charrrrrrrrrrrrr, char, 1 penguineat fan, wL Prime Sharty</td>
             <td class="">6</td>
@@ -9400,6 +9644,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3281434">3281434</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:317714123]</td>
             <td class="">gullywash flank scout, whitelight</td>
             <td class="">2</td>
@@ -9417,6 +9662,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1024346761]</td>
             <td class="">goku&gt;, yight yagami</td>
             <td class="">2</td>
@@ -9434,6 +9680,7 @@
             <td class=""><a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3276885">3276885</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:93702050]</td>
             <td class="">C.C.C.O., monster math</td>
             <td class="">2</td>
@@ -9451,6 +9698,7 @@
             <td class=""><a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3285722">3285722</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:159413592]</td>
             <td class="">$.$.$., money, SeverelyFadedThanAHoAtPopeyes, F.I.L.O.</td>
             <td class="">6</td>
@@ -9468,6 +9716,7 @@
             <td class=""><a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3285722">3285722</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:193452647]</td>
             <td class="">dragomborn11</td>
             <td class="">2</td>
@@ -9485,6 +9734,7 @@
             <td class=""><a href="https://logs.tf/3278087">3278087</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:84963494]</td>
             <td class="">BULK. MIGHT GUY</td>
             <td class="">6</td>
@@ -9502,6 +9752,7 @@
             <td class=""><a href="https://logs.tf/3276886">3276886</a>, <a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:83643663]</td>
             <td class="">NUG gigamonster405, liaaammm, FaZe hitmonlee, trapstarpoobear</td>
             <td class="">16</td>
@@ -9519,6 +9770,7 @@
             <td class=""><a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3281459">3281459</a>, <a href="https://logs.tf/3277474">3277474</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:151659980]</td>
             <td class="">homosexual rigamarole</td>
             <td class="">0</td>
@@ -9536,6 +9788,7 @@
             <td class=""><a href="https://logs.tf/3276866">3276866</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:97296227]</td>
             <td class="">cyberspace eminem, eljefe cyberspace eminem, fy_iceworld</td>
             <td class="">2</td>
@@ -9553,6 +9806,7 @@
             <td class=""><a href="https://logs.tf/3276866">3276866</a>, <a href="https://logs.tf/3278077">3278077</a>, <a href="https://logs.tf/3285297">3285297</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:181216424]</td>
             <td class="">Tec________________________WANG</td>
             <td class="">22</td>
@@ -9570,6 +9824,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3278068">3278068</a>, <a href="https://logs.tf/3285292">3285292</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:179340824]</td>
             <td class="">Ellie________________________WA, Holly________________WANG</td>
             <td class="">2</td>
@@ -9587,6 +9842,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3285292">3285292</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:17011247]</td>
             <td class="">coupe</td>
             <td class="">2</td>
@@ -9604,6 +9860,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3277470">3277470</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:164211839]</td>
             <td class="">Bunt</td>
             <td class="">2</td>
@@ -9621,6 +9878,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3277470">3277470</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:421791356]</td>
             <td class="">✯ ✯MR KING ✯ ✯, 2x, MDsioM</td>
             <td class="">3</td>
@@ -9638,6 +9896,7 @@
             <td class=""><a href="https://logs.tf/3281443">3281443</a>, <a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:347251003]</td>
             <td class="">SpockLSD</td>
             <td class="">1</td>
@@ -9655,6 +9914,7 @@
             <td class=""><a href="https://logs.tf/3278078">3278078</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:249149572]</td>
             <td class="">✯Mr. FlareD✯, Mr. FlareD</td>
             <td class="">0</td>
@@ -9672,6 +9932,7 @@
             <td class=""><a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3285279">3285279</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:155448756]</td>
             <td class="">mr, night, coffee black, Midnight</td>
             <td class="">3</td>
@@ -9689,6 +9950,7 @@
             <td class=""><a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3278043">3278043</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:89897890]</td>
             <td class="">✫P∀nck∈✫, P4B ✫P∀nck∈✫</td>
             <td class="">1</td>
@@ -9706,6 +9968,7 @@
             <td class=""><a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3286171">3286171</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1145838988]</td>
             <td class="">friend, template romance manga, INTERWORLDS</td>
             <td class="">4</td>
@@ -9723,6 +9986,7 @@
             <td class=""><a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3276885">3276885</a>, <a href="https://logs.tf/3285276">3285276</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:123870274]</td>
             <td class="">thehogslammer</td>
             <td class="">3</td>
@@ -9740,6 +10004,7 @@
             <td class=""><a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3285276">3285276</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:179585629]</td>
             <td class="">guitar</td>
             <td class="">0</td>
@@ -9757,6 +10022,7 @@
             <td class=""><a href="https://logs.tf/3276909">3276909</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:151299353]</td>
             <td class="">wise ass tree, jsmil101@harvard.edu, kujikawa</td>
             <td class="">1</td>
@@ -9774,6 +10040,7 @@
             <td class=""><a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3278068">3278068</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:91304212]</td>
             <td class="">aefax, SLICK aefax, LATHERED afx,  LATHERED afx</td>
             <td class="">13</td>
@@ -9791,6 +10058,7 @@
             <td class=""><a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3285288">3285288</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:163617933]</td>
             <td class="">rasta &quot;Josh S.&quot; ronald</td>
             <td class="">2</td>
@@ -9808,6 +10076,7 @@
             <td class=""><a href="https://logs.tf/3278068">3278068</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:240618091]</td>
             <td class="">Alexis</td>
             <td class="">1</td>
@@ -9825,6 +10094,7 @@
             <td class=""><a href="https://logs.tf/3277474">3277474</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:118783237]</td>
             <td class="">unCrutch, tunneltown,  tunneltown</td>
             <td class="">5</td>
@@ -9842,6 +10112,7 @@
             <td class=""><a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3285751">3285751</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:320393313]</td>
             <td class=""> Allahgator, Allahgator, froGG Catalyst</td>
             <td class="">4</td>
@@ -9859,6 +10130,7 @@
             <td class=""><a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3282478">3282478</a>, <a href="https://logs.tf/3282454">3282454</a>, <a href="https://logs.tf/3285268">3285268</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:234875493]</td>
             <td class="">unwrander,  wrndr</td>
             <td class="">4</td>
@@ -9876,6 +10148,7 @@
             <td class=""><a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3285751">3285751</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:48897782]</td>
             <td class=""> KutchKutch, KutchKutch</td>
             <td class="">3</td>
@@ -9893,6 +10166,7 @@
             <td class=""><a href="https://logs.tf/3282029">3282029</a>, <a href="https://logs.tf/3285276">3285276</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:65591156]</td>
             <td class="">SomethingAmazing</td>
             <td class="">1</td>
@@ -9910,6 +10184,7 @@
             <td class=""><a href="https://logs.tf/3285730">3285730</a>, <a href="https://logs.tf/3286171">3286171</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:42954103]</td>
             <td class=""> art vandelay</td>
             <td class="">4</td>
@@ -9927,6 +10202,7 @@
             <td class=""><a href="https://logs.tf/3285751">3285751</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:143242759]</td>
             <td class="">BIG TURK</td>
             <td class="">1</td>
@@ -9944,6 +10220,7 @@
             <td class=""><a href="https://logs.tf/3285722">3285722</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:214149442]</td>
             <td class="">(503) nYxia- ♥</td>
             <td class="">5</td>
@@ -9961,6 +10238,7 @@
             <td class=""><a href="https://logs.tf/3285268">3285268</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:131704728]</td>
             <td class="">UU&#x60;J</td>
             <td class="">1</td>
@@ -9978,6 +10256,7 @@
             <td class=""><a href="https://logs.tf/3285279">3285279</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:114412545]</td>
             <td class="">ROPE SHOOTER IN THE BUILDING</td>
             <td class="">4</td>
@@ -9995,6 +10274,7 @@
             <td class=""><a href="https://logs.tf/3285292">3285292</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:180428816]</td>
             <td class="">trees alert!</td>
             <td class="">1</td>
@@ -10012,6 +10292,7 @@
             <td class=""><a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:330003400]</td>
             <td class="">BULK.sasuke</td>
             <td class="">2</td>
@@ -10029,6 +10310,7 @@
             <td class=""><a href="https://logs.tf/3285267">3285267</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:69284001]</td>
             <td class="">b♥bb[Y!]</td>
             <td class="">1</td>
@@ -10046,6 +10328,7 @@
             <td class=""><a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:90130240]</td>
             <td class="">MIDAS</td>
             <td class="">2</td>
@@ -10063,6 +10346,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:483032880]</td>
             <td class="">GREMLIN MAN</td>
             <td class="">1</td>
@@ -10080,6 +10364,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:147518283]</td>
             <td class="">princess</td>
             <td class="">0</td>
@@ -10097,6 +10382,7 @@
             <td class=""><a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:39110213]</td>
             <td class="">the alex smith of main alert!</td>
             <td class="">0</td>
@@ -10114,6 +10400,7 @@
             <td class=""><a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:108227175]</td>
             <td class="">displace</td>
             <td class="">0</td>
@@ -10139,6 +10426,7 @@
       <table id="engineerStats" class="js-sort-table">
       <thead>
         <tr>
+          <td></td>
           <th class="js-sort-number">Steam ID</td>
           <th class="js-sort-number">Aliases</td>
           <th class="js-sort-number">Kills</td>
@@ -10158,6 +10446,7 @@
       </thead>
       <tbody>
           <tr>
+            <td></td>
             <td class="">[U:1:108272745]</td>
             <td class="">CeigeBirb</td>
             <td class="">1</td>
@@ -10175,6 +10464,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:208463880]</td>
             <td class="">ChristianKing787</td>
             <td class="">9</td>
@@ -10192,6 +10482,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1416218980]</td>
             <td class="">kola PURRRR</td>
             <td class="">5</td>
@@ -10209,6 +10500,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276886">3276886</a>, <a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:217627615]</td>
             <td class="">TOXIC charrrrrrrrrrrrr, char, wL Prime Sharty</td>
             <td class="">4</td>
@@ -10226,6 +10518,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:39110213]</td>
             <td class="">turnip alert!, the alex smith of main</td>
             <td class="">4</td>
@@ -10243,6 +10536,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3285267">3285267</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:317714123]</td>
             <td class="">gullywash flank scout</td>
             <td class="">0</td>
@@ -10260,6 +10554,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1024346761]</td>
             <td class="">goku&gt;, yight yagami</td>
             <td class="">4</td>
@@ -10277,6 +10572,7 @@
             <td class=""><a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3276885">3276885</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:159413592]</td>
             <td class="">money, SeverelyFadedThanAHoAtPopeyes, F.I.L.O.</td>
             <td class="">7</td>
@@ -10294,6 +10590,7 @@
             <td class=""><a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3285722">3285722</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:83643663]</td>
             <td class="">NUG gigamonster405</td>
             <td class="">0</td>
@@ -10311,6 +10608,7 @@
             <td class=""><a href="https://logs.tf/3278088">3278088</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:330003400]</td>
             <td class="">BULK.sasuke</td>
             <td class="">2</td>
@@ -10328,6 +10626,7 @@
             <td class=""><a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:84963494]</td>
             <td class="">BULK. MIGHT GUY</td>
             <td class="">2</td>
@@ -10345,6 +10644,7 @@
             <td class=""><a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3285267">3285267</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:210673562]</td>
             <td class="">cayorne,  cayorne</td>
             <td class="">0</td>
@@ -10362,6 +10662,7 @@
             <td class=""><a href="https://logs.tf/3278028">3278028</a>, <a href="https://logs.tf/3276912">3276912</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:97296227]</td>
             <td class="">cyberspace eminem, eljefe cyberspace eminem, fy_iceworld</td>
             <td class="">3</td>
@@ -10379,6 +10680,7 @@
             <td class=""><a href="https://logs.tf/3276866">3276866</a>, <a href="https://logs.tf/3278077">3278077</a>, <a href="https://logs.tf/3285297">3285297</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:179340824]</td>
             <td class="">Ellie________________________WA, Ellie :3, Holly________________WANG</td>
             <td class="">4</td>
@@ -10396,6 +10698,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3278068">3278068</a>, <a href="https://logs.tf/3285292">3285292</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:17011247]</td>
             <td class="">coupe</td>
             <td class="">6</td>
@@ -10413,6 +10716,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3285269">3285269</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:376632465]</td>
             <td class=""> Whisper_Equinox</td>
             <td class="">0</td>
@@ -10430,6 +10734,7 @@
             <td class=""><a href="https://logs.tf/3281447">3281447</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:165986855]</td>
             <td class="">K1ngT1gr, T1gr</td>
             <td class="">14</td>
@@ -10447,6 +10752,7 @@
             <td class=""><a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:249149572]</td>
             <td class="">FlareD, Mr. FlareD</td>
             <td class="">0</td>
@@ -10464,6 +10770,7 @@
             <td class=""><a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3285279">3285279</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:155448756]</td>
             <td class="">mr, night, coffee black, Midnight</td>
             <td class="">3</td>
@@ -10481,6 +10788,7 @@
             <td class=""><a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3278043">3278043</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:89897890]</td>
             <td class="">✫P∀nck∈✫</td>
             <td class="">0</td>
@@ -10498,6 +10806,7 @@
             <td class=""><a href="https://logs.tf/3276879">3276879</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:147518283]</td>
             <td class="">bloodlust, ktmz, princess</td>
             <td class="">2</td>
@@ -10515,6 +10824,7 @@
             <td class=""><a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3285279">3285279</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1145838988]</td>
             <td class="">friend, template romance manga, INTERWORLDS</td>
             <td class="">1</td>
@@ -10532,6 +10842,7 @@
             <td class=""><a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3276885">3276885</a>, <a href="https://logs.tf/3285276">3285276</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:123870274]</td>
             <td class="">thehogslammer</td>
             <td class="">0</td>
@@ -10549,6 +10860,7 @@
             <td class=""><a href="https://logs.tf/3278094">3278094</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:179585629]</td>
             <td class="">guitar, SLICK guitar, LATHERED whisky,  LATHERED whisky</td>
             <td class="">4</td>
@@ -10566,6 +10878,7 @@
             <td class=""><a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3285288">3285288</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:151299353]</td>
             <td class="">wise ass tree,  josh, kujikawa</td>
             <td class="">4</td>
@@ -10583,6 +10896,7 @@
             <td class=""><a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3282029">3282029</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:91304212]</td>
             <td class="">aefax, SLICK aefax, LATHERED afx,  LATHERED afx</td>
             <td class="">1</td>
@@ -10600,6 +10914,7 @@
             <td class=""><a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3285288">3285288</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:163617933]</td>
             <td class="">rasta &quot;Josh S.&quot; ronald</td>
             <td class="">3</td>
@@ -10617,6 +10932,7 @@
             <td class=""><a href="https://logs.tf/3278068">3278068</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:193452647]</td>
             <td class="">dragomborn11</td>
             <td class="">0</td>
@@ -10634,6 +10950,7 @@
             <td class=""><a href="https://logs.tf/3277474">3277474</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:164211839]</td>
             <td class="">Bunt</td>
             <td class="">1</td>
@@ -10651,6 +10968,7 @@
             <td class=""><a href="https://logs.tf/3277470">3277470</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:144408382]</td>
             <td class=""> (503) GT0-LeCrum</td>
             <td class="">0</td>
@@ -10668,6 +10986,7 @@
             <td class=""><a href="https://logs.tf/3276912">3276912</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:65591156]</td>
             <td class="">SomethingAmazing</td>
             <td class="">1</td>
@@ -10685,6 +11004,7 @@
             <td class=""><a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:74354839]</td>
             <td class="">Snap his choker :3</td>
             <td class="">5</td>
@@ -10702,6 +11022,7 @@
             <td class=""><a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3285730">3285730</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:234875493]</td>
             <td class=""> wrndr</td>
             <td class="">0</td>
@@ -10719,6 +11040,7 @@
             <td class=""><a href="https://logs.tf/3285751">3285751</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:42954103]</td>
             <td class=""> art vandelay</td>
             <td class="">0</td>
@@ -10736,6 +11058,7 @@
             <td class=""><a href="https://logs.tf/3285751">3285751</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:146334357]</td>
             <td class="">Stealthpilled Thiefcel</td>
             <td class="">5</td>
@@ -10753,6 +11076,7 @@
             <td class=""><a href="https://logs.tf/3285722">3285722</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:214149442]</td>
             <td class="">(503) nYxia- ♥</td>
             <td class="">0</td>
@@ -10770,6 +11094,7 @@
             <td class=""><a href="https://logs.tf/3285268">3285268</a>, <a href="https://logs.tf/3286219">3286219</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:347251003]</td>
             <td class="">wize fifty</td>
             <td class="">2</td>
@@ -10787,6 +11112,7 @@
             <td class=""><a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:242905621]</td>
             <td class="">freddo.</td>
             <td class="">1</td>
@@ -10804,6 +11130,7 @@
             <td class=""><a href="https://logs.tf/3285276">3285276</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:421791356]</td>
             <td class="">J&#x60;UU</td>
             <td class="">0</td>
@@ -10821,6 +11148,7 @@
             <td class=""><a href="https://logs.tf/3285279">3285279</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:114412545]</td>
             <td class="">ROPE SHOOTER IN THE BUILDING</td>
             <td class="">0</td>
@@ -10838,6 +11166,7 @@
             <td class=""><a href="https://logs.tf/3285292">3285292</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:109897685]</td>
             <td class="">throne</td>
             <td class="">1</td>
@@ -10855,6 +11184,7 @@
             <td class=""><a href="https://logs.tf/3285292">3285292</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:90130240]</td>
             <td class="">MIDAS</td>
             <td class="">0</td>
@@ -10872,6 +11202,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:483032880]</td>
             <td class="">GREMLIN MAN</td>
             <td class="">3</td>
@@ -10889,6 +11220,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:131704728]</td>
             <td class="">UU&#x60;J</td>
             <td class="">1</td>
@@ -10906,6 +11238,7 @@
             <td class=""><a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:254196047]</td>
             <td class="">fuzze</td>
             <td class="">0</td>
@@ -10923,6 +11256,7 @@
             <td class=""><a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:180428816]</td>
             <td class="">trees alert!</td>
             <td class="">2</td>
@@ -10948,6 +11282,7 @@
       <table id="medicStats" class="js-sort-table">
       <thead>
         <tr>
+          <th></th>
           <th class="js-sort-number">Steam ID</td>
           <th class="js-sort-number">Aliases</td>
           <th class="js-sort-number">Kills</td>
@@ -10972,6 +11307,7 @@
       </thead>
       <tbody>
           <tr>
+            <td></td>
             <td class="">[U:1:1513298]</td>
             <td class="">rmx^-^, rmx</td>
             <td class="">2</td>
@@ -10994,6 +11330,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3281516">3281516</a>, <a href="https://logs.tf/3282478">3282478</a>, <a href="https://logs.tf/3282454">3282454</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:157945795]</td>
             <td class="">boob bouncer</td>
             <td class="">1</td>
@@ -11016,6 +11353,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:154627863]</td>
             <td class="">jose.gonzales2006, P4B moss_untitld</td>
             <td class="">2</td>
@@ -11038,6 +11376,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3278043">3278043</a>, <a href="https://logs.tf/3281465">3281465</a>, <a href="https://logs.tf/3282509">3282509</a>, <a href="https://logs.tf/3285297">3285297</a>, <a href="https://logs.tf/3286171">3286171</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:2497748]</td>
             <td class="">SLIPPY 8), ml, SLICK mattytight, SLIPPY ml, LATHERED Kirk Cousins,  mL</td>
             <td class="">5</td>
@@ -11060,6 +11399,7 @@
             <td class=""><a href="https://logs.tf/3282502">3282502</a>, <a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3281465">3281465</a>, <a href="https://logs.tf/3285288">3285288</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:110395964]</td>
             <td class="">sunnyy, eljefe sunnyy, mercy.healer.2006</td>
             <td class="">0</td>
@@ -11082,6 +11422,7 @@
             <td class=""><a href="https://logs.tf/3282502">3282502</a>, <a href="https://logs.tf/3276866">3276866</a>, <a href="https://logs.tf/3281434">3281434</a>, <a href="https://logs.tf/3278077">3278077</a>, <a href="https://logs.tf/3285297">3285297</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:440196377]</td>
             <td class="">TOXIC Gabe, 懿初, Neho &lt;3</td>
             <td class="">8</td>
@@ -11104,6 +11445,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3282513">3282513</a>, <a href="https://logs.tf/3281434">3281434</a>, <a href="https://logs.tf/3285268">3285268</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:226541387]</td>
             <td class="">ShadowFenix alert!</td>
             <td class="">6</td>
@@ -11126,6 +11468,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3281479">3281479</a>, <a href="https://logs.tf/3282503">3282503</a>, <a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:29086594]</td>
             <td class="">Blindsfell #freesniplax</td>
             <td class="">3</td>
@@ -11148,6 +11491,7 @@
             <td class=""><a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3282513">3282513</a>, <a href="https://logs.tf/3281424">3281424</a>, <a href="https://logs.tf/3281402">3281402</a>, <a href="https://logs.tf/3276885">3276885</a>, <a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3285730">3285730</a>, <a href="https://logs.tf/3286171">3286171</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1202317473]</td>
             <td class="">amnesiac, young girls&#x27; fangs, juno, my perspective is ignorant, dreamscape</td>
             <td class="">6</td>
@@ -11170,6 +11514,7 @@
             <td class=""><a href="https://logs.tf/3281479">3281479</a>, <a href="https://logs.tf/3282527">3282527</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3285276">3285276</a>, <a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:255294112]</td>
             <td class="">mel KUSH, mel_tha_blunt_smoker, melanie</td>
             <td class="">4</td>
@@ -11192,6 +11537,7 @@
             <td class=""><a href="https://logs.tf/3282503">3282503</a>, <a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3281472">3281472</a>, <a href="https://logs.tf/3285722">3285722</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:98487326]</td>
             <td class="">Soalabe, Soala</td>
             <td class="">2</td>
@@ -11214,6 +11560,7 @@
             <td class=""><a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:34183440]</td>
             <td class="">visa, tf2 groomer, Mr Epic,  bladee city</td>
             <td class="">3</td>
@@ -11236,6 +11583,7 @@
             <td class=""><a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3282509">3282509</a>, <a href="https://logs.tf/3281424">3281424</a>, <a href="https://logs.tf/3281402">3281402</a>, <a href="https://logs.tf/3285751">3285751</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:107838459]</td>
             <td class="">Joey Lemons</td>
             <td class="">1</td>
@@ -11258,6 +11606,7 @@
             <td class=""><a href="https://logs.tf/3281472">3281472</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:350738311]</td>
             <td class="">ixa, yate, yatexox</td>
             <td class="">5</td>
@@ -11280,6 +11629,7 @@
             <td class=""><a href="https://logs.tf/3281472">3281472</a>, <a href="https://logs.tf/3282527">3282527</a>, <a href="https://logs.tf/3278028">3278028</a>, <a href="https://logs.tf/3276866">3276866</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:254196047]</td>
             <td class="">✯fuzze✯, fuzze, ✯Mrs.fuzze✯, fuzze✿</td>
             <td class="">3</td>
@@ -11302,6 +11652,7 @@
             <td class=""><a href="https://logs.tf/3282492">3282492</a>, <a href="https://logs.tf/3281443">3281443</a>, <a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3285279">3285279</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:193807220]</td>
             <td class="">BULK.dinkolaw, THE LADYS MAN! PERVY SAGE, BULK. PERVY SAGE</td>
             <td class="">5</td>
@@ -11324,6 +11675,7 @@
             <td class=""><a href="https://logs.tf/3282492">3282492</a>, <a href="https://logs.tf/3281464">3281464</a>, <a href="https://logs.tf/3276886">3276886</a>, <a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:85573106]</td>
             <td class="">ghadilli, desiring machine</td>
             <td class="">1</td>
@@ -11346,6 +11698,7 @@
             <td class=""><a href="https://logs.tf/3281464">3281464</a>, <a href="https://logs.tf/3282529">3282529</a>, <a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3278043">3278043</a>, <a href="https://logs.tf/3285279">3285279</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:171769009]</td>
             <td class="">dubthot &gt;:3 PURRRR</td>
             <td class="">3</td>
@@ -11368,6 +11721,7 @@
             <td class=""><a href="https://logs.tf/3276886">3276886</a>, <a href="https://logs.tf/3282499">3282499</a>, <a href="https://logs.tf/3281450">3281450</a>, <a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:213858425]</td>
             <td class="">optimisticdude, NUG K2, K2, MAL porygon 2</td>
             <td class="">7</td>
@@ -11390,6 +11744,7 @@
             <td class=""><a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3282452">3282452</a>, <a href="https://logs.tf/3281459">3281459</a>, <a href="https://logs.tf/3277474">3277474</a>, <a href="https://logs.tf/3285722">3285722</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:113694093]</td>
             <td class="">(503) GTO- Theo,  (503) GTO- Theo</td>
             <td class="">2</td>
@@ -11412,6 +11767,7 @@
             <td class=""><a href="https://logs.tf/3278028">3278028</a>, <a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3282478">3282478</a>, <a href="https://logs.tf/3282454">3282454</a>, <a href="https://logs.tf/3281450">3281450</a>, <a href="https://logs.tf/3285268">3285268</a>, <a href="https://logs.tf/3286219">3286219</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:438002921]</td>
             <td class="">Aifx________________WANG, Aifx_________________WANG, &#x3D;), Aifx__________________WANG</td>
             <td class="">4</td>
@@ -11434,6 +11790,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3282452">3282452</a>, <a href="https://logs.tf/3281447">3281447</a>, <a href="https://logs.tf/3278068">3278068</a>, <a href="https://logs.tf/3285292">3285292</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:352052370]</td>
             <td class="">CH4RIOT</td>
             <td class="">6</td>
@@ -11456,6 +11813,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3281443">3281443</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286219">3286219</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:108821041]</td>
             <td class="">pom,  pom</td>
             <td class="">10</td>
@@ -11478,6 +11836,7 @@
             <td class=""><a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3281459">3281459</a>, <a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3278068">3278068</a>, <a href="https://logs.tf/3282029">3282029</a>, <a href="https://logs.tf/3285276">3285276</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:130289070]</td>
             <td class=""> meow mix™  promocode unun</td>
             <td class="">2</td>
@@ -11500,6 +11859,7 @@
             <td class=""><a href="https://logs.tf/3281447">3281447</a>, <a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3282029">3282029</a>, <a href="https://logs.tf/3278077">3278077</a>, <a href="https://logs.tf/3285751">3285751</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:167374185]</td>
             <td class="">我想永远这样, [FREE] finman, finman</td>
             <td class="">6</td>
@@ -11522,6 +11882,7 @@
             <td class=""><a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3282499">3282499</a>, <a href="https://logs.tf/3281516">3281516</a>, <a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:28635774]</td>
             <td class="">DavyC ♔</td>
             <td class="">2</td>
@@ -11544,6 +11905,7 @@
             <td class=""><a href="https://logs.tf/3282529">3282529</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:408450141]</td>
             <td class="">mur</td>
             <td class="">2</td>
@@ -11566,6 +11928,7 @@
             <td class=""><a href="https://logs.tf/3277474">3277474</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:81069410]</td>
             <td class="">heks</td>
             <td class="">0</td>
@@ -11588,6 +11951,7 @@
             <td class=""><a href="https://logs.tf/3276885">3276885</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:917913484]</td>
             <td class="">Kaiju4289</td>
             <td class="">0</td>
@@ -11610,6 +11974,7 @@
             <td class=""><a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3285730">3285730</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:85506440]</td>
             <td class="">PRROJECTION200000xx</td>
             <td class="">0</td>
@@ -11632,6 +11997,7 @@
             <td class=""><a href="https://logs.tf/3285292">3285292</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1140565447]</td>
             <td class="">mousecake</td>
             <td class="">1</td>
@@ -11654,6 +12020,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:214421545]</td>
             <td class="">Francis &quot;Dickheaddozer&quot;</td>
             <td class="">2</td>
@@ -11676,6 +12043,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:859298704]</td>
             <td class="">WCF BBL</td>
             <td class="">0</td>
@@ -11698,6 +12066,7 @@
             <td class=""><a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:83500673]</td>
             <td class="">e39 chassis</td>
             <td class="">1</td>
@@ -11728,6 +12097,7 @@
       <table id="sniperStats" class="js-sort-table">
       <thead>
         <tr>
+          <th></th>
           <th class="js-sort-number">Steam ID</td>
           <th class="js-sort-number">Aliases</td>
           <th class="js-sort-number">Kills</td>
@@ -11747,6 +12117,7 @@
       </thead>
       <tbody>
           <tr>
+            <td></td>
             <td class="">[U:1:208463880]</td>
             <td class="">ChristianKing787</td>
             <td class="">4</td>
@@ -11764,6 +12135,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3285730">3285730</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1416218980]</td>
             <td class="">kola PURRRR</td>
             <td class="">1</td>
@@ -11781,6 +12153,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:408450141]</td>
             <td class="">mur</td>
             <td class="">0</td>
@@ -11798,6 +12171,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:74354839]</td>
             <td class="">VXIOW, Snap his choker :3</td>
             <td class="">10</td>
@@ -11815,6 +12189,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3285698">3285698</a>, <a href="https://logs.tf/3285730">3285730</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:149892152]</td>
             <td class="">bigbigboy12, eljefe bigbigboy12, yuengling fiend</td>
             <td class="">4</td>
@@ -11832,6 +12207,7 @@
             <td class=""><a href="https://logs.tf/3282502">3282502</a>, <a href="https://logs.tf/3278077">3278077</a>, <a href="https://logs.tf/3285297">3285297</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:180428816]</td>
             <td class="">trees alert!</td>
             <td class="">4</td>
@@ -11849,6 +12225,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3285267">3285267</a>, <a href="https://logs.tf/3286239">3286239</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:317714123]</td>
             <td class="">gullywash flank scout, teddy inc., zero and nine, whitelight</td>
             <td class="">3</td>
@@ -11866,6 +12243,7 @@
             <td class=""><a href="https://logs.tf/3276895">3276895</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3285268">3285268</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:80264053]</td>
             <td class="">b4nnyminioncarnagejohnsonbowlin</td>
             <td class="">0</td>
@@ -11883,6 +12261,7 @@
             <td class=""><a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3286196">3286196</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1024346761]</td>
             <td class="">goku&gt;, yight yagami</td>
             <td class="">1</td>
@@ -11900,6 +12279,7 @@
             <td class=""><a href="https://logs.tf/3278061">3278061</a>, <a href="https://logs.tf/3276885">3276885</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:123870274]</td>
             <td class="">thehogslammer</td>
             <td class="">8</td>
@@ -11917,6 +12297,7 @@
             <td class=""><a href="https://logs.tf/3281479">3281479</a>, <a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3276885">3276885</a>, <a href="https://logs.tf/3285276">3285276</a>, <a href="https://logs.tf/3286221">3286221</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:143242759]</td>
             <td class="">JOHN_COMBAT</td>
             <td class="">0</td>
@@ -11934,6 +12315,7 @@
             <td class=""><a href="https://logs.tf/3276856">3276856</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1140565447]</td>
             <td class="">anna PURRRR</td>
             <td class="">7</td>
@@ -11951,6 +12333,7 @@
             <td class=""><a href="https://logs.tf/3276886">3276886</a>, <a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:249379140]</td>
             <td class="">Yomama Chandelure, warm and powerful, Yamagishi</td>
             <td class="">3</td>
@@ -11968,6 +12351,7 @@
             <td class=""><a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3285722">3285722</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:83643663]</td>
             <td class="">NUG gigamonster405, liaaammm, FaZe hitmonlee, lazygangsta, trapstarpoobear</td>
             <td class="">24</td>
@@ -11985,6 +12369,7 @@
             <td class=""><a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3282488">3282488</a>, <a href="https://logs.tf/3282452">3282452</a>, <a href="https://logs.tf/3281459">3281459</a>, <a href="https://logs.tf/3277474">3277474</a>, <a href="https://logs.tf/3285722">3285722</a>, <a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:84963494]</td>
             <td class="">BULK. MIGHT GUY</td>
             <td class="">5</td>
@@ -12002,6 +12387,7 @@
             <td class=""><a href="https://logs.tf/3278088">3278088</a>, <a href="https://logs.tf/3285734">3285734</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:144408382]</td>
             <td class="">(503) GT0-LeCrum,  (503) GT0-LeCrum, (five-oh-tree) LeCrumble</td>
             <td class="">6</td>
@@ -12019,6 +12405,7 @@
             <td class=""><a href="https://logs.tf/3278028">3278028</a>, <a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3282454">3282454</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:216238243]</td>
             <td class="">coughinshade, -{HR]- childsoldier1984</td>
             <td class="">3</td>
@@ -12036,6 +12423,7 @@
             <td class=""><a href="https://logs.tf/3276866">3276866</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:35913780]</td>
             <td class="">xyz</td>
             <td class="">3</td>
@@ -12053,6 +12441,7 @@
             <td class=""><a href="https://logs.tf/3276866">3276866</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:181216424]</td>
             <td class="">Tec________________________WANG</td>
             <td class="">5</td>
@@ -12070,6 +12459,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3281447">3281447</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:17011247]</td>
             <td class="">coupe</td>
             <td class="">7</td>
@@ -12087,6 +12477,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3282529">3282529</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3285269">3285269</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:151299353]</td>
             <td class="">jsmil101@harvard.edu, kujikawa</td>
             <td class="">0</td>
@@ -12104,6 +12495,7 @@
             <td class=""><a href="https://logs.tf/3278091">3278091</a>, <a href="https://logs.tf/3278068">3278068</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:347251003]</td>
             <td class="">SpockLSD, [FREE] SpockASD</td>
             <td class="">0</td>
@@ -12121,6 +12513,7 @@
             <td class=""><a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3276878">3276878</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:111068434]</td>
             <td class="">mac_cheese</td>
             <td class="">3</td>
@@ -12138,6 +12531,7 @@
             <td class=""><a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:157883802]</td>
             <td class="">✯Mr.Sagejay✯</td>
             <td class="">0</td>
@@ -12155,6 +12549,7 @@
             <td class=""><a href="https://logs.tf/3278078">3278078</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:421791356]</td>
             <td class="">✯ ✯MR KING ✯ ✯, 2x, J&#x60;UU</td>
             <td class="">5</td>
@@ -12172,6 +12567,7 @@
             <td class=""><a href="https://logs.tf/3278078">3278078</a>, <a href="https://logs.tf/3276879">3276879</a>, <a href="https://logs.tf/3285279">3285279</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:139944350]</td>
             <td class="">AvoidJoker</td>
             <td class="">0</td>
@@ -12189,6 +12585,7 @@
             <td class=""><a href="https://logs.tf/3276879">3276879</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:147518283]</td>
             <td class="">bloodlust, ktmz, princess</td>
             <td class="">7</td>
@@ -12206,6 +12603,7 @@
             <td class=""><a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3285279">3285279</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:165986855]</td>
             <td class="">K1ngT1gr, T1gr</td>
             <td class="">5</td>
@@ -12223,6 +12621,7 @@
             <td class=""><a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3285269">3285269</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1145838988]</td>
             <td class="">friend, INTERWORLDS</td>
             <td class="">3</td>
@@ -12240,6 +12639,7 @@
             <td class=""><a href="https://logs.tf/3278094">3278094</a>, <a href="https://logs.tf/3285276">3285276</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:178908705]</td>
             <td class="">Cam, SLICK Cambonieboo, LATHERED Cambonieboo</td>
             <td class="">8</td>
@@ -12257,6 +12657,7 @@
             <td class=""><a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:163617933]</td>
             <td class="">rasta &quot;Josh S.&quot; ronald</td>
             <td class="">3</td>
@@ -12274,6 +12675,7 @@
             <td class=""><a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3278068">3278068</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:91304212]</td>
             <td class="">aefax, SLICK aefax,  LATHERED afx</td>
             <td class="">0</td>
@@ -12291,6 +12693,7 @@
             <td class=""><a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3277470">3277470</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:240618091]</td>
             <td class="">Alexis</td>
             <td class="">0</td>
@@ -12308,6 +12711,7 @@
             <td class=""><a href="https://logs.tf/3277474">3277474</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:118783237]</td>
             <td class="">unCrutch</td>
             <td class="">0</td>
@@ -12325,6 +12729,7 @@
             <td class=""><a href="https://logs.tf/3276912">3276912</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:234875493]</td>
             <td class="">unwrander,  wrndr,  heliov</td>
             <td class="">13</td>
@@ -12342,6 +12747,7 @@
             <td class=""><a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3285751">3285751</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:210673562]</td>
             <td class=""> cayorne, (503) GHNA cayorne.NFS #DLF</td>
             <td class="">5</td>
@@ -12359,6 +12765,7 @@
             <td class=""><a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3285268">3285268</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:119196042]</td>
             <td class="">(503) BcnBltz</td>
             <td class="">0</td>
@@ -12376,6 +12783,7 @@
             <td class=""><a href="https://logs.tf/3282478">3282478</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:48897782]</td>
             <td class=""> KutchKutch, KutchKutch</td>
             <td class="">9</td>
@@ -12393,6 +12801,7 @@
             <td class=""><a href="https://logs.tf/3282029">3282029</a>, <a href="https://logs.tf/3285276">3285276</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:204344441]</td>
             <td class="">MoisDMMMMMMMMMM</td>
             <td class="">1</td>
@@ -12410,6 +12819,7 @@
             <td class=""><a href="https://logs.tf/3276885">3276885</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:42954103]</td>
             <td class=""> art vandelay</td>
             <td class="">0</td>
@@ -12427,6 +12837,7 @@
             <td class=""><a href="https://logs.tf/3285751">3285751</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1161366408]</td>
             <td class=""> shitty bastard :o3</td>
             <td class="">0</td>
@@ -12444,6 +12855,7 @@
             <td class=""><a href="https://logs.tf/3285751">3285751</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:140676484]</td>
             <td class="">Pride0</td>
             <td class="">0</td>
@@ -12461,6 +12873,7 @@
             <td class=""><a href="https://logs.tf/3285268">3285268</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:242905621]</td>
             <td class="">freddo.</td>
             <td class="">4</td>
@@ -12478,6 +12891,7 @@
             <td class=""><a href="https://logs.tf/3285276">3285276</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:86604563]</td>
             <td class="">bumblecheeks</td>
             <td class="">1</td>
@@ -12495,6 +12909,7 @@
             <td class=""><a href="https://logs.tf/3285276">3285276</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:109897685]</td>
             <td class="">throne</td>
             <td class="">1</td>
@@ -12512,6 +12927,7 @@
             <td class=""><a href="https://logs.tf/3285292">3285292</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:107450401]</td>
             <td class="">(503) lean iwokura cu@ATL</td>
             <td class="">1</td>
@@ -12529,6 +12945,7 @@
             <td class=""><a href="https://logs.tf/3286219">3286219</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:90130240]</td>
             <td class="">MIDAS</td>
             <td class="">0</td>
@@ -12546,6 +12963,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:483032880]</td>
             <td class="">GREMLIN MAN</td>
             <td class="">0</td>
@@ -12563,6 +12981,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:468494252]</td>
             <td class="">Frank</td>
             <td class="">0</td>
@@ -12580,6 +12999,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:149518001]</td>
             <td class="">snow-水</td>
             <td class="">2</td>
@@ -12597,6 +13017,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:93702050]</td>
             <td class="">monster math</td>
             <td class="">1</td>
@@ -12614,6 +13035,7 @@
             <td class=""><a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:114412545]</td>
             <td class="">ROPE SHOOTER IN THE BUILDING</td>
             <td class="">1</td>
@@ -12639,6 +13061,7 @@
       <table id="spyStats" class="js-sort-table">
       <thead>
         <tr>
+          <th></th>
           <th class="js-sort-number">Steam ID</td>
           <th class="js-sort-number">Aliases</td>
           <th class="js-sort-number">Kills</td>
@@ -12658,6 +13081,7 @@
       </thead>
       <tbody>
           <tr>
+            <td></td>
             <td class="">[U:1:108272745]</td>
             <td class="">CeigeBirb</td>
             <td class="">0</td>
@@ -12675,6 +13099,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:74354839]</td>
             <td class="">VXIOW, Snap his choker :3</td>
             <td class="">5</td>
@@ -12692,6 +13117,7 @@
             <td class=""><a href="https://logs.tf/3278093">3278093</a>, <a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:119238860]</td>
             <td class="">zzzz, ._., (◣_◢)</td>
             <td class="">2</td>
@@ -12709,6 +13135,7 @@
             <td class=""><a href="https://logs.tf/3282503">3282503</a>, <a href="https://logs.tf/3276856">3276856</a>, <a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:193452647]</td>
             <td class="">dragomborn11</td>
             <td class="">0</td>
@@ -12726,6 +13153,7 @@
             <td class=""><a href="https://logs.tf/3278087">3278087</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:93702050]</td>
             <td class="">C.C.C.O., monster math</td>
             <td class="">0</td>
@@ -12743,6 +13171,7 @@
             <td class=""><a href="https://logs.tf/3278087">3278087</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:122204454]</td>
             <td class="">mild</td>
             <td class="">1</td>
@@ -12760,6 +13189,7 @@
             <td class=""><a href="https://logs.tf/3276910">3276910</a>, <a href="https://logs.tf/3285269">3285269</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:163617933]</td>
             <td class="">rasta &quot;Josh S.&quot; ronald</td>
             <td class="">1</td>
@@ -12777,6 +13207,7 @@
             <td class=""><a href="https://logs.tf/3278091">3278091</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:421791356]</td>
             <td class="">✯ ✯MR KING ✯ ✯</td>
             <td class="">2</td>
@@ -12794,6 +13225,7 @@
             <td class=""><a href="https://logs.tf/3278078">3278078</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:165986855]</td>
             <td class="">K1ngT1gr, T1gr</td>
             <td class="">0</td>
@@ -12811,6 +13243,7 @@
             <td class=""><a href="https://logs.tf/3276878">3276878</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:80813879]</td>
             <td class="">trogdorBURNINATOR</td>
             <td class="">1</td>
@@ -12828,6 +13261,7 @@
             <td class=""><a href="https://logs.tf/3278043">3278043</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:83344404]</td>
             <td class="">MogulSoap</td>
             <td class="">0</td>
@@ -12845,6 +13279,7 @@
             <td class=""><a href="https://logs.tf/3278043">3278043</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:80405405]</td>
             <td class="">Se_Rious</td>
             <td class="">0</td>
@@ -12862,6 +13297,7 @@
             <td class=""><a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3285276">3285276</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:151299353]</td>
             <td class="">wise ass tree, kujikawa</td>
             <td class="">2</td>
@@ -12879,6 +13315,7 @@
             <td class=""><a href="https://logs.tf/3276909">3276909</a>, <a href="https://logs.tf/3286225">3286225</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:126986021]</td>
             <td class="">Fireball7d7________________WANG</td>
             <td class="">0</td>
@@ -12896,6 +13333,7 @@
             <td class=""><a href="https://logs.tf/3278068">3278068</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:160046804]</td>
             <td class="">b0nes____________________WANG</td>
             <td class="">0</td>
@@ -12913,6 +13351,7 @@
             <td class=""><a href="https://logs.tf/3278068">3278068</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:240618091]</td>
             <td class="">Alexis</td>
             <td class="">0</td>
@@ -12930,6 +13369,7 @@
             <td class=""><a href="https://logs.tf/3277474">3277474</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:178908705]</td>
             <td class="">SLICK Cambonieboo</td>
             <td class="">0</td>
@@ -12947,6 +13387,7 @@
             <td class=""><a href="https://logs.tf/3277470">3277470</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:179585629]</td>
             <td class="">SLICK guitar</td>
             <td class="">0</td>
@@ -12964,6 +13405,7 @@
             <td class=""><a href="https://logs.tf/3277470">3277470</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:441902418]</td>
             <td class="">unxero,  unxero</td>
             <td class="">4</td>
@@ -12981,6 +13423,7 @@
             <td class=""><a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3285751">3285751</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:144408382]</td>
             <td class=""> (503) GT0-LeCrum, (five-oh-tree) LeCrumble</td>
             <td class="">4</td>
@@ -12998,6 +13441,7 @@
             <td class=""><a href="https://logs.tf/3276912">3276912</a>, <a href="https://logs.tf/3282478">3282478</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:184206731]</td>
             <td class="">jems</td>
             <td class="">0</td>
@@ -13015,6 +13459,7 @@
             <td class=""><a href="https://logs.tf/3285698">3285698</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:118783237]</td>
             <td class="">tunneltown</td>
             <td class="">1</td>
@@ -13032,6 +13477,7 @@
             <td class=""><a href="https://logs.tf/3285751">3285751</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:42954103]</td>
             <td class=""> art vandelay</td>
             <td class="">1</td>
@@ -13049,6 +13495,7 @@
             <td class=""><a href="https://logs.tf/3285751">3285751</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1161366408]</td>
             <td class=""> shitty bastard :o3</td>
             <td class="">1</td>
@@ -13066,6 +13513,7 @@
             <td class=""><a href="https://logs.tf/3285751">3285751</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:376632465]</td>
             <td class=""> 3125</td>
             <td class="">0</td>
@@ -13083,6 +13531,7 @@
             <td class=""><a href="https://logs.tf/3285751">3285751</a>, <a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1416218980]</td>
             <td class="">kola PURRRR</td>
             <td class="">0</td>
@@ -13100,6 +13549,7 @@
             <td class=""><a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:1140565447]</td>
             <td class="">anna PURRRR</td>
             <td class="">3</td>
@@ -13117,6 +13567,7 @@
             <td class=""><a href="https://logs.tf/3285288">3285288</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:83930987]</td>
             <td class="">Penguineat</td>
             <td class="">1</td>
@@ -13134,6 +13585,7 @@
             <td class=""><a href="https://logs.tf/3285268">3285268</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:131704728]</td>
             <td class="">UU&#x60;J</td>
             <td class="">1</td>
@@ -13151,6 +13603,7 @@
             <td class=""><a href="https://logs.tf/3285279">3285279</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:147518283]</td>
             <td class="">ktmz, princess</td>
             <td class="">0</td>
@@ -13168,6 +13621,7 @@
             <td class=""><a href="https://logs.tf/3285279">3285279</a>, <a href="https://logs.tf/3286246">3286246</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:109897685]</td>
             <td class="">throne</td>
             <td class="">1</td>
@@ -13185,6 +13639,7 @@
             <td class=""><a href="https://logs.tf/3285292">3285292</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:208463880]</td>
             <td class="">ChristianKing787</td>
             <td class="">1</td>
@@ -13202,6 +13657,7 @@
             <td class=""><a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:69284001]</td>
             <td class="">b♥bb[Y!]</td>
             <td class="">1</td>
@@ -13219,6 +13675,7 @@
             <td class=""><a href="https://logs.tf/3286253">3286253</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:340919188]</td>
             <td class="">Boy Princess</td>
             <td class="">2</td>
@@ -13236,6 +13693,7 @@
             <td class=""><a href="https://logs.tf/3286218">3286218</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:91304212]</td>
             <td class=""> LATHERED afx</td>
             <td class="">1</td>
@@ -13253,6 +13711,7 @@
             <td class=""><a href="https://logs.tf/3286235">3286235</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:83643663]</td>
             <td class="">trapstarpoobear</td>
             <td class="">1</td>
@@ -13270,6 +13729,7 @@
             <td class=""><a href="https://logs.tf/3286252">3286252</a>, </td>
           </tr>
           <tr>
+            <td></td>
             <td class="">[U:1:119169619]</td>
             <td class="">NOOT!</td>
             <td class="">0</td>
