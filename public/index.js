@@ -11,7 +11,7 @@ function toggleClassTable(classId) {
 
   currentClassShown = classId;
 }
-
+/*
 function filterTable() {
     // Declare variables
     let input = document.getElementById("filter");
@@ -33,3 +33,4 @@ function filterTable() {
       }
     }
   }
+  */
