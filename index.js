@@ -10,16 +10,23 @@ const calculatePlayerStats = async () => {
     let playerStats = {};
 
     let logData = [];
+    const startTime = new Date().getTime();
+    console.log(`Processing logs...`);
     for (const matchId of logs.logs) {
         try {
-            let currentLogData = await getLogData(matchId);
-            currentLogData.logId = matchId;
+            let currentLogData = getLogData(matchId);
+            currentLogData.then(result => {
+                result.logId = matchId;
+            });
             logData.push(currentLogData);
-            await new Promise(r => setTimeout(r, 10));
+            await new Promise(r => setTimeout(r, 500));
         } catch (error) {
             console.error(error.message);
         }
     }
+
+    logData = await Promise.all(logData);
+    console.log(`Finished processing logs... Took ${(new Date().getTime() - startTime) / 1000} seconds`)
 
     for (const log of logData) {
         for (const playerKey in log.players) {
@@ -49,7 +56,7 @@ const calculatePlayerStats = async () => {
                         totalDamageTaken: log.players[playerKey].dt,
                         totalDamage: currentClass.dmg,
                         totalTime: currentClass.total_time,
-                        logs: (log.logId).toString()
+                        logs: (log.logId).toString(),
                     }
 
                     if (currentClass.type === 'medic') {
@@ -60,6 +67,9 @@ const calculatePlayerStats = async () => {
                         playerStats[currentClass.type][playerKey]["Ubers/30"] = (log.players[playerKey].ubers / (currentClass.total_time / 60) * 30).toFixed(2);
                         playerStats[currentClass.type][playerKey]["Drops/30"] = (log.players[playerKey].drops / (currentClass.total_time / 60) * 30).toFixed(2);
                     }
+                    if (currentClass.type === 'scout' || currentClass.type === 'soldier') {
+                        calculateRole(playerKey, currentClass, log, playerStats);
+                    }
                 } else {
                     playerStats[currentClass.type][playerKey].kills += currentClass.kills;
                     playerStats[currentClass.type][playerKey].deaths += currentClass.deaths;
@@ -68,34 +78,30 @@ const calculatePlayerStats = async () => {
                     playerStats[currentClass.type][playerKey].totalDamageTaken += log.players[playerKey].dt;
                     playerStats[currentClass.type][playerKey].totalTime += currentClass.total_time;
 
-                    let totalDmg = playerStats[currentClass.type][playerKey].totalDamage;
-                    let totalDmgTaken = playerStats[currentClass.type][playerKey].totalDamageTaken;
-                    let totalTime = playerStats[currentClass.type][playerKey].totalTime;
-                    playerStats[currentClass.type][playerKey].avgDpm = (totalDmg / (totalTime / 60)).toFixed(2);
-                    playerStats[currentClass.type][playerKey].avgDtm = (totalDmgTaken / (totalTime / 60)).toFixed(2);
-                    playerStats[currentClass.type][playerKey].deltaDmg = (totalDmg / (totalTime / 60) - (totalDmgTaken / (totalTime / 60))).toFixed(2);
+                    let { totalDamage, totalDamageTaken, totalTime } = playerStats[currentClass.type][playerKey];
+                    playerStats[currentClass.type][playerKey].avgDpm = (totalDamage / (totalTime / 60)).toFixed(2);
+                    playerStats[currentClass.type][playerKey].avgDtm = (totalDamageTaken / (totalTime / 60)).toFixed(2);
+                    playerStats[currentClass.type][playerKey].deltaDmg = (totalDamage / (totalTime / 60) - (totalDamageTaken / (totalTime / 60))).toFixed(2);
 
-                    let totalKills = playerStats[currentClass.type][playerKey].kills;
-                    let totalAssists = playerStats[currentClass.type][playerKey].assists;
-                    let totalDeaths = playerStats[currentClass.type][playerKey].deaths;
-
-                    playerStats[currentClass.type][playerKey]["K/D"] = (totalKills / totalDeaths).toFixed(2);
-                    playerStats[currentClass.type][playerKey]["KA/D"] = ((totalKills + totalAssists) / totalDeaths).toFixed(2);
-                    playerStats[currentClass.type][playerKey]["K/30"] = (totalKills / (totalTime / 60) * 30).toFixed(2);
-                    playerStats[currentClass.type][playerKey]["D/30"] = (totalDeaths / (totalTime / 60) * 30).toFixed(2);
+                    let { kills, assists, deaths } = playerStats[currentClass.type][playerKey];
+                    playerStats[currentClass.type][playerKey]["K/D"] = (kills / deaths).toFixed(2);
+                    playerStats[currentClass.type][playerKey]["KA/D"] = ((kills + assists) / deaths).toFixed(2);
+                    playerStats[currentClass.type][playerKey]["K/30"] = (kills / (totalTime / 60) * 30).toFixed(2);
+                    playerStats[currentClass.type][playerKey]["D/30"] = (deaths / (totalTime / 60) * 30).toFixed(2);
 
                     if (currentClass.type === 'medic') {
                         playerStats[currentClass.type][playerKey].ubers += log.players[playerKey].ubers;
                         playerStats[currentClass.type][playerKey].totalHealing += log.players[playerKey].heal;
                         playerStats[currentClass.type][playerKey].drops += log.players[playerKey].drops;
 
-                        let totalHealing = playerStats[currentClass.type][playerKey].totalHealing;
-                        let ubers = playerStats[currentClass.type][playerKey].ubers;
-                        let drops = playerStats[currentClass.type][playerKey].drops;
-
+                        let { totalHealing, ubers, drops } = playerStats[currentClass.type][playerKey];
                         playerStats[currentClass.type][playerKey].avgHpm = (totalHealing / (totalTime / 60)).toFixed(2);
                         playerStats[currentClass.type][playerKey]["Ubers/30"] = (ubers / (totalTime / 60) * 30).toFixed(2);
                         playerStats[currentClass.type][playerKey]["Drops/30"] = (drops / (totalTime / 60) * 30).toFixed(2);
+                    }
+
+                    if (currentClass.type === 'scout' || currentClass.type === 'soldier') {
+                        calculateRole(playerKey, currentClass, log, playerStats);
                     }
 
                     let aliases = playerStats[currentClass.type][playerKey].aliases.split(', ');
@@ -115,6 +121,41 @@ const calculatePlayerStats = async () => {
     fs.writeFile('./totalPlayerStats.json', JSON.stringify(playerStats, null, 2), err => {
         if (err) throw err;
     })
+}
+
+const calculateRole = (playerKey, currentClass, log, playerStats) => {
+    for (const partnerKey in log.players) {
+        let classPartner = log.players[partnerKey];
+        if (partnerKey === playerKey || log.players[playerKey].team !== classPartner.team) {
+            continue;
+        }
+
+        if (!playerStats[currentClass.type][playerKey].comboLogs)
+            playerStats[currentClass.type][playerKey].comboLogs = 0;
+        if (!playerStats[currentClass.type][playerKey].flankLogs)
+            playerStats[currentClass.type][playerKey].flankLogs = 0;
+
+        for (const teammateClass of classPartner.class_stats) {
+            if (currentClass.type === teammateClass.type) {
+                if (log.players[playerKey].hr > classPartner.hr) {
+                    playerStats[currentClass.type][playerKey].comboLogs += 1;
+                } else {
+                    playerStats[currentClass.type][playerKey].flankLogs += 1;
+                }
+                break;
+            }
+        }
+    }
+
+    let { flankLogs, comboLogs } = playerStats[currentClass.type][playerKey];
+    if (currentClass.type === 'soldier') {
+        playerStats[currentClass.type][playerKey].role = (comboLogs >= flankLogs) ? 'pocket' : 'roamer';
+        if (comboLogs === flankLogs) playerStats[currentClass.type][playerKey].role = '?';
+    } else {
+        playerStats[currentClass.type][playerKey].role = (comboLogs >= flankLogs) ? 'combo' : 'flank';
+        if (comboLogs === flankLogs)
+            playerStats[currentClass.type][playerKey].role = '?';
+    }
 }
 
 const calculateMedicValues = async () => {
