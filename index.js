@@ -139,7 +139,7 @@ const calculateRole = (playerKey, currentClass, log, playerStats) => {
             if (currentClass.type === teammateClass.type) {
                 if (log.players[playerKey].hr > classPartner.hr) {
                     playerStats[currentClass.type][playerKey].comboLogs += 1;
-                } else {
+                } else if (log.players[playerKey].hr < classPartner.hr) {
                     playerStats[currentClass.type][playerKey].flankLogs += 1;
                 }
                 break;
