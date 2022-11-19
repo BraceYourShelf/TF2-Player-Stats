@@ -1,12 +1,11 @@
 
 const axios = require('axios');
 const fs = require('fs');
-const steam = require('steamidconvert')();
 
 const api = 'http://logs.tf/api/v1/log/';
 
 const calculatePlayerStats = async () => {
-    const logs = JSON.parse(fs.readFileSync('./matchLogs.json', 'utf8'));
+    const logs = JSON.parse(fs.readFileSync('./rglLogs/s10/main/main.json', 'utf8'));
     let playerStats = {};
 
     let logData = [];
@@ -158,70 +157,10 @@ const calculateRole = (playerKey, currentClass, log, playerStats) => {
     }
 }
 
-const calculateMedicValues = async () => {
-    const medics = JSON.parse(fs.readFileSync('./medics.json', 'utf8'));
-    let medicStats = {};
-
-    // Loop through each medic and get their logs/stats
-    for (const [medic, medicData] of Object.entries(medics.medics)) {
-        const medicId = convertSteamId64ToSteamId3(medicData.rglId);
-
-        let logs = [];
-        for (const matchId of medicData.matchLogs) {
-            try {
-                let logData = await getLogData(matchId);
-                logs.push(logData);
-                await new Promise(r => setTimeout(r, 100));
-            } catch (error) {
-                console.error(error.message);
-            }
-        }
-
-        medicStats[medic] = getMedicStats(logs, medicId);
-    }
-
-    // Write stats to file
-    fs.writeFile('./medicStats.json', JSON.stringify(medicStats, null, 2), err => {
-        if (err) throw err;
-    })
-}
-
 const getLogData = async (logId) => {
     const logData = (await axios.get(api + logId)).data;
     
     return logData;
 }
 
-const getMedicStats = (logs, medicId) => {
-    let deaths = 0;
-    let ubers = 0;
-    let drops = 0;
-    let hpm = 0;
-
-    for (const log of logs) {
-        deaths += (log.players[medicId].deaths / (log.length / 60) * 30);
-        ubers += (log.players[medicId].ubers / (log.length / 60) * 30);
-        drops += (log.players[medicId].drops / (log.length / 60) * 30);
-        hpm += (log.players[medicId].heal / (log.length / 60));
-    }
-
-    return {
-        medicId,
-        "hpm": (hpm / logs.length).toFixed(2),
-        "drops": (drops / logs.length).toFixed(2),
-        "ubers": (ubers / logs.length).toFixed(2),
-        "deaths": (deaths / logs.length).toFixed(2),
-    }
-}
-
-const convertSteamId64ToSteamId3 = (steamId64) => {
-    let steamId = steam.convertToText(steamId64);
-    return steam.convertToNewFormat(steamId);
-}
-
-const convertSteamId3ToSteamId64 = (steamId3) => {
-    return steam.convertTo64(steamId3);
-}
-
-//calculateMedicValues();
 calculatePlayerStats();
