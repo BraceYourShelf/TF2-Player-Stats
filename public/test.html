@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TF2 S10 Main Player Stats</title>
+    
+    <link rel="stylesheet" href="https://cdn.datatables.net/searchbuilder/1.3.4/css/searchBuilder.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+    <link rel="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="sort-table.min.js"></script>
+    <script src="index.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/searchbuilder/1.3.4/js/dataTables.searchBuilder.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        let dataTableConfig = {
+          language: {
+            searchBuilder: {
+                title: ''
+            },
+            search: "Search: "
+          },
+          "columnDefs": [
+            { "orderable": false, "searchable": false, "targets": 0 }
+          ],
+          titles:[
+              'SearchBuilder'
+          ],
+          paging: false,
+          order: [[1, 'asc']],
+          dom: 'Qlfrtip'
+        };
+        
+        var scoutTable = $('#scoutStats').DataTable(dataTableConfig);
+        scoutTable.on('order.dt search.dt', function () {
+            let i = 1;
+            scoutTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        scoutTable.searchBuilder.container().addClass('inline');
+        scoutTable.searchBuilder.container().prependTo(scoutTable.table().container());
+
+        var soldierTable = $('#soldierStats').DataTable(dataTableConfig);
+        soldierTable.on('order.dt search.dt', function () {
+            let i = 1;
+            soldierTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        soldierTable.searchBuilder.container().addClass('inline');
+        soldierTable.searchBuilder.container().prependTo(soldierTable.table().container());
+
+        var pyroTable = $('#pyroStats').DataTable(dataTableConfig);
+        pyroTable.on('order.dt search.dt', function () {
+            let i = 1;
+            pyroTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        pyroTable.searchBuilder.container().addClass('inline');
+        pyroTable.searchBuilder.container().prependTo(pyroTable.table().container());
+
+        var demomanTable = $('#demomanStats').DataTable(dataTableConfig);
+        demomanTable.on('order.dt search.dt', function () {
+            let i = 1;
+            demomanTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        demomanTable.searchBuilder.container().addClass('inline');
+        demomanTable.searchBuilder.container().prependTo(demomanTable.table().container());
+
+        var heavyTable = $('#heavyweaponsStats').DataTable(dataTableConfig);
+        heavyTable.on('order.dt search.dt', function () {
+            let i = 1;
+            heavyTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        heavyTable.searchBuilder.container().addClass('inline');
+        heavyTable.searchBuilder.container().prependTo(heavyTable.table().container());
+
+        var engineerTable = $('#engineerStats').DataTable(dataTableConfig);
+        engineerTable.on('order.dt search.dt', function () {
+            let i = 1;
+            engineerTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        engineerTable.searchBuilder.container().addClass('inline');
+        engineerTable.searchBuilder.container().prependTo(engineerTable.table().container());
+
+        var medicTable = $('#medicStats').DataTable(dataTableConfig);
+        medicTable.on('order.dt search.dt', function () {
+            let i = 1;
+            medicTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        medicTable.searchBuilder.container().addClass('inline');
+        medicTable.searchBuilder.container().prependTo(medicTable.table().container());
+
+        var sniperTable = $('#sniperStats').DataTable(dataTableConfig);
+        sniperTable.on('order.dt search.dt', function () {
+            let i = 1;
+            sniperTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        sniperTable.searchBuilder.container().addClass('inline');
+        sniperTable.searchBuilder.container().prependTo(sniperTable.table().container());
+
+        var spyTable = $('#spyStats').DataTable(dataTableConfig);
+        spyTable.on('order.dt search.dt', function () {
+            let i = 1;
+            spyTable.cells(null, 0, { search: 'applied', order: 'applied' }).every(function (cell) {
+                this.data(i++);
+            });
+        }).draw();
+        spyTable.searchBuilder.container().addClass('inline');
+        spyTable.searchBuilder.container().prependTo(spyTable.table().container());
+    });
+    </script>
+  </head>
+  <body>
+	<div id="output"></div>
+    <h1>TF2 S10 Main Player Stats</h1>
+    <p>Stats taken from matches through Week 8</p>
+
+    <h2>Class Select</h2>
+    <div>
+      <button style="display: none" onClick="toggleClassTable('allClasses')">All</button>
+      <button onClick="toggleClassTable('scout')">Scout</button>
+      <button onClick="toggleClassTable('soldier')">Soldier</button>
+      <button onClick="toggleClassTable('pyro')">Pyro</button>
+      <button onClick="toggleClassTable('demoman')">Demoman</button>
+      <button onClick="toggleClassTable('heavyweapons')">Heavy</button>
+      <button onClick="toggleClassTable('engineer')">Engineer</button>
+      <button onClick="toggleClassTable('medic')">Medic</button>
+      <button onClick="toggleClassTable('sniper')">Sniper</button>
+      <button onClick="toggleClassTable('spy')">Spy</button>
+    </div>
+
+    <div id="allClasses" class="table-hidden">
+      <h3>All</h3>                
+    </div>
+  </body>
+</html>

@@ -4,8 +4,8 @@ const fs = require('fs');
 
 const api = 'http://logs.tf/api/v1/log/';
 
-const calculatePlayerStats = async () => {
-    const logs = JSON.parse(fs.readFileSync('./rglLogs/s10/main/main.json', 'utf8'));
+const calculatePlayerStats = async (logsFilePath) => {
+    const logs = JSON.parse(fs.readFileSync(logsFilePath, 'utf8'));
     let playerStats = {};
 
     let logData = [];
@@ -117,7 +117,9 @@ const calculatePlayerStats = async () => {
         }
     }
 
-    fs.writeFile('./totalPlayerStats.json', JSON.stringify(playerStats, null, 2), err => {
+    let outputFilePath = logsFilePath.split('.')[1];
+    console.log(outputFilePath);
+    fs.writeFile(`./${outputFilePath}_output.json`, JSON.stringify(playerStats, null, 2), err => {
         if (err) throw err;
     })
 }
@@ -163,4 +165,4 @@ const getLogData = async (logId) => {
     return logData;
 }
 
-calculatePlayerStats();
+calculatePlayerStats('./rglLogs/s10/main/main.json');
