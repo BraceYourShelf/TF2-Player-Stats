@@ -88,3 +88,13 @@ button:focus {
 .pad-right {
     margin-right: 40%;
 }
+
+@media only screen and (max-width: 670px) {
+    .pad-left {
+        margin-left: 20%;
+    }
+    
+    .pad-right {
+        margin-right: 20%;
+    }
+}
