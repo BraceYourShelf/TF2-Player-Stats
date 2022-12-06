@@ -77,4 +77,14 @@ button {
   font-size: 16px;
 }
 
-button:focus{background-color:#706f6f;}
+button:focus {
+    background-color:#706f6f;
+}
+
+.pad-left {
+    margin-left: 40%;
+}
+
+.pad-right {
+    margin-right: 40%;
+}
