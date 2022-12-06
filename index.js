@@ -1,7 +1,7 @@
 
 const axios = require('axios');
 const fs = require('fs');
-
+const glob = require("glob");
 const api = 'http://logs.tf/api/v1/log/';
 
 const calculatePlayerStats = async (logsFilePath) => {
@@ -10,7 +10,7 @@ const calculatePlayerStats = async (logsFilePath) => {
 
     let logData = [];
     const startTime = new Date().getTime();
-    console.log(`Processing logs...`);
+    console.log(`Processing logs for ${logsFilePath}...`);
     for (const matchId of logs.logs) {
         try {
             let currentLogData = getLogData(matchId);
@@ -160,9 +160,10 @@ const calculateRole = (playerKey, currentClass, log, playerStats) => {
 }
 
 const getLogData = async (logId) => {
-    const logData = (await axios.get(api + logId)).data;
-    
-    return logData;
+    return (await axios.get(api + logId)).data;
 }
 
-calculatePlayerStats('./rglLogs/s10/main/main.json');
+const files = glob.sync('rglLogs/**/**/*Logs.json');
+files.forEach(file => {
+    calculatePlayerStats(`./${file}`);
+});
