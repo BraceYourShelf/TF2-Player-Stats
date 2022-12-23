@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/searchbuilder/1.3.4/css/searchBuilder.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
     <link rel="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://braceyourshelf.github.io/TF2-Player-Stats/style.css">
+    <link rel="stylesheet" href="../../../style.css">
 
-    <script src="https://braceyourshelf.github.io/TF2-Player-Stats/sort-table.min.js"></script>
-    <script src="https://braceyourshelf.github.io/TF2-Player-Stats/index.js"></script>
+    <script src="../../../sort-table.min.js"></script>
+    <script src="../../../index.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
@@ -47,7 +47,7 @@
                 this.data(i++);
             });
         }).draw();
-        scoutTable.searchBuilder.container().addClass('inline');
+        //scoutTable.searchBuilder.container().addClass('inline');
         scoutTable.searchBuilder.container().prependTo(scoutTable.table().container());
 
         var soldierTable = $('#soldierStats').DataTable(dataTableConfig);
