@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/searchbuilder/1.3.4/css/searchBuilder.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
     <link rel="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://braceyourshelf.github.io/TF2-Player-Stats/style.css">
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
 
     <script src="https://braceyourshelf.github.io/TF2-Player-Stats/sort-table.min.js"></script>
     <script src="https://braceyourshelf.github.io/TF2-Player-Stats/index.js"></script>
@@ -19,6 +20,7 @@
     <script src="https://cdn.datatables.net/searchbuilder/1.3.4/js/dataTables.searchBuilder.min.js"></script>
     <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script stc="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
 
     <script>
       $(document).ready(function() {
@@ -37,7 +39,8 @@
           ],
           paging: false,
           order: [[1, 'asc']],
-          dom: 'Qlfrtip'
+          dom: 'Qlfrtip',
+          responsive: true
         };
         
         var scoutTable = $('#scoutStats').DataTable(dataTableConfig);
@@ -47,7 +50,7 @@
                 this.data(i++);
             });
         }).draw();
-        scoutTable.searchBuilder.container().addClass('inline');
+        //scoutTable.searchBuilder.container().addClass('inline');
         scoutTable.searchBuilder.container().prependTo(scoutTable.table().container());
 
         var soldierTable = $('#soldierStats').DataTable(dataTableConfig);
@@ -175,30 +178,30 @@
           <tr>
             <td></td>
             <td class="">[U:1:330003400]</td>
-            <td class="">TYJOR1</td>
-            <td class="">44</td>
-            <td class="">16</td>
-            <td class="">32</td>
-            <td class="">245.09</td>
-            <td class="">2.75</td>
-            <td class="">4.75</td>
-            <td class="">12798</td>
-            <td class="">3133</td>
-            <td class="">3313277, 3313276, 3313273, 3313269</td>
+            <td class="">TYJOR1, bulk.raygun, bulk//raygun</td>
+            <td class="">137</td>
+            <td class="">73</td>
+            <td class="">84</td>
+            <td class="">232.76</td>
+            <td class="">1.88</td>
+            <td class="">3.03</td>
+            <td class="">42557</td>
+            <td class="">10970</td>
+            <td class="">3313277, 3313276, 3313273, 3313269, 3320671, 3320670, 3324374</td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:84963494]</td>
-            <td class="">agnus dei miserere nobis</td>
-            <td class="">41</td>
-            <td class="">24</td>
-            <td class="">21</td>
-            <td class="">202.61</td>
-            <td class="">1.71</td>
-            <td class="">2.58</td>
-            <td class="">10860</td>
-            <td class="">3216</td>
-            <td class="">3313277, 3313276, 3313273, 3313269</td>
+            <td class="">agnus dei miserere nobis, butthole calamity!!!!, BULK//Fart strong Frankie 1957</td>
+            <td class="">145</td>
+            <td class="">82</td>
+            <td class="">70</td>
+            <td class="">249.42</td>
+            <td class="">1.77</td>
+            <td class="">2.62</td>
+            <td class="">45140</td>
+            <td class="">10859</td>
+            <td class="">3313277, 3313276, 3313273, 3313269, 3320671, 3320670, 3324374</td>
           </tr>
           <tr>
             <td></td>
@@ -260,43 +263,43 @@
             <td></td>
             <td class="">[U:1:123870274]</td>
             <td class="">thehogslammer</td>
-            <td class="">85</td>
-            <td class="">74</td>
-            <td class="">32</td>
-            <td class="">231.39</td>
-            <td class="">1.15</td>
-            <td class="">1.58</td>
-            <td class="">24435</td>
-            <td class="">6336</td>
-            <td class="">3315585</td>
+            <td class="">161</td>
+            <td class="">159</td>
+            <td class="">61</td>
+            <td class="">240.19</td>
+            <td class="">1.01</td>
+            <td class="">1.40</td>
+            <td class="">51317</td>
+            <td class="">12819</td>
+            <td class="">3315585, 3320671, 3320670, 3323051</td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:88513379]</td>
-            <td class="">sr. asombroso</td>
-            <td class="">82</td>
-            <td class="">52</td>
-            <td class="">58</td>
-            <td class="">185.91</td>
-            <td class="">1.58</td>
-            <td class="">2.69</td>
-            <td class="">22325</td>
-            <td class="">7205</td>
-            <td class="">3315585</td>
+            <td class="">sr. asombroso, hhaha</td>
+            <td class="">182</td>
+            <td class="">110</td>
+            <td class="">100</td>
+            <td class="">220.37</td>
+            <td class="">1.65</td>
+            <td class="">2.56</td>
+            <td class="">52524</td>
+            <td class="">14301</td>
+            <td class="">3315585, 3320671, 3320670, 3323051</td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:255294112]</td>
-            <td class="">mel KUSH</td>
-            <td class="">45</td>
-            <td class="">28</td>
-            <td class="">20</td>
-            <td class="">200.92</td>
-            <td class="">1.61</td>
-            <td class="">2.32</td>
-            <td class="">12859</td>
-            <td class="">3840</td>
-            <td class="">3314141</td>
+            <td class="">mel KUSH, mel alert!</td>
+            <td class="">166</td>
+            <td class="">83</td>
+            <td class="">76</td>
+            <td class="">211.70</td>
+            <td class="">2.00</td>
+            <td class="">2.92</td>
+            <td class="">47639</td>
+            <td class="">13502</td>
+            <td class="">3314141, 3317060, 3324374</td>
           </tr>
           <tr>
             <td></td>
@@ -315,16 +318,16 @@
           <tr>
             <td></td>
             <td class="">[U:1:159413592]</td>
-            <td class="">BLANC_j #PLAYOFFSMODE</td>
-            <td class="">48</td>
-            <td class="">26</td>
-            <td class="">25</td>
-            <td class="">257.47</td>
-            <td class="">1.85</td>
-            <td class="">2.81</td>
-            <td class="">15517</td>
-            <td class="">3616</td>
-            <td class="">3314141</td>
+            <td class="">BLANC_j #PLAYOFFSMODE, zacksofplymouth #PLAYOFFSMODE, joe #PLAYOFFSMODE</td>
+            <td class="">167</td>
+            <td class="">119</td>
+            <td class="">104</td>
+            <td class="">249.80</td>
+            <td class="">1.40</td>
+            <td class="">2.28</td>
+            <td class="">51150</td>
+            <td class="">12286</td>
+            <td class="">3314141, 3317060, 3324374</td>
           </tr>
           <tr>
             <td></td>
@@ -371,30 +374,44 @@
           <tr>
             <td></td>
             <td class="">[U:1:132987261]</td>
-            <td class=""> o-o rico suave</td>
-            <td class="">62</td>
-            <td class="">50</td>
-            <td class="">29</td>
-            <td class="">301.16</td>
-            <td class="">1.24</td>
-            <td class="">1.82</td>
-            <td class="">18150</td>
-            <td class="">3616</td>
-            <td class="">3313279</td>
+            <td class=""> o-o rico suave, rico suave</td>
+            <td class="">183</td>
+            <td class="">140</td>
+            <td class="">86</td>
+            <td class="">245.47</td>
+            <td class="">1.31</td>
+            <td class="">1.92</td>
+            <td class="">52497</td>
+            <td class="">12832</td>
+            <td class="">3313279, 3323051, 3317060</td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:173350930]</td>
-            <td class=""> ploopyYBT</td>
+            <td class=""> ploopyYBT, *****YBT</td>
+            <td class="">117</td>
             <td class="">63</td>
-            <td class="">24</td>
-            <td class="">31</td>
-            <td class="">263.47</td>
-            <td class="">2.63</td>
-            <td class="">3.92</td>
-            <td class="">15716</td>
-            <td class="">3579</td>
-            <td class="">3313279</td>
+            <td class="">71</td>
+            <td class="">221.36</td>
+            <td class="">1.86</td>
+            <td class="">2.98</td>
+            <td class="">32042</td>
+            <td class="">8685</td>
+            <td class="">3313279, 3317060</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:187480830]</td>
+            <td class="">tinguspingus</td>
+            <td class="">87</td>
+            <td class="">45</td>
+            <td class="">21</td>
+            <td class="">265.02</td>
+            <td class="">1.93</td>
+            <td class="">2.40</td>
+            <td class="">18759</td>
+            <td class="">4247</td>
+            <td class="">3323051</td>
           </tr>
           <tr>
             <td class="">[U:1:282045356]</td>
@@ -412,28 +429,28 @@
           <tr>
             <td class="">[U:1:129383694]</td>
             <td class="">raphaim #bb</td>
-            <td class="">43</td>
-            <td class="">42</td>
-            <td class="">8</td>
-            <td class="">282.32</td>
-            <td class="">1.02</td>
-            <td class="">1.21</td>
-            <td class="">15443</td>
-            <td class="">3282</td>
-            <td class="">3313277, 3313276, 3313273, 3313269</td>
+            <td class="">118</td>
+            <td class="">148</td>
+            <td class="">31</td>
+            <td class="">271.20</td>
+            <td class="">0.80</td>
+            <td class="">1.01</td>
+            <td class="">48125</td>
+            <td class="">10647</td>
+            <td class="">3313277, 3313276, 3313273, 3313269, 3320671, 3320670, 3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:180403249]</td>
-            <td class="">bulk.chell</td>
-            <td class="">28</td>
-            <td class="">40</td>
-            <td class="">15</td>
-            <td class="">224.83</td>
-            <td class="">0.70</td>
-            <td class="">1.07</td>
-            <td class="">12298</td>
-            <td class="">3282</td>
-            <td class="">3313277, 3313276, 3313273, 3313269</td>
+            <td class="">bulk.chell, bulk//chell</td>
+            <td class="">100</td>
+            <td class="">139</td>
+            <td class="">34</td>
+            <td class="">224.36</td>
+            <td class="">0.72</td>
+            <td class="">0.96</td>
+            <td class="">43024</td>
+            <td class="">11506</td>
+            <td class="">3313277, 3313276, 3313273, 3313269, 3320671, 3320670, 3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:122204454]</td>
@@ -490,28 +507,28 @@
           <tr>
             <td class="">[U:1:89871068]</td>
             <td class="">thehookerslammer</td>
-            <td class="">82</td>
-            <td class="">104</td>
-            <td class="">15</td>
-            <td class="">265.76</td>
-            <td class="">0.79</td>
-            <td class="">0.93</td>
-            <td class="">36157</td>
-            <td class="">8163</td>
-            <td class="">3315585</td>
+            <td class="">144</td>
+            <td class="">208</td>
+            <td class="">40</td>
+            <td class="">248.34</td>
+            <td class="">0.69</td>
+            <td class="">0.88</td>
+            <td class="">64920</td>
+            <td class="">15685</td>
+            <td class="">3315585, 3320671, 3320670, 3323051</td>
           </tr>
           <tr>
             <td class="">[U:1:204344441]</td>
             <td class="">MoisDM_pe</td>
-            <td class="">54</td>
-            <td class="">78</td>
-            <td class="">27</td>
-            <td class="">196.92</td>
-            <td class="">0.69</td>
-            <td class="">1.04</td>
-            <td class="">24795</td>
-            <td class="">7555</td>
-            <td class="">3315585</td>
+            <td class="">112</td>
+            <td class="">179</td>
+            <td class="">53</td>
+            <td class="">215.87</td>
+            <td class="">0.63</td>
+            <td class="">0.92</td>
+            <td class="">53603</td>
+            <td class="">14899</td>
+            <td class="">3315585, 3320671, 3320670, 3323051</td>
           </tr>
           <tr>
             <td class="">[U:1:171437358]</td>
@@ -554,55 +571,55 @@
           </tr>
           <tr>
             <td class="">[U:1:93702050]</td>
-            <td class="">Merry Math #PLAYOFFSMODE</td>
-            <td class="">48</td>
-            <td class="">34</td>
-            <td class="">19</td>
-            <td class="">302.48</td>
-            <td class="">1.41</td>
-            <td class="">1.97</td>
-            <td class="">21547</td>
-            <td class="">4274</td>
-            <td class="">3314141</td>
+            <td class="">Merry Math #PLAYOFFSMODE, merry math #playoffsmode</td>
+            <td class="">145</td>
+            <td class="">155</td>
+            <td class="">60</td>
+            <td class="">268.36</td>
+            <td class="">0.94</td>
+            <td class="">1.32</td>
+            <td class="">64130</td>
+            <td class="">14338</td>
+            <td class="">3314141, 3317060, 3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:143242759]</td>
-            <td class="">MIKE_HUNT #PLAYOFFSMODE</td>
-            <td class="">31</td>
-            <td class="">38</td>
-            <td class="">12</td>
-            <td class="">252.86</td>
-            <td class="">0.82</td>
-            <td class="">1.13</td>
-            <td class="">16419</td>
-            <td class="">3896</td>
-            <td class="">3314141</td>
+            <td class="">MIKE_HUNT #PLAYOFFSMODE, THE BIG 3 #PLAYOFFSMODE, steve alert!</td>
+            <td class="">133</td>
+            <td class="">166</td>
+            <td class="">47</td>
+            <td class="">249.82</td>
+            <td class="">0.80</td>
+            <td class="">1.08</td>
+            <td class="">55531</td>
+            <td class="">13337</td>
+            <td class="">3314141, 3317060, 3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:38619095]</td>
-            <td class=""> ṽ⧉ c</td>
-            <td class="">43</td>
-            <td class="">58</td>
-            <td class="">24</td>
-            <td class="">271.14</td>
-            <td class="">0.74</td>
+            <td class=""> ṽ⧉ c, ṽ⧉ cookie</td>
+            <td class="">101</td>
+            <td class="">122</td>
+            <td class="">40</td>
+            <td class="">259.85</td>
+            <td class="">0.83</td>
             <td class="">1.16</td>
-            <td class="">16833</td>
-            <td class="">3725</td>
-            <td class="">3313279</td>
+            <td class="">39428</td>
+            <td class="">9104</td>
+            <td class="">3313279, 3317060</td>
           </tr>
           <tr>
             <td class="">[U:1:48897782]</td>
-            <td class=""> KutchKutch</td>
-            <td class="">39</td>
-            <td class="">44</td>
-            <td class="">19</td>
-            <td class="">239.00</td>
-            <td class="">0.89</td>
-            <td class="">1.32</td>
-            <td class="">14571</td>
-            <td class="">3658</td>
-            <td class="">3313279</td>
+            <td class=""> KutchKutch, KutchKutch</td>
+            <td class="">69</td>
+            <td class="">108</td>
+            <td class="">29</td>
+            <td class="">212.27</td>
+            <td class="">0.64</td>
+            <td class="">0.91</td>
+            <td class="">30921</td>
+            <td class="">8740</td>
+            <td class="">3313279, 3317060</td>
           </tr>
           <tr>
             <td class="">[U:1:119169619]</td>
@@ -629,6 +646,45 @@
             <td class="">14723</td>
             <td class="">3725</td>
             <td class="">3313279</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:64745316]</td>
+            <td class="">alfredodan</td>
+            <td class="">27</td>
+            <td class="">55</td>
+            <td class="">20</td>
+            <td class="">228.23</td>
+            <td class="">0.49</td>
+            <td class="">0.85</td>
+            <td class="">17197</td>
+            <td class="">4521</td>
+            <td class="">3323051</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:86604563]</td>
+            <td class="">ramensniffer</td>
+            <td class="">34</td>
+            <td class="">29</td>
+            <td class="">9</td>
+            <td class="">264.84</td>
+            <td class="">1.17</td>
+            <td class="">1.48</td>
+            <td class="">12231</td>
+            <td class="">2771</td>
+            <td class="">3323051</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:242905621]</td>
+            <td class="">freddo.</td>
+            <td class="">20</td>
+            <td class="">26</td>
+            <td class="">6</td>
+            <td class="">341.79</td>
+            <td class="">0.77</td>
+            <td class="">1.00</td>
+            <td class="">10060</td>
+            <td class="">1766</td>
+            <td class="">3323051</td>
           </tr>
           <tr>
             <td class="">[U:1:164211839]</td>
@@ -660,14 +716,14 @@
             <td class="">[U:1:123870274]</td>
             <td class="">thehogslammer</td>
             <td class="">1</td>
-            <td class="">1</td>
+            <td class="">3</td>
             <td class="">0</td>
-            <td class="">286.50</td>
-            <td class="">1.00</td>
-            <td class="">1.00</td>
-            <td class="">191</td>
-            <td class="">40</td>
-            <td class="">3315585</td>
+            <td class="">155.48</td>
+            <td class="">0.33</td>
+            <td class="">0.33</td>
+            <td class="">298</td>
+            <td class="">115</td>
+            <td class="">3315585, 3320671, 3323051</td>
           </tr>
           <tr>
             <td class="">[U:1:204344441]</td>
@@ -684,16 +740,16 @@
           </tr>
           <tr>
             <td class="">[U:1:255294112]</td>
-            <td class="">mel KUSH</td>
-            <td class="">2</td>
-            <td class="">1</td>
-            <td class="">1</td>
-            <td class="">246.58</td>
-            <td class="">2.00</td>
+            <td class="">mel KUSH, mel alert!</td>
+            <td class="">9</td>
+            <td class="">3</td>
+            <td class="">5</td>
+            <td class="">187.22</td>
             <td class="">3.00</td>
-            <td class="">937</td>
-            <td class="">228</td>
-            <td class="">3314141</td>
+            <td class="">4.67</td>
+            <td class="">3086</td>
+            <td class="">989</td>
+            <td class="">3314141, 3317060, 3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:181216424]</td>
@@ -710,16 +766,16 @@
           </tr>
           <tr>
             <td class="">[U:1:159413592]</td>
-            <td class="">BLANC_j #PLAYOFFSMODE</td>
-            <td class="">0</td>
-            <td class="">1</td>
-            <td class="">1</td>
-            <td class="">227.43</td>
-            <td class="">0.00</td>
-            <td class="">1.00</td>
-            <td class="">1285</td>
-            <td class="">339</td>
-            <td class="">3314141</td>
+            <td class="">BLANC_j #PLAYOFFSMODE, zacksofplymouth #PLAYOFFSMODE</td>
+            <td class="">3</td>
+            <td class="">4</td>
+            <td class="">2</td>
+            <td class="">285.85</td>
+            <td class="">0.75</td>
+            <td class="">1.25</td>
+            <td class="">2101</td>
+            <td class="">441</td>
+            <td class="">3314141, 3317060</td>
           </tr>
           <tr>
             <td class="">[U:1:179340824]</td>
@@ -736,16 +792,55 @@
           </tr>
           <tr>
             <td class="">[U:1:132987261]</td>
-            <td class=""> o-o rico suave</td>
+            <td class=""> o-o rico suave, rico suave</td>
             <td class="">0</td>
-            <td class="">2</td>
+            <td class="">4</td>
             <td class="">0</td>
-            <td class="">375.24</td>
+            <td class="">149.62</td>
             <td class="">0.00</td>
             <td class="">0.00</td>
             <td class="">394</td>
-            <td class="">63</td>
-            <td class="">3313279</td>
+            <td class="">158</td>
+            <td class="">3313279, 3317060</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:88513379]</td>
+            <td class="">hhaha</td>
+            <td class="">1</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">224.57</td>
+            <td class="">1.00</td>
+            <td class="">1.00</td>
+            <td class="">131</td>
+            <td class="">35</td>
+            <td class="">3320671</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:129383694]</td>
+            <td class="">raphaim #bb</td>
+            <td class="">2</td>
+            <td class="">2</td>
+            <td class="">0</td>
+            <td class="">209.38</td>
+            <td class="">1.00</td>
+            <td class="">1.00</td>
+            <td class="">506</td>
+            <td class="">145</td>
+            <td class="">3320671</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:330003400]</td>
+            <td class="">bulk//raygun</td>
+            <td class="">2</td>
+            <td class="">1</td>
+            <td class="">4</td>
+            <td class="">152.87</td>
+            <td class="">2.00</td>
+            <td class="">6.00</td>
+            <td class="">986</td>
+            <td class="">387</td>
+            <td class="">3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:144799579]</td>
@@ -762,29 +857,29 @@
           </tr>
           <tr>
             <td class="">[U:1:166359895]</td>
-            <td class="">Chronos</td>
-            <td class="">35</td>
-            <td class="">24</td>
-            <td class="">12</td>
-            <td class="">259.71</td>
-            <td class="">1.46</td>
-            <td class="">1.96</td>
-            <td class="">14206</td>
-            <td class="">3282</td>
-            <td class="">3313277, 3313276, 3313273, 3313269</td>
+            <td class="">Chronos, bulk// Chronos</td>
+            <td class="">105</td>
+            <td class="">80</td>
+            <td class="">42</td>
+            <td class="">263.30</td>
+            <td class="">1.31</td>
+            <td class="">1.84</td>
+            <td class="">50492</td>
+            <td class="">11506</td>
+            <td class="">3313277, 3313276, 3313273, 3313269, 3320671, 3320670, 3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:128828742]</td>
             <td class="">earl</td>
-            <td class="">76</td>
-            <td class="">55</td>
-            <td class="">19</td>
-            <td class="">220.87</td>
-            <td class="">1.38</td>
-            <td class="">1.73</td>
-            <td class="">30060</td>
-            <td class="">8166</td>
-            <td class="">3315585</td>
+            <td class="">133</td>
+            <td class="">118</td>
+            <td class="">41</td>
+            <td class="">248.51</td>
+            <td class="">1.13</td>
+            <td class="">1.47</td>
+            <td class="">64977</td>
+            <td class="">15688</td>
+            <td class="">3315585, 3320671, 3320670, 3323051</td>
           </tr>
           <tr>
             <td class="">[U:1:81990136]</td>
@@ -801,16 +896,16 @@
           </tr>
           <tr>
             <td class="">[U:1:106127991]</td>
-            <td class="">Wild_Rumpus</td>
-            <td class="">44</td>
-            <td class="">24</td>
-            <td class="">17</td>
-            <td class="">267.55</td>
-            <td class="">1.83</td>
-            <td class="">2.54</td>
-            <td class="">19803</td>
-            <td class="">4441</td>
-            <td class="">3314141</td>
+            <td class="">Wild_Rumpus, Wild_Rumpus alert!</td>
+            <td class="">137</td>
+            <td class="">92</td>
+            <td class="">37</td>
+            <td class="">254.39</td>
+            <td class="">1.49</td>
+            <td class="">1.89</td>
+            <td class="">64188</td>
+            <td class="">15139</td>
+            <td class="">3314141, 3317060, 3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:914240935]</td>
@@ -840,29 +935,42 @@
           </tr>
           <tr>
             <td class="">[U:1:86604563]</td>
-            <td class=""> mousecake</td>
-            <td class="">42</td>
+            <td class=""> mousecake, ramensniffer, dumbass david</td>
+            <td class="">134</td>
+            <td class="">84</td>
+            <td class="">43</td>
+            <td class="">359.56</td>
+            <td class="">1.60</td>
+            <td class="">2.11</td>
+            <td class="">65511</td>
+            <td class="">10932</td>
+            <td class="">3313279, 3323051, 3317060</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:242905621]</td>
+            <td class="">freddo.</td>
             <td class="">28</td>
-            <td class="">16</td>
-            <td class="">370.49</td>
-            <td class="">1.50</td>
-            <td class="">2.07</td>
-            <td class="">23001</td>
-            <td class="">3725</td>
-            <td class="">3313279</td>
+            <td class="">10</td>
+            <td class="">9</td>
+            <td class="">332.33</td>
+            <td class="">2.80</td>
+            <td class="">3.70</td>
+            <td class="">15348</td>
+            <td class="">2771</td>
+            <td class="">3323051</td>
           </tr>
           <tr>
             <td class="">[U:1:84963494]</td>
-            <td class="">agnus dei miserere nobis</td>
-            <td class="">1</td>
+            <td class="">agnus dei miserere nobis, BULK//Fart strong Frankie 1957</td>
+            <td class="">2</td>
             <td class="">0</td>
-            <td class="">0</td>
-            <td class="">339.13</td>
+            <td class="">3</td>
+            <td class="">620.32</td>
             <td class="">Infinity</td>
             <td class="">Infinity</td>
-            <td class="">130</td>
-            <td class="">23</td>
-            <td class="">3313269</td>
+            <td class="">641</td>
+            <td class="">62</td>
+            <td class="">3313269, 3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:74444421]</td>
@@ -905,16 +1013,16 @@
           </tr>
           <tr>
             <td class="">[U:1:88513379]</td>
-            <td class="">sr. asombroso</td>
+            <td class="">sr. asombroso, hhaha</td>
             <td class="">4</td>
-            <td class="">4</td>
-            <td class="">1</td>
-            <td class="">508.14</td>
-            <td class="">1.00</td>
-            <td class="">1.25</td>
-            <td class="">1228</td>
-            <td class="">145</td>
-            <td class="">3315585</td>
+            <td class="">6</td>
+            <td class="">3</td>
+            <td class="">434.44</td>
+            <td class="">0.67</td>
+            <td class="">1.17</td>
+            <td class="">1564</td>
+            <td class="">216</td>
+            <td class="">3315585, 3320671, 3323051</td>
           </tr>
           <tr>
             <td class="">[U:1:181216424]</td>
@@ -931,16 +1039,16 @@
           </tr>
           <tr>
             <td class="">[U:1:159413592]</td>
-            <td class="">BLANC_j #PLAYOFFSMODE</td>
-            <td class="">2</td>
-            <td class="">2</td>
-            <td class="">2</td>
-            <td class="">149.13</td>
-            <td class="">1.00</td>
-            <td class="">2.00</td>
-            <td class="">512</td>
-            <td class="">206</td>
-            <td class="">3314141</td>
+            <td class="">BLANC_j #PLAYOFFSMODE, zacksofplymouth #PLAYOFFSMODE, joe #PLAYOFFSMODE</td>
+            <td class="">8</td>
+            <td class="">5</td>
+            <td class="">4</td>
+            <td class="">352.94</td>
+            <td class="">1.60</td>
+            <td class="">2.40</td>
+            <td class="">2300</td>
+            <td class="">391</td>
+            <td class="">3314141, 3317060, 3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:179340824]</td>
@@ -957,29 +1065,81 @@
           </tr>
           <tr>
             <td class="">[U:1:93702050]</td>
-            <td class="">Merry Math #PLAYOFFSMODE</td>
-            <td class="">0</td>
-            <td class="">2</td>
-            <td class="">2</td>
-            <td class="">414.23</td>
-            <td class="">0.00</td>
-            <td class="">1.00</td>
-            <td class="">718</td>
-            <td class="">104</td>
-            <td class="">3314141</td>
+            <td class="">Merry Math #PLAYOFFSMODE, merry math #playoffsmode</td>
+            <td class="">3</td>
+            <td class="">4</td>
+            <td class="">9</td>
+            <td class="">276.61</td>
+            <td class="">0.75</td>
+            <td class="">3.00</td>
+            <td class="">2070</td>
+            <td class="">449</td>
+            <td class="">3314141, 3317060, 3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:143242759]</td>
-            <td class="">MIKE_HUNT #PLAYOFFSMODE</td>
-            <td class="">8</td>
-            <td class="">1</td>
-            <td class="">7</td>
-            <td class="">272.25</td>
-            <td class="">8.00</td>
-            <td class="">15.00</td>
-            <td class="">2237</td>
+            <td class="">MIKE_HUNT #PLAYOFFSMODE, THE BIG 3 #PLAYOFFSMODE, steve alert!</td>
+            <td class="">18</td>
+            <td class="">5</td>
+            <td class="">10</td>
+            <td class="">272.16</td>
+            <td class="">3.60</td>
+            <td class="">5.60</td>
+            <td class="">5416</td>
+            <td class="">1194</td>
+            <td class="">3314141, 3317060, 3324374</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:132987261]</td>
+            <td class="">rico suave</td>
+            <td class="">4</td>
+            <td class="">2</td>
+            <td class="">0</td>
+            <td class="">292.87</td>
+            <td class="">2.00</td>
+            <td class="">2.00</td>
             <td class="">493</td>
-            <td class="">3314141</td>
+            <td class="">101</td>
+            <td class="">3323051, 3317060</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:173350930]</td>
+            <td class="">*****YBT</td>
+            <td class="">1</td>
+            <td class="">3</td>
+            <td class="">1</td>
+            <td class="">766.91</td>
+            <td class="">0.33</td>
+            <td class="">0.67</td>
+            <td class="">703</td>
+            <td class="">55</td>
+            <td class="">3317060</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:48897782]</td>
+            <td class="">KutchKutch</td>
+            <td class="">1</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">616.00</td>
+            <td class="">1.00</td>
+            <td class="">1.00</td>
+            <td class="">308</td>
+            <td class="">30</td>
+            <td class="">3317060</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:255294112]</td>
+            <td class="">mel KUSH</td>
+            <td class="">0</td>
+            <td class="">0</td>
+            <td class="">1</td>
+            <td class="">60.00</td>
+            <td class="">NaN</td>
+            <td class="">Infinity</td>
+            <td class="">27</td>
+            <td class="">27</td>
+            <td class="">3317060</td>
           </tr>
           <tr>
             <td class="">[U:1:17011247]</td>
@@ -1050,27 +1210,27 @@
             <td class="">[U:1:123870274]</td>
             <td class="">thehogslammer</td>
             <td class="">0</td>
-            <td class="">2</td>
+            <td class="">3</td>
             <td class="">1</td>
-            <td class="">131.10</td>
+            <td class="">149.42</td>
             <td class="">0.00</td>
-            <td class="">0.50</td>
-            <td class="">378</td>
-            <td class="">173</td>
-            <td class="">3315585</td>
+            <td class="">0.33</td>
+            <td class="">777</td>
+            <td class="">312</td>
+            <td class="">3315585, 3320671, 3323051</td>
           </tr>
           <tr>
             <td class="">[U:1:88513379]</td>
-            <td class="">sr. asombroso</td>
+            <td class="">sr. asombroso, hhaha</td>
+            <td class="">5</td>
             <td class="">2</td>
             <td class="">1</td>
-            <td class="">1</td>
-            <td class="">69.72</td>
-            <td class="">2.00</td>
+            <td class="">100.06</td>
+            <td class="">2.50</td>
             <td class="">3.00</td>
-            <td class="">911</td>
-            <td class="">784</td>
-            <td class="">3315585</td>
+            <td class="">1686</td>
+            <td class="">1011</td>
+            <td class="">3315585, 3323051</td>
           </tr>
           <tr>
             <td class="">[U:1:255294112]</td>
@@ -1087,16 +1247,16 @@
           </tr>
           <tr>
             <td class="">[U:1:159413592]</td>
-            <td class="">BLANC_j #PLAYOFFSMODE</td>
-            <td class="">0</td>
+            <td class="">BLANC_j #PLAYOFFSMODE, zacksofplymouth #PLAYOFFSMODE, joe #PLAYOFFSMODE</td>
+            <td class="">7</td>
             <td class="">1</td>
-            <td class="">1</td>
-            <td class="">61.43</td>
-            <td class="">0.00</td>
-            <td class="">1.00</td>
-            <td class="">257</td>
-            <td class="">251</td>
-            <td class="">3314141</td>
+            <td class="">4</td>
+            <td class="">83.38</td>
+            <td class="">7.00</td>
+            <td class="">11.00</td>
+            <td class="">2336</td>
+            <td class="">1681</td>
+            <td class="">3314141, 3317060, 3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:179340824]</td>
@@ -1110,6 +1270,58 @@
             <td class="">224</td>
             <td class="">249</td>
             <td class="">3314141</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:187480830]</td>
+            <td class="">tinguspingus</td>
+            <td class="">2</td>
+            <td class="">0</td>
+            <td class="">0</td>
+            <td class="">125.53</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">295</td>
+            <td class="">141</td>
+            <td class="">3323051</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:132987261]</td>
+            <td class="">rico suave</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">0</td>
+            <td class="">101.47</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">323</td>
+            <td class="">191</td>
+            <td class="">3323051, 3317060</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:173350930]</td>
+            <td class="">*****YBT</td>
+            <td class="">2</td>
+            <td class="">0</td>
+            <td class="">0</td>
+            <td class="">114.60</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">361</td>
+            <td class="">189</td>
+            <td class="">3317060</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:84963494]</td>
+            <td class="">BULK//Fart strong Frankie 1957</td>
+            <td class="">6</td>
+            <td class="">3</td>
+            <td class="">2</td>
+            <td class="">246.19</td>
+            <td class="">2.00</td>
+            <td class="">2.67</td>
+            <td class="">1830</td>
+            <td class="">446</td>
+            <td class="">3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:352052370]</td>
@@ -1126,16 +1338,16 @@
           </tr>
           <tr>
             <td class="">[U:1:193807220]</td>
-            <td class="">BULK.dinkolaw</td>
-            <td class="">0</td>
-            <td class="">9</td>
-            <td class="">16</td>
-            <td class="">4.13</td>
-            <td class="">0.00</td>
-            <td class="">1.78</td>
-            <td class="">226</td>
-            <td class="">3282</td>
-            <td class="">3313277, 3313276, 3313273, 3313269</td>
+            <td class="">BULK.dinkolaw, bulk//Dinkolaw</td>
+            <td class="">2</td>
+            <td class="">40</td>
+            <td class="">84</td>
+            <td class="">6.09</td>
+            <td class="">0.05</td>
+            <td class="">2.15</td>
+            <td class="">1167</td>
+            <td class="">11498</td>
+            <td class="">3313277, 3313276, 3313273, 3313269, 3320671, 3320670, 3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:85573106]</td>
@@ -1153,15 +1365,15 @@
           <tr>
             <td class="">[U:1:119712757]</td>
             <td class="">anti-nuke rat trebuchet</td>
-            <td class="">4</td>
-            <td class="">37</td>
-            <td class="">60</td>
-            <td class="">7.09</td>
-            <td class="">0.11</td>
-            <td class="">1.73</td>
-            <td class="">965</td>
-            <td class="">8166</td>
-            <td class="">3315585</td>
+            <td class="">7</td>
+            <td class="">79</td>
+            <td class="">117</td>
+            <td class="">8.09</td>
+            <td class="">0.09</td>
+            <td class="">1.57</td>
+            <td class="">2115</td>
+            <td class="">15688</td>
+            <td class="">3315585, 3320671, 3320670, 3323051</td>
           </tr>
           <tr>
             <td class="">[U:1:438002921]</td>
@@ -1191,16 +1403,16 @@
           </tr>
           <tr>
             <td class="">[U:1:108821041]</td>
-            <td class=""> pom</td>
-            <td class="">0</td>
-            <td class="">15</td>
-            <td class="">28</td>
-            <td class="">0.00</td>
-            <td class="">0.00</td>
-            <td class="">1.87</td>
-            <td class="">0</td>
-            <td class="">3725</td>
-            <td class="">3313279</td>
+            <td class=""> pom, pom</td>
+            <td class="">2</td>
+            <td class="">61</td>
+            <td class="">111</td>
+            <td class="">3.82</td>
+            <td class="">0.03</td>
+            <td class="">1.85</td>
+            <td class="">873</td>
+            <td class="">13721</td>
+            <td class="">3313279, 3323051, 3317060</td>
           </tr>
           <tr>
             <td class="">[U:1:226541387]</td>
@@ -1214,6 +1426,19 @@
             <td class="">362</td>
             <td class="">3725</td>
             <td class="">3313279</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:119238860]</td>
+            <td class="">hyly, tree alert!</td>
+            <td class="">1</td>
+            <td class="">50</td>
+            <td class="">76</td>
+            <td class="">8.70</td>
+            <td class="">0.02</td>
+            <td class="">1.54</td>
+            <td class="">1544</td>
+            <td class="">10650</td>
+            <td class="">3317060, 3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:17011247]</td>
@@ -1257,28 +1482,28 @@
           <tr>
             <td class="">[U:1:123870274]</td>
             <td class="">thehogslammer</td>
-            <td class="">14</td>
-            <td class="">12</td>
-            <td class="">4</td>
-            <td class="">250.30</td>
-            <td class="">1.17</td>
-            <td class="">1.50</td>
-            <td class="">6099</td>
-            <td class="">1462</td>
-            <td class="">3315585</td>
+            <td class="">24</td>
+            <td class="">21</td>
+            <td class="">7</td>
+            <td class="">263.50</td>
+            <td class="">1.14</td>
+            <td class="">1.48</td>
+            <td class="">10035</td>
+            <td class="">2285</td>
+            <td class="">3315585, 3320671, 3320670, 3323051</td>
           </tr>
           <tr>
             <td class="">[U:1:204344441]</td>
             <td class="">MoisDM_pe</td>
             <td class="">0</td>
-            <td class="">1</td>
+            <td class="">2</td>
             <td class="">0</td>
-            <td class="">63.38</td>
+            <td class="">90.91</td>
             <td class="">0.00</td>
             <td class="">0.00</td>
-            <td class="">150</td>
-            <td class="">142</td>
-            <td class="">3315585</td>
+            <td class="">300</td>
+            <td class="">198</td>
+            <td class="">3315585, 3323051</td>
           </tr>
           <tr>
             <td class="">[U:1:181216424]</td>
@@ -1295,16 +1520,146 @@
           </tr>
           <tr>
             <td class="">[U:1:173350930]</td>
-            <td class=""> ploopyYBT</td>
+            <td class=""> ploopyYBT, *****YBT</td>
             <td class="">0</td>
+            <td class="">3</td>
+            <td class="">0</td>
+            <td class="">34.09</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">100</td>
+            <td class="">176</td>
+            <td class="">3313279, 3317060</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:129383694]</td>
+            <td class="">raphaim #bb</td>
+            <td class="">8</td>
+            <td class="">4</td>
+            <td class="">1</td>
+            <td class="">263.40</td>
+            <td class="">2.00</td>
+            <td class="">2.25</td>
+            <td class="">2735</td>
+            <td class="">623</td>
+            <td class="">3320671, 3324374</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:88513379]</td>
+            <td class="">hhaha</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">0</td>
+            <td class="">462.86</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">216</td>
+            <td class="">28</td>
+            <td class="">3323051</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:187480830]</td>
+            <td class="">tinguspingus</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">1</td>
+            <td class="">175.15</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">289</td>
+            <td class="">99</td>
+            <td class="">3323051</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:132987261]</td>
+            <td class="">rico suave</td>
+            <td class="">0</td>
+            <td class="">3</td>
+            <td class="">1</td>
+            <td class="">80.18</td>
+            <td class="">0.00</td>
+            <td class="">0.33</td>
+            <td class="">298</td>
+            <td class="">223</td>
+            <td class="">3323051, 3317060</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:48897782]</td>
+            <td class="">KutchKutch</td>
+            <td class="">5</td>
+            <td class="">3</td>
+            <td class="">1</td>
+            <td class="">348.82</td>
+            <td class="">1.67</td>
+            <td class="">2.00</td>
+            <td class="">1965</td>
+            <td class="">338</td>
+            <td class="">3317060</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:93702050]</td>
+            <td class="">Merry Math #PLAYOFFSMODE</td>
+            <td class="">5</td>
+            <td class="">0</td>
+            <td class="">0</td>
+            <td class="">505.38</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">1314</td>
+            <td class="">156</td>
+            <td class="">3317060</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:255294112]</td>
+            <td class="">mel KUSH</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">0</td>
+            <td class="">138.43</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">353</td>
+            <td class="">153</td>
+            <td class="">3317060</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:143242759]</td>
+            <td class="">THE BIG 3 #PLAYOFFSMODE</td>
+            <td class="">5</td>
             <td class="">2</td>
+            <td class="">2</td>
+            <td class="">177.44</td>
+            <td class="">2.50</td>
+            <td class="">3.50</td>
+            <td class="">1038</td>
+            <td class="">351</td>
+            <td class="">3317060</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:159413592]</td>
+            <td class="">zacksofplymouth #PLAYOFFSMODE, joe #PLAYOFFSMODE</td>
+            <td class="">1</td>
+            <td class="">1</td>
             <td class="">0</td>
-            <td class="">0.00</td>
-            <td class="">0.00</td>
-            <td class="">0.00</td>
+            <td class="">230.67</td>
+            <td class="">1.00</td>
+            <td class="">1.00</td>
+            <td class="">519</td>
+            <td class="">135</td>
+            <td class="">3317060, 3324374</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:84963494]</td>
+            <td class="">BULK//Fart strong Frankie 1957</td>
+            <td class="">1</td>
             <td class="">0</td>
-            <td class="">92</td>
-            <td class="">3313279</td>
+            <td class="">0</td>
+            <td class="">1952.73</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">358</td>
+            <td class="">11</td>
+            <td class="">3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:74444421]</td>
@@ -1361,15 +1716,15 @@
           <tr>
             <td class="">[U:1:204344441]</td>
             <td class="">MoisDM_pe</td>
-            <td class="">4</td>
-            <td class="">4</td>
+            <td class="">5</td>
+            <td class="">7</td>
             <td class="">0</td>
-            <td class="">242.51</td>
-            <td class="">1.00</td>
-            <td class="">1.00</td>
-            <td class="">1645</td>
-            <td class="">407</td>
-            <td class="">3315585</td>
+            <td class="">259.12</td>
+            <td class="">0.71</td>
+            <td class="">0.71</td>
+            <td class="">2250</td>
+            <td class="">521</td>
+            <td class="">3315585, 3320671, 3323051</td>
           </tr>
           <tr>
             <td class="">[U:1:126986021]</td>
@@ -1386,29 +1741,29 @@
           </tr>
           <tr>
             <td class="">[U:1:93702050]</td>
-            <td class="">Merry Math #PLAYOFFSMODE</td>
-            <td class="">2</td>
-            <td class="">1</td>
+            <td class="">Merry Math #PLAYOFFSMODE, merry math #playoffsmode</td>
+            <td class="">3</td>
+            <td class="">3</td>
             <td class="">0</td>
-            <td class="">857.14</td>
-            <td class="">2.00</td>
-            <td class="">2.00</td>
-            <td class="">900</td>
-            <td class="">63</td>
-            <td class="">3314141</td>
+            <td class="">460.23</td>
+            <td class="">1.00</td>
+            <td class="">1.00</td>
+            <td class="">1350</td>
+            <td class="">176</td>
+            <td class="">3314141, 3317060, 3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:143242759]</td>
-            <td class="">MIKE_HUNT #PLAYOFFSMODE</td>
+            <td class="">MIKE_HUNT #PLAYOFFSMODE, THE BIG 3 #PLAYOFFSMODE, steve alert!</td>
             <td class="">1</td>
-            <td class="">1</td>
+            <td class="">4</td>
             <td class="">0</td>
-            <td class="">519.23</td>
-            <td class="">1.00</td>
-            <td class="">1.00</td>
+            <td class="">116.88</td>
+            <td class="">0.25</td>
+            <td class="">0.25</td>
             <td class="">450</td>
-            <td class="">52</td>
-            <td class="">3314141</td>
+            <td class="">231</td>
+            <td class="">3314141, 3317060, 3324374</td>
           </tr>
           <tr>
             <td class="">[U:1:48897782]</td>
@@ -1422,6 +1777,84 @@
             <td class="">56</td>
             <td class="">67</td>
             <td class="">3313279</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:187480830]</td>
+            <td class="">tinguspingus</td>
+            <td class="">0</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">0</td>
+            <td class="">50</td>
+            <td class="">3323051</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:132987261]</td>
+            <td class="">rico suave</td>
+            <td class="">1</td>
+            <td class="">3</td>
+            <td class="">0</td>
+            <td class="">158.82</td>
+            <td class="">0.33</td>
+            <td class="">0.33</td>
+            <td class="">450</td>
+            <td class="">170</td>
+            <td class="">3323051, 3317060</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:159413592]</td>
+            <td class="">zacksofplymouth #PLAYOFFSMODE, joe #PLAYOFFSMODE</td>
+            <td class="">1</td>
+            <td class="">3</td>
+            <td class="">0</td>
+            <td class="">167.05</td>
+            <td class="">0.33</td>
+            <td class="">0.33</td>
+            <td class="">490</td>
+            <td class="">176</td>
+            <td class="">3317060, 3324374</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:38619095]</td>
+            <td class="">ṽ⧉ cookie</td>
+            <td class="">0</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">0</td>
+            <td class="">80</td>
+            <td class="">3317060</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:129383694]</td>
+            <td class="">raphaim #bb</td>
+            <td class="">0</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">0</td>
+            <td class="">83</td>
+            <td class="">3324374</td>
+          </tr>
+          <tr>
+            <td class="">[U:1:84963494]</td>
+            <td class="">BULK//Fart strong Frankie 1957</td>
+            <td class="">0</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">57.86</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">81</td>
+            <td class="">84</td>
+            <td class="">3324374</td>
           </tr>
       </tbody>
       </table>
@@ -1455,39 +1888,39 @@
           <tr>
             <td></td>
             <td class="">[U:1:330003400]</td>
-            <td class="">TYJOR1</td>
-            <td class="">44</td>
-            <td class="">16</td>
-            <td class="">32</td>
-            <td class="">245.09</td>
-            <td class="">194.69</td>
-            <td class="">50.41</td>
-            <td class="">2.75</td>
-            <td class="">4.75</td>
-            <td class="">25.28</td>
-            <td class="">9.19</td>
-            <td class="">12798</td>
-            <td class="">3133</td>
-            <td class=""><a href="https://logs.tf/3313277">3313277</a>, <a href="https://logs.tf/3313276">3313276</a>, <a href="https://logs.tf/3313273">3313273</a>, <a href="https://logs.tf/3313269">3313269</a>, </td>
+            <td class="">TYJOR1, bulk.raygun, bulk//raygun</td>
+            <td class="">137</td>
+            <td class="">73</td>
+            <td class="">84</td>
+            <td class="">232.76</td>
+            <td class="">222.62</td>
+            <td class="">10.15</td>
+            <td class="">1.88</td>
+            <td class="">3.03</td>
+            <td class="">22.48</td>
+            <td class="">11.98</td>
+            <td class="">42557</td>
+            <td class="">10970</td>
+            <td class=""><a href="https://logs.tf/3313277">3313277</a>, <a href="https://logs.tf/3313276">3313276</a>, <a href="https://logs.tf/3313273">3313273</a>, <a href="https://logs.tf/3313269">3313269</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3320670">3320670</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
             <td class="">combo</td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:84963494]</td>
-            <td class="">agnus dei miserere nobis</td>
-            <td class="">41</td>
-            <td class="">24</td>
-            <td class="">21</td>
-            <td class="">202.61</td>
-            <td class="">132.84</td>
-            <td class="">69.78</td>
-            <td class="">1.71</td>
-            <td class="">2.58</td>
-            <td class="">22.95</td>
-            <td class="">13.43</td>
-            <td class="">10860</td>
-            <td class="">3216</td>
-            <td class=""><a href="https://logs.tf/3313277">3313277</a>, <a href="https://logs.tf/3313276">3313276</a>, <a href="https://logs.tf/3313273">3313273</a>, <a href="https://logs.tf/3313269">3313269</a>, </td>
+            <td class="">agnus dei miserere nobis, butthole calamity!!!!, BULK//Fart strong Frankie 1957</td>
+            <td class="">145</td>
+            <td class="">82</td>
+            <td class="">70</td>
+            <td class="">249.42</td>
+            <td class="">152.59</td>
+            <td class="">96.82</td>
+            <td class="">1.77</td>
+            <td class="">2.62</td>
+            <td class="">24.04</td>
+            <td class="">13.59</td>
+            <td class="">45140</td>
+            <td class="">10859</td>
+            <td class=""><a href="https://logs.tf/3313277">3313277</a>, <a href="https://logs.tf/3313276">3313276</a>, <a href="https://logs.tf/3313273">3313273</a>, <a href="https://logs.tf/3313269">3313269</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3320670">3320670</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
             <td class="">flank</td>
           </tr>
           <tr>
@@ -1570,57 +2003,57 @@
             <td></td>
             <td class="">[U:1:123870274]</td>
             <td class="">thehogslammer</td>
-            <td class="">85</td>
-            <td class="">74</td>
-            <td class="">32</td>
-            <td class="">231.39</td>
-            <td class="">254.69</td>
-            <td class="">-23.30</td>
-            <td class="">1.15</td>
-            <td class="">1.58</td>
-            <td class="">24.15</td>
-            <td class="">21.02</td>
-            <td class="">24435</td>
-            <td class="">6336</td>
-            <td class=""><a href="https://logs.tf/3315585">3315585</a>, </td>
+            <td class="">161</td>
+            <td class="">159</td>
+            <td class="">61</td>
+            <td class="">240.19</td>
+            <td class="">256.29</td>
+            <td class="">-16.10</td>
+            <td class="">1.01</td>
+            <td class="">1.40</td>
+            <td class="">22.61</td>
+            <td class="">22.33</td>
+            <td class="">51317</td>
+            <td class="">12819</td>
+            <td class=""><a href="https://logs.tf/3315585">3315585</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3320670">3320670</a>, <a href="https://logs.tf/3323051">3323051</a>, </td>
             <td class="">flank</td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:88513379]</td>
-            <td class="">sr. asombroso</td>
-            <td class="">82</td>
-            <td class="">52</td>
-            <td class="">58</td>
-            <td class="">185.91</td>
-            <td class="">205.22</td>
-            <td class="">-19.31</td>
-            <td class="">1.58</td>
-            <td class="">2.69</td>
-            <td class="">20.49</td>
-            <td class="">12.99</td>
-            <td class="">22325</td>
-            <td class="">7205</td>
-            <td class=""><a href="https://logs.tf/3315585">3315585</a>, </td>
+            <td class="">sr. asombroso, hhaha</td>
+            <td class="">182</td>
+            <td class="">110</td>
+            <td class="">100</td>
+            <td class="">220.37</td>
+            <td class="">229.67</td>
+            <td class="">-9.30</td>
+            <td class="">1.65</td>
+            <td class="">2.56</td>
+            <td class="">22.91</td>
+            <td class="">13.85</td>
+            <td class="">52524</td>
+            <td class="">14301</td>
+            <td class=""><a href="https://logs.tf/3315585">3315585</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3320670">3320670</a>, <a href="https://logs.tf/3323051">3323051</a>, </td>
             <td class="">combo</td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:255294112]</td>
-            <td class="">mel KUSH</td>
-            <td class="">45</td>
-            <td class="">28</td>
-            <td class="">20</td>
-            <td class="">200.92</td>
-            <td class="">225.92</td>
-            <td class="">-25.00</td>
-            <td class="">1.61</td>
-            <td class="">2.32</td>
-            <td class="">21.09</td>
-            <td class="">13.13</td>
-            <td class="">12859</td>
-            <td class="">3840</td>
-            <td class=""><a href="https://logs.tf/3314141">3314141</a>, </td>
+            <td class="">mel KUSH, mel alert!</td>
+            <td class="">166</td>
+            <td class="">83</td>
+            <td class="">76</td>
+            <td class="">211.70</td>
+            <td class="">228.30</td>
+            <td class="">-16.61</td>
+            <td class="">2.00</td>
+            <td class="">2.92</td>
+            <td class="">22.13</td>
+            <td class="">11.07</td>
+            <td class="">47639</td>
+            <td class="">13502</td>
+            <td class=""><a href="https://logs.tf/3314141">3314141</a>, <a href="https://logs.tf/3317060">3317060</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
             <td class="">combo</td>
           </tr>
           <tr>
@@ -1645,20 +2078,20 @@
           <tr>
             <td></td>
             <td class="">[U:1:159413592]</td>
-            <td class="">BLANC_j #PLAYOFFSMODE</td>
-            <td class="">48</td>
-            <td class="">26</td>
-            <td class="">25</td>
-            <td class="">257.47</td>
-            <td class="">217.18</td>
-            <td class="">40.29</td>
-            <td class="">1.85</td>
-            <td class="">2.81</td>
-            <td class="">23.89</td>
-            <td class="">12.94</td>
-            <td class="">15517</td>
-            <td class="">3616</td>
-            <td class=""><a href="https://logs.tf/3314141">3314141</a>, </td>
+            <td class="">BLANC_j #PLAYOFFSMODE, zacksofplymouth #PLAYOFFSMODE, joe #PLAYOFFSMODE</td>
+            <td class="">167</td>
+            <td class="">119</td>
+            <td class="">104</td>
+            <td class="">249.80</td>
+            <td class="">211.27</td>
+            <td class="">38.53</td>
+            <td class="">1.40</td>
+            <td class="">2.28</td>
+            <td class="">24.47</td>
+            <td class="">17.43</td>
+            <td class="">51150</td>
+            <td class="">12286</td>
+            <td class=""><a href="https://logs.tf/3314141">3314141</a>, <a href="https://logs.tf/3317060">3317060</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
             <td class="">flank</td>
           </tr>
           <tr>
@@ -1721,40 +2154,59 @@
           <tr>
             <td></td>
             <td class="">[U:1:132987261]</td>
-            <td class=""> o-o rico suave</td>
-            <td class="">62</td>
-            <td class="">50</td>
-            <td class="">29</td>
-            <td class="">301.16</td>
-            <td class="">229.65</td>
-            <td class="">71.51</td>
-            <td class="">1.24</td>
-            <td class="">1.82</td>
-            <td class="">30.86</td>
-            <td class="">24.89</td>
-            <td class="">18150</td>
-            <td class="">3616</td>
-            <td class=""><a href="https://logs.tf/3313279">3313279</a>, </td>
+            <td class=""> o-o rico suave, rico suave</td>
+            <td class="">183</td>
+            <td class="">140</td>
+            <td class="">86</td>
+            <td class="">245.47</td>
+            <td class="">215.95</td>
+            <td class="">29.52</td>
+            <td class="">1.31</td>
+            <td class="">1.92</td>
+            <td class="">25.67</td>
+            <td class="">19.64</td>
+            <td class="">52497</td>
+            <td class="">12832</td>
+            <td class=""><a href="https://logs.tf/3313279">3313279</a>, <a href="https://logs.tf/3323051">3323051</a>, <a href="https://logs.tf/3317060">3317060</a>, </td>
             <td class="">flank</td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:173350930]</td>
-            <td class=""> ploopyYBT</td>
+            <td class=""> ploopyYBT, *****YBT</td>
+            <td class="">117</td>
             <td class="">63</td>
-            <td class="">24</td>
-            <td class="">31</td>
-            <td class="">263.47</td>
-            <td class="">252.05</td>
-            <td class="">11.42</td>
-            <td class="">2.63</td>
-            <td class="">3.92</td>
-            <td class="">31.68</td>
-            <td class="">12.07</td>
-            <td class="">15716</td>
-            <td class="">3579</td>
-            <td class=""><a href="https://logs.tf/3313279">3313279</a>, </td>
+            <td class="">71</td>
+            <td class="">221.36</td>
+            <td class="">227.24</td>
+            <td class="">-5.88</td>
+            <td class="">1.86</td>
+            <td class="">2.98</td>
+            <td class="">24.25</td>
+            <td class="">13.06</td>
+            <td class="">32042</td>
+            <td class="">8685</td>
+            <td class=""><a href="https://logs.tf/3313279">3313279</a>, <a href="https://logs.tf/3317060">3317060</a>, </td>
             <td class="">combo</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:187480830]</td>
+            <td class="">tinguspingus</td>
+            <td class="">87</td>
+            <td class="">45</td>
+            <td class="">21</td>
+            <td class="">265.02</td>
+            <td class="">200.68</td>
+            <td class="">64.34</td>
+            <td class="">1.93</td>
+            <td class="">2.40</td>
+            <td class="">36.87</td>
+            <td class="">19.07</td>
+            <td class="">18759</td>
+            <td class="">4247</td>
+            <td class=""><a href="https://logs.tf/3323051">3323051</a>, </td>
+            <td class="">flank</td>
           </tr>
       </tbody>
       </table>
@@ -1808,38 +2260,38 @@
             <td></td>
             <td class="">[U:1:129383694]</td>
             <td class="">raphaim #bb</td>
-            <td class="">43</td>
-            <td class="">42</td>
-            <td class="">8</td>
-            <td class="">282.32</td>
-            <td class="">222.10</td>
-            <td class="">60.22</td>
-            <td class="">1.02</td>
-            <td class="">1.21</td>
-            <td class="">23.58</td>
-            <td class="">23.03</td>
-            <td class="">15443</td>
-            <td class="">3282</td>
-            <td class=""><a href="https://logs.tf/3313277">3313277</a>, <a href="https://logs.tf/3313276">3313276</a>, <a href="https://logs.tf/3313273">3313273</a>, <a href="https://logs.tf/3313269">3313269</a>, </td>
+            <td class="">118</td>
+            <td class="">148</td>
+            <td class="">31</td>
+            <td class="">271.20</td>
+            <td class="">254.90</td>
+            <td class="">16.30</td>
+            <td class="">0.80</td>
+            <td class="">1.01</td>
+            <td class="">19.95</td>
+            <td class="">25.02</td>
+            <td class="">48125</td>
+            <td class="">10647</td>
+            <td class=""><a href="https://logs.tf/3313277">3313277</a>, <a href="https://logs.tf/3313276">3313276</a>, <a href="https://logs.tf/3313273">3313273</a>, <a href="https://logs.tf/3313269">3313269</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3320670">3320670</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
             <td class="">roamer</td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:180403249]</td>
-            <td class="">bulk.chell</td>
-            <td class="">28</td>
-            <td class="">40</td>
-            <td class="">15</td>
-            <td class="">224.83</td>
-            <td class="">201.06</td>
-            <td class="">23.77</td>
-            <td class="">0.70</td>
-            <td class="">1.07</td>
-            <td class="">15.36</td>
-            <td class="">21.94</td>
-            <td class="">12298</td>
-            <td class="">3282</td>
-            <td class=""><a href="https://logs.tf/3313277">3313277</a>, <a href="https://logs.tf/3313276">3313276</a>, <a href="https://logs.tf/3313273">3313273</a>, <a href="https://logs.tf/3313269">3313269</a>, </td>
+            <td class="">bulk.chell, bulk//chell</td>
+            <td class="">100</td>
+            <td class="">139</td>
+            <td class="">34</td>
+            <td class="">224.36</td>
+            <td class="">238.00</td>
+            <td class="">-13.64</td>
+            <td class="">0.72</td>
+            <td class="">0.96</td>
+            <td class="">15.64</td>
+            <td class="">21.75</td>
+            <td class="">43024</td>
+            <td class="">11506</td>
+            <td class=""><a href="https://logs.tf/3313277">3313277</a>, <a href="https://logs.tf/3313276">3313276</a>, <a href="https://logs.tf/3313273">3313273</a>, <a href="https://logs.tf/3313269">3313269</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3320670">3320670</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
             <td class="">pocket</td>
           </tr>
           <tr>
@@ -1922,38 +2374,38 @@
             <td></td>
             <td class="">[U:1:89871068]</td>
             <td class="">thehookerslammer</td>
-            <td class="">82</td>
-            <td class="">104</td>
-            <td class="">15</td>
-            <td class="">265.76</td>
-            <td class="">246.09</td>
-            <td class="">19.67</td>
-            <td class="">0.79</td>
-            <td class="">0.93</td>
-            <td class="">18.08</td>
-            <td class="">22.93</td>
-            <td class="">36157</td>
-            <td class="">8163</td>
-            <td class=""><a href="https://logs.tf/3315585">3315585</a>, </td>
-            <td class="">pocket</td>
+            <td class="">144</td>
+            <td class="">208</td>
+            <td class="">40</td>
+            <td class="">248.34</td>
+            <td class="">239.98</td>
+            <td class="">8.35</td>
+            <td class="">0.69</td>
+            <td class="">0.88</td>
+            <td class="">16.53</td>
+            <td class="">23.87</td>
+            <td class="">64920</td>
+            <td class="">15685</td>
+            <td class=""><a href="https://logs.tf/3315585">3315585</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3320670">3320670</a>, <a href="https://logs.tf/3323051">3323051</a>, </td>
+            <td class="">roamer</td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:204344441]</td>
             <td class="">MoisDM_pe</td>
-            <td class="">54</td>
-            <td class="">78</td>
-            <td class="">27</td>
-            <td class="">196.92</td>
-            <td class="">220.69</td>
-            <td class="">-23.77</td>
-            <td class="">0.69</td>
-            <td class="">1.04</td>
-            <td class="">12.87</td>
-            <td class="">18.58</td>
-            <td class="">24795</td>
-            <td class="">7555</td>
-            <td class=""><a href="https://logs.tf/3315585">3315585</a>, </td>
+            <td class="">112</td>
+            <td class="">179</td>
+            <td class="">53</td>
+            <td class="">215.87</td>
+            <td class="">247.06</td>
+            <td class="">-31.19</td>
+            <td class="">0.63</td>
+            <td class="">0.92</td>
+            <td class="">13.53</td>
+            <td class="">21.63</td>
+            <td class="">53603</td>
+            <td class="">14899</td>
+            <td class=""><a href="https://logs.tf/3315585">3315585</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3320670">3320670</a>, <a href="https://logs.tf/3323051">3323051</a>, </td>
             <td class="">pocket</td>
           </tr>
           <tr>
@@ -2016,77 +2468,77 @@
           <tr>
             <td></td>
             <td class="">[U:1:93702050]</td>
-            <td class="">Merry Math #PLAYOFFSMODE</td>
-            <td class="">48</td>
-            <td class="">34</td>
-            <td class="">19</td>
-            <td class="">302.48</td>
-            <td class="">210.06</td>
-            <td class="">92.42</td>
-            <td class="">1.41</td>
-            <td class="">1.97</td>
-            <td class="">20.22</td>
-            <td class="">14.32</td>
-            <td class="">21547</td>
-            <td class="">4274</td>
-            <td class=""><a href="https://logs.tf/3314141">3314141</a>, </td>
+            <td class="">Merry Math #PLAYOFFSMODE, merry math #playoffsmode</td>
+            <td class="">145</td>
+            <td class="">155</td>
+            <td class="">60</td>
+            <td class="">268.36</td>
+            <td class="">229.71</td>
+            <td class="">38.65</td>
+            <td class="">0.94</td>
+            <td class="">1.32</td>
+            <td class="">18.20</td>
+            <td class="">19.46</td>
+            <td class="">64130</td>
+            <td class="">14338</td>
+            <td class=""><a href="https://logs.tf/3314141">3314141</a>, <a href="https://logs.tf/3317060">3317060</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
             <td class="">pocket</td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:143242759]</td>
-            <td class="">MIKE_HUNT #PLAYOFFSMODE</td>
-            <td class="">31</td>
-            <td class="">38</td>
-            <td class="">12</td>
-            <td class="">252.86</td>
-            <td class="">264.16</td>
-            <td class="">-11.30</td>
-            <td class="">0.82</td>
-            <td class="">1.13</td>
-            <td class="">14.32</td>
-            <td class="">17.56</td>
-            <td class="">16419</td>
-            <td class="">3896</td>
-            <td class=""><a href="https://logs.tf/3314141">3314141</a>, </td>
+            <td class="">MIKE_HUNT #PLAYOFFSMODE, THE BIG 3 #PLAYOFFSMODE, steve alert!</td>
+            <td class="">133</td>
+            <td class="">166</td>
+            <td class="">47</td>
+            <td class="">249.82</td>
+            <td class="">251.05</td>
+            <td class="">-1.23</td>
+            <td class="">0.80</td>
+            <td class="">1.08</td>
+            <td class="">17.95</td>
+            <td class="">22.40</td>
+            <td class="">55531</td>
+            <td class="">13337</td>
+            <td class=""><a href="https://logs.tf/3314141">3314141</a>, <a href="https://logs.tf/3317060">3317060</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
             <td class="">roamer</td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:38619095]</td>
-            <td class=""> ṽ⧉ c</td>
-            <td class="">43</td>
-            <td class="">58</td>
-            <td class="">24</td>
-            <td class="">271.14</td>
-            <td class="">265.98</td>
-            <td class="">5.16</td>
-            <td class="">0.74</td>
+            <td class=""> ṽ⧉ c, ṽ⧉ cookie</td>
+            <td class="">101</td>
+            <td class="">122</td>
+            <td class="">40</td>
+            <td class="">259.85</td>
+            <td class="">244.27</td>
+            <td class="">15.58</td>
+            <td class="">0.83</td>
             <td class="">1.16</td>
-            <td class="">20.78</td>
-            <td class="">28.03</td>
-            <td class="">16833</td>
-            <td class="">3725</td>
-            <td class=""><a href="https://logs.tf/3313279">3313279</a>, </td>
+            <td class="">19.97</td>
+            <td class="">24.12</td>
+            <td class="">39428</td>
+            <td class="">9104</td>
+            <td class=""><a href="https://logs.tf/3313279">3313279</a>, <a href="https://logs.tf/3317060">3317060</a>, </td>
             <td class="">roamer</td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:48897782]</td>
-            <td class=""> KutchKutch</td>
-            <td class="">39</td>
-            <td class="">44</td>
-            <td class="">19</td>
-            <td class="">239.00</td>
-            <td class="">201.26</td>
-            <td class="">37.74</td>
-            <td class="">0.89</td>
-            <td class="">1.32</td>
-            <td class="">19.19</td>
-            <td class="">21.65</td>
-            <td class="">14571</td>
-            <td class="">3658</td>
-            <td class=""><a href="https://logs.tf/3313279">3313279</a>, </td>
+            <td class=""> KutchKutch, KutchKutch</td>
+            <td class="">69</td>
+            <td class="">108</td>
+            <td class="">29</td>
+            <td class="">212.27</td>
+            <td class="">214.88</td>
+            <td class="">-2.61</td>
+            <td class="">0.64</td>
+            <td class="">0.91</td>
+            <td class="">14.21</td>
+            <td class="">22.24</td>
+            <td class="">30921</td>
+            <td class="">8740</td>
+            <td class=""><a href="https://logs.tf/3313279">3313279</a>, <a href="https://logs.tf/3317060">3317060</a>, </td>
             <td class="">pocket</td>
           </tr>
           <tr>
@@ -2126,6 +2578,63 @@
             <td class="">3725</td>
             <td class=""><a href="https://logs.tf/3313279">3313279</a>, </td>
             <td class="">pocket</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:64745316]</td>
+            <td class="">alfredodan</td>
+            <td class="">27</td>
+            <td class="">55</td>
+            <td class="">20</td>
+            <td class="">228.23</td>
+            <td class="">245.22</td>
+            <td class="">-16.99</td>
+            <td class="">0.49</td>
+            <td class="">0.85</td>
+            <td class="">10.75</td>
+            <td class="">21.90</td>
+            <td class="">17197</td>
+            <td class="">4521</td>
+            <td class=""><a href="https://logs.tf/3323051">3323051</a>, </td>
+            <td class="">roamer</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:86604563]</td>
+            <td class="">ramensniffer</td>
+            <td class="">34</td>
+            <td class="">29</td>
+            <td class="">9</td>
+            <td class="">264.84</td>
+            <td class="">423.36</td>
+            <td class="">-158.52</td>
+            <td class="">1.17</td>
+            <td class="">1.48</td>
+            <td class="">22.09</td>
+            <td class="">18.84</td>
+            <td class="">12231</td>
+            <td class="">2771</td>
+            <td class=""><a href="https://logs.tf/3323051">3323051</a>, </td>
+            <td class="">pocket</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:242905621]</td>
+            <td class="">freddo.</td>
+            <td class="">20</td>
+            <td class="">26</td>
+            <td class="">6</td>
+            <td class="">341.79</td>
+            <td class="">656.50</td>
+            <td class="">-314.71</td>
+            <td class="">0.77</td>
+            <td class="">1.00</td>
+            <td class="">20.39</td>
+            <td class="">26.50</td>
+            <td class="">10060</td>
+            <td class="">1766</td>
+            <td class=""><a href="https://logs.tf/3323051">3323051</a>, </td>
+            <td class="">?</td>
           </tr>
       </tbody>
       </table>
@@ -2196,18 +2705,18 @@
             <td class="">[U:1:123870274]</td>
             <td class="">thehogslammer</td>
             <td class="">1</td>
-            <td class="">1</td>
+            <td class="">3</td>
             <td class="">0</td>
-            <td class="">286.50</td>
-            <td class="">40342.50</td>
-            <td class="">-40056.00</td>
-            <td class="">1.00</td>
-            <td class="">1.00</td>
-            <td class="">45.00</td>
-            <td class="">45.00</td>
-            <td class="">191</td>
-            <td class="">40</td>
-            <td class=""><a href="https://logs.tf/3315585">3315585</a>, </td>
+            <td class="">155.48</td>
+            <td class="">24777.91</td>
+            <td class="">-24622.43</td>
+            <td class="">0.33</td>
+            <td class="">0.33</td>
+            <td class="">15.65</td>
+            <td class="">46.96</td>
+            <td class="">298</td>
+            <td class="">115</td>
+            <td class=""><a href="https://logs.tf/3315585">3315585</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3323051">3323051</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -2230,20 +2739,20 @@
           <tr>
             <td></td>
             <td class="">[U:1:255294112]</td>
-            <td class="">mel KUSH</td>
-            <td class="">2</td>
-            <td class="">1</td>
-            <td class="">1</td>
-            <td class="">246.58</td>
-            <td class="">3805.00</td>
-            <td class="">-3558.42</td>
-            <td class="">2.00</td>
+            <td class="">mel KUSH, mel alert!</td>
+            <td class="">9</td>
+            <td class="">3</td>
+            <td class="">5</td>
+            <td class="">187.22</td>
+            <td class="">3116.85</td>
+            <td class="">-2929.63</td>
             <td class="">3.00</td>
-            <td class="">15.79</td>
-            <td class="">7.89</td>
-            <td class="">937</td>
-            <td class="">228</td>
-            <td class=""><a href="https://logs.tf/3314141">3314141</a>, </td>
+            <td class="">4.67</td>
+            <td class="">16.38</td>
+            <td class="">5.46</td>
+            <td class="">3086</td>
+            <td class="">989</td>
+            <td class=""><a href="https://logs.tf/3314141">3314141</a>, <a href="https://logs.tf/3317060">3317060</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -2266,20 +2775,20 @@
           <tr>
             <td></td>
             <td class="">[U:1:159413592]</td>
-            <td class="">BLANC_j #PLAYOFFSMODE</td>
-            <td class="">0</td>
-            <td class="">1</td>
-            <td class="">1</td>
-            <td class="">227.43</td>
-            <td class="">2316.64</td>
-            <td class="">-2089.21</td>
-            <td class="">0.00</td>
-            <td class="">1.00</td>
-            <td class="">0.00</td>
-            <td class="">5.31</td>
-            <td class="">1285</td>
-            <td class="">339</td>
-            <td class=""><a href="https://logs.tf/3314141">3314141</a>, </td>
+            <td class="">BLANC_j #PLAYOFFSMODE, zacksofplymouth #PLAYOFFSMODE</td>
+            <td class="">3</td>
+            <td class="">4</td>
+            <td class="">2</td>
+            <td class="">285.85</td>
+            <td class="">3927.62</td>
+            <td class="">-3641.77</td>
+            <td class="">0.75</td>
+            <td class="">1.25</td>
+            <td class="">12.24</td>
+            <td class="">16.33</td>
+            <td class="">2101</td>
+            <td class="">441</td>
+            <td class=""><a href="https://logs.tf/3314141">3314141</a>, <a href="https://logs.tf/3317060">3317060</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -2302,20 +2811,74 @@
           <tr>
             <td></td>
             <td class="">[U:1:132987261]</td>
-            <td class=""> o-o rico suave</td>
+            <td class=""> o-o rico suave, rico suave</td>
             <td class="">0</td>
+            <td class="">4</td>
+            <td class="">0</td>
+            <td class="">149.62</td>
+            <td class="">11783.92</td>
+            <td class="">-11634.30</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">45.57</td>
+            <td class="">394</td>
+            <td class="">158</td>
+            <td class=""><a href="https://logs.tf/3313279">3313279</a>, <a href="https://logs.tf/3317060">3317060</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:88513379]</td>
+            <td class="">hhaha</td>
+            <td class="">1</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">224.57</td>
+            <td class="">6618.86</td>
+            <td class="">-6394.29</td>
+            <td class="">1.00</td>
+            <td class="">1.00</td>
+            <td class="">51.43</td>
+            <td class="">51.43</td>
+            <td class="">131</td>
+            <td class="">35</td>
+            <td class=""><a href="https://logs.tf/3320671">3320671</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:129383694]</td>
+            <td class="">raphaim #bb</td>
+            <td class="">2</td>
             <td class="">2</td>
             <td class="">0</td>
-            <td class="">375.24</td>
-            <td class="">13180.95</td>
-            <td class="">-12805.71</td>
-            <td class="">0.00</td>
-            <td class="">0.00</td>
-            <td class="">0.00</td>
-            <td class="">57.14</td>
-            <td class="">394</td>
-            <td class="">63</td>
-            <td class=""><a href="https://logs.tf/3313279">3313279</a>, </td>
+            <td class="">209.38</td>
+            <td class="">1898.90</td>
+            <td class="">-1689.52</td>
+            <td class="">1.00</td>
+            <td class="">1.00</td>
+            <td class="">24.83</td>
+            <td class="">24.83</td>
+            <td class="">506</td>
+            <td class="">145</td>
+            <td class=""><a href="https://logs.tf/3320671">3320671</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:330003400]</td>
+            <td class="">bulk//raygun</td>
+            <td class="">2</td>
+            <td class="">1</td>
+            <td class="">4</td>
+            <td class="">152.87</td>
+            <td class="">2840.93</td>
+            <td class="">-2688.06</td>
+            <td class="">2.00</td>
+            <td class="">6.00</td>
+            <td class="">9.30</td>
+            <td class="">4.65</td>
+            <td class="">986</td>
+            <td class="">387</td>
+            <td class=""><a href="https://logs.tf/3324374">3324374</a>, </td>
           </tr>
       </tbody>
       </table>
@@ -2366,38 +2929,38 @@
           <tr>
             <td></td>
             <td class="">[U:1:166359895]</td>
-            <td class="">Chronos</td>
-            <td class="">35</td>
-            <td class="">24</td>
-            <td class="">12</td>
-            <td class="">259.71</td>
-            <td class="">219.69</td>
-            <td class="">40.02</td>
-            <td class="">1.46</td>
-            <td class="">1.96</td>
-            <td class="">19.20</td>
-            <td class="">13.16</td>
-            <td class="">14206</td>
-            <td class="">3282</td>
-            <td class=""><a href="https://logs.tf/3313277">3313277</a>, <a href="https://logs.tf/3313276">3313276</a>, <a href="https://logs.tf/3313273">3313273</a>, <a href="https://logs.tf/3313269">3313269</a>, </td>
+            <td class="">Chronos, bulk// Chronos</td>
+            <td class="">105</td>
+            <td class="">80</td>
+            <td class="">42</td>
+            <td class="">263.30</td>
+            <td class="">227.69</td>
+            <td class="">35.61</td>
+            <td class="">1.31</td>
+            <td class="">1.84</td>
+            <td class="">16.43</td>
+            <td class="">12.52</td>
+            <td class="">50492</td>
+            <td class="">11506</td>
+            <td class=""><a href="https://logs.tf/3313277">3313277</a>, <a href="https://logs.tf/3313276">3313276</a>, <a href="https://logs.tf/3313273">3313273</a>, <a href="https://logs.tf/3313269">3313269</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3320670">3320670</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:128828742]</td>
             <td class="">earl</td>
-            <td class="">76</td>
-            <td class="">55</td>
-            <td class="">19</td>
-            <td class="">220.87</td>
-            <td class="">197.44</td>
-            <td class="">23.43</td>
-            <td class="">1.38</td>
-            <td class="">1.73</td>
-            <td class="">16.75</td>
-            <td class="">12.12</td>
-            <td class="">30060</td>
-            <td class="">8166</td>
-            <td class=""><a href="https://logs.tf/3315585">3315585</a>, </td>
+            <td class="">133</td>
+            <td class="">118</td>
+            <td class="">41</td>
+            <td class="">248.51</td>
+            <td class="">227.22</td>
+            <td class="">21.29</td>
+            <td class="">1.13</td>
+            <td class="">1.47</td>
+            <td class="">15.26</td>
+            <td class="">13.54</td>
+            <td class="">64977</td>
+            <td class="">15688</td>
+            <td class=""><a href="https://logs.tf/3315585">3315585</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3320670">3320670</a>, <a href="https://logs.tf/3323051">3323051</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -2420,20 +2983,20 @@
           <tr>
             <td></td>
             <td class="">[U:1:106127991]</td>
-            <td class="">Wild_Rumpus</td>
-            <td class="">44</td>
-            <td class="">24</td>
-            <td class="">17</td>
-            <td class="">267.55</td>
-            <td class="">213.30</td>
-            <td class="">54.25</td>
-            <td class="">1.83</td>
-            <td class="">2.54</td>
-            <td class="">17.83</td>
-            <td class="">9.73</td>
-            <td class="">19803</td>
-            <td class="">4441</td>
-            <td class=""><a href="https://logs.tf/3314141">3314141</a>, </td>
+            <td class="">Wild_Rumpus, Wild_Rumpus alert!</td>
+            <td class="">137</td>
+            <td class="">92</td>
+            <td class="">37</td>
+            <td class="">254.39</td>
+            <td class="">226.87</td>
+            <td class="">27.53</td>
+            <td class="">1.49</td>
+            <td class="">1.89</td>
+            <td class="">16.29</td>
+            <td class="">10.94</td>
+            <td class="">64188</td>
+            <td class="">15139</td>
+            <td class=""><a href="https://logs.tf/3314141">3314141</a>, <a href="https://logs.tf/3317060">3317060</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -2474,20 +3037,38 @@
           <tr>
             <td></td>
             <td class="">[U:1:86604563]</td>
-            <td class=""> mousecake</td>
-            <td class="">42</td>
+            <td class=""> mousecake, ramensniffer, dumbass david</td>
+            <td class="">134</td>
+            <td class="">84</td>
+            <td class="">43</td>
+            <td class="">359.56</td>
+            <td class="">345.29</td>
+            <td class="">14.26</td>
+            <td class="">1.60</td>
+            <td class="">2.11</td>
+            <td class="">22.06</td>
+            <td class="">13.83</td>
+            <td class="">65511</td>
+            <td class="">10932</td>
+            <td class=""><a href="https://logs.tf/3313279">3313279</a>, <a href="https://logs.tf/3323051">3323051</a>, <a href="https://logs.tf/3317060">3317060</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:242905621]</td>
+            <td class="">freddo.</td>
             <td class="">28</td>
-            <td class="">16</td>
-            <td class="">370.49</td>
-            <td class="">325.95</td>
-            <td class="">44.54</td>
-            <td class="">1.50</td>
-            <td class="">2.07</td>
-            <td class="">20.30</td>
-            <td class="">13.53</td>
-            <td class="">23001</td>
-            <td class="">3725</td>
-            <td class=""><a href="https://logs.tf/3313279">3313279</a>, </td>
+            <td class="">10</td>
+            <td class="">9</td>
+            <td class="">332.33</td>
+            <td class="">418.40</td>
+            <td class="">-86.07</td>
+            <td class="">2.80</td>
+            <td class="">3.70</td>
+            <td class="">18.19</td>
+            <td class="">6.50</td>
+            <td class="">15348</td>
+            <td class="">2771</td>
+            <td class=""><a href="https://logs.tf/3323051">3323051</a>, </td>
           </tr>
       </tbody>
       </table>
@@ -2520,20 +3101,20 @@
           <tr>
             <td></td>
             <td class="">[U:1:84963494]</td>
-            <td class="">agnus dei miserere nobis</td>
-            <td class="">1</td>
+            <td class="">agnus dei miserere nobis, BULK//Fart strong Frankie 1957</td>
+            <td class="">2</td>
             <td class="">0</td>
-            <td class="">0</td>
-            <td class="">339.13</td>
-            <td class="">5199.13</td>
-            <td class="">-4860.00</td>
+            <td class="">3</td>
+            <td class="">620.32</td>
+            <td class="">14370.00</td>
+            <td class="">-13749.68</td>
             <td class="">Infinity</td>
             <td class="">Infinity</td>
-            <td class="">78.26</td>
+            <td class="">58.06</td>
             <td class="">0.00</td>
-            <td class="">130</td>
-            <td class="">23</td>
-            <td class=""><a href="https://logs.tf/3313269">3313269</a>, </td>
+            <td class="">641</td>
+            <td class="">62</td>
+            <td class=""><a href="https://logs.tf/3313269">3313269</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -2592,20 +3173,20 @@
           <tr>
             <td></td>
             <td class="">[U:1:88513379]</td>
-            <td class="">sr. asombroso</td>
+            <td class="">sr. asombroso, hhaha</td>
             <td class="">4</td>
-            <td class="">4</td>
-            <td class="">1</td>
-            <td class="">508.14</td>
-            <td class="">10197.10</td>
-            <td class="">-9688.96</td>
-            <td class="">1.00</td>
-            <td class="">1.25</td>
-            <td class="">49.66</td>
-            <td class="">49.66</td>
-            <td class="">1228</td>
-            <td class="">145</td>
-            <td class=""><a href="https://logs.tf/3315585">3315585</a>, </td>
+            <td class="">6</td>
+            <td class="">3</td>
+            <td class="">434.44</td>
+            <td class="">13180.00</td>
+            <td class="">-12745.56</td>
+            <td class="">0.67</td>
+            <td class="">1.17</td>
+            <td class="">33.33</td>
+            <td class="">50.00</td>
+            <td class="">1564</td>
+            <td class="">216</td>
+            <td class=""><a href="https://logs.tf/3315585">3315585</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3323051">3323051</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -2628,20 +3209,20 @@
           <tr>
             <td></td>
             <td class="">[U:1:159413592]</td>
-            <td class="">BLANC_j #PLAYOFFSMODE</td>
-            <td class="">2</td>
-            <td class="">2</td>
-            <td class="">2</td>
-            <td class="">149.13</td>
-            <td class="">3812.33</td>
-            <td class="">-3663.20</td>
-            <td class="">1.00</td>
-            <td class="">2.00</td>
-            <td class="">17.48</td>
-            <td class="">17.48</td>
-            <td class="">512</td>
-            <td class="">206</td>
-            <td class=""><a href="https://logs.tf/3314141">3314141</a>, </td>
+            <td class="">BLANC_j #PLAYOFFSMODE, zacksofplymouth #PLAYOFFSMODE, joe #PLAYOFFSMODE</td>
+            <td class="">8</td>
+            <td class="">5</td>
+            <td class="">4</td>
+            <td class="">352.94</td>
+            <td class="">6638.52</td>
+            <td class="">-6285.58</td>
+            <td class="">1.60</td>
+            <td class="">2.40</td>
+            <td class="">36.83</td>
+            <td class="">23.02</td>
+            <td class="">2300</td>
+            <td class="">391</td>
+            <td class=""><a href="https://logs.tf/3314141">3314141</a>, <a href="https://logs.tf/3317060">3317060</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -2664,38 +3245,110 @@
           <tr>
             <td></td>
             <td class="">[U:1:93702050]</td>
-            <td class="">Merry Math #PLAYOFFSMODE</td>
-            <td class="">0</td>
-            <td class="">2</td>
-            <td class="">2</td>
-            <td class="">414.23</td>
-            <td class="">8632.50</td>
-            <td class="">-8218.27</td>
-            <td class="">0.00</td>
-            <td class="">1.00</td>
-            <td class="">0.00</td>
-            <td class="">34.62</td>
-            <td class="">718</td>
-            <td class="">104</td>
-            <td class=""><a href="https://logs.tf/3314141">3314141</a>, </td>
+            <td class="">Merry Math #PLAYOFFSMODE, merry math #playoffsmode</td>
+            <td class="">3</td>
+            <td class="">4</td>
+            <td class="">9</td>
+            <td class="">276.61</td>
+            <td class="">7335.37</td>
+            <td class="">-7058.75</td>
+            <td class="">0.75</td>
+            <td class="">3.00</td>
+            <td class="">12.03</td>
+            <td class="">16.04</td>
+            <td class="">2070</td>
+            <td class="">449</td>
+            <td class=""><a href="https://logs.tf/3314141">3314141</a>, <a href="https://logs.tf/3317060">3317060</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:143242759]</td>
-            <td class="">MIKE_HUNT #PLAYOFFSMODE</td>
-            <td class="">8</td>
-            <td class="">1</td>
-            <td class="">7</td>
-            <td class="">272.25</td>
-            <td class="">2087.59</td>
-            <td class="">-1815.34</td>
-            <td class="">8.00</td>
-            <td class="">15.00</td>
-            <td class="">29.21</td>
-            <td class="">3.65</td>
-            <td class="">2237</td>
+            <td class="">MIKE_HUNT #PLAYOFFSMODE, THE BIG 3 #PLAYOFFSMODE, steve alert!</td>
+            <td class="">18</td>
+            <td class="">5</td>
+            <td class="">10</td>
+            <td class="">272.16</td>
+            <td class="">2804.27</td>
+            <td class="">-2532.11</td>
+            <td class="">3.60</td>
+            <td class="">5.60</td>
+            <td class="">27.14</td>
+            <td class="">7.54</td>
+            <td class="">5416</td>
+            <td class="">1194</td>
+            <td class=""><a href="https://logs.tf/3314141">3314141</a>, <a href="https://logs.tf/3317060">3317060</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:132987261]</td>
+            <td class="">rico suave</td>
+            <td class="">4</td>
+            <td class="">2</td>
+            <td class="">0</td>
+            <td class="">292.87</td>
+            <td class="">19214.26</td>
+            <td class="">-18921.39</td>
+            <td class="">2.00</td>
+            <td class="">2.00</td>
+            <td class="">71.29</td>
+            <td class="">35.64</td>
             <td class="">493</td>
-            <td class=""><a href="https://logs.tf/3314141">3314141</a>, </td>
+            <td class="">101</td>
+            <td class=""><a href="https://logs.tf/3323051">3323051</a>, <a href="https://logs.tf/3317060">3317060</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:173350930]</td>
+            <td class="">*****YBT</td>
+            <td class="">1</td>
+            <td class="">3</td>
+            <td class="">1</td>
+            <td class="">766.91</td>
+            <td class="">19481.45</td>
+            <td class="">-18714.54</td>
+            <td class="">0.33</td>
+            <td class="">0.67</td>
+            <td class="">32.73</td>
+            <td class="">98.18</td>
+            <td class="">703</td>
+            <td class="">55</td>
+            <td class=""><a href="https://logs.tf/3317060">3317060</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:48897782]</td>
+            <td class="">KutchKutch</td>
+            <td class="">1</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">616.00</td>
+            <td class="">38062.00</td>
+            <td class="">-37446.00</td>
+            <td class="">1.00</td>
+            <td class="">1.00</td>
+            <td class="">60.00</td>
+            <td class="">60.00</td>
+            <td class="">308</td>
+            <td class="">30</td>
+            <td class=""><a href="https://logs.tf/3317060">3317060</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:255294112]</td>
+            <td class="">mel KUSH</td>
+            <td class="">0</td>
+            <td class="">0</td>
+            <td class="">1</td>
+            <td class="">60.00</td>
+            <td class="">47344.44</td>
+            <td class="">-47284.44</td>
+            <td class="">NaN</td>
+            <td class="">Infinity</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">27</td>
+            <td class="">27</td>
+            <td class=""><a href="https://logs.tf/3317060">3317060</a>, </td>
           </tr>
       </tbody>
       </table>
@@ -2820,36 +3473,36 @@
             <td class="">[U:1:123870274]</td>
             <td class="">thehogslammer</td>
             <td class="">0</td>
-            <td class="">2</td>
+            <td class="">3</td>
             <td class="">1</td>
-            <td class="">131.10</td>
-            <td class="">9327.75</td>
-            <td class="">-9196.65</td>
+            <td class="">149.42</td>
+            <td class="">9132.88</td>
+            <td class="">-8983.46</td>
             <td class="">0.00</td>
-            <td class="">0.50</td>
+            <td class="">0.33</td>
             <td class="">0.00</td>
-            <td class="">20.81</td>
-            <td class="">378</td>
-            <td class="">173</td>
-            <td class=""><a href="https://logs.tf/3315585">3315585</a>, </td>
+            <td class="">17.31</td>
+            <td class="">777</td>
+            <td class="">312</td>
+            <td class=""><a href="https://logs.tf/3315585">3315585</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3323051">3323051</a>, </td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:88513379]</td>
-            <td class="">sr. asombroso</td>
+            <td class="">sr. asombroso, hhaha</td>
+            <td class="">5</td>
             <td class="">2</td>
             <td class="">1</td>
-            <td class="">1</td>
-            <td class="">69.72</td>
-            <td class="">1885.94</td>
-            <td class="">-1816.22</td>
-            <td class="">2.00</td>
+            <td class="">100.06</td>
+            <td class="">2586.77</td>
+            <td class="">-2486.71</td>
+            <td class="">2.50</td>
             <td class="">3.00</td>
-            <td class="">4.59</td>
-            <td class="">2.30</td>
-            <td class="">911</td>
-            <td class="">784</td>
-            <td class=""><a href="https://logs.tf/3315585">3315585</a>, </td>
+            <td class="">8.90</td>
+            <td class="">3.56</td>
+            <td class="">1686</td>
+            <td class="">1011</td>
+            <td class=""><a href="https://logs.tf/3315585">3315585</a>, <a href="https://logs.tf/3323051">3323051</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -2872,20 +3525,20 @@
           <tr>
             <td></td>
             <td class="">[U:1:159413592]</td>
-            <td class="">BLANC_j #PLAYOFFSMODE</td>
-            <td class="">0</td>
+            <td class="">BLANC_j #PLAYOFFSMODE, zacksofplymouth #PLAYOFFSMODE, joe #PLAYOFFSMODE</td>
+            <td class="">7</td>
             <td class="">1</td>
-            <td class="">1</td>
-            <td class="">61.43</td>
-            <td class="">3128.84</td>
-            <td class="">-3067.41</td>
-            <td class="">0.00</td>
-            <td class="">1.00</td>
-            <td class="">0.00</td>
-            <td class="">7.17</td>
-            <td class="">257</td>
-            <td class="">251</td>
-            <td class=""><a href="https://logs.tf/3314141">3314141</a>, </td>
+            <td class="">4</td>
+            <td class="">83.38</td>
+            <td class="">1544.12</td>
+            <td class="">-1460.74</td>
+            <td class="">7.00</td>
+            <td class="">11.00</td>
+            <td class="">7.50</td>
+            <td class="">1.07</td>
+            <td class="">2336</td>
+            <td class="">1681</td>
+            <td class=""><a href="https://logs.tf/3314141">3314141</a>, <a href="https://logs.tf/3317060">3317060</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -2904,6 +3557,78 @@
             <td class="">224</td>
             <td class="">249</td>
             <td class=""><a href="https://logs.tf/3314141">3314141</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:187480830]</td>
+            <td class="">tinguspingus</td>
+            <td class="">2</td>
+            <td class="">0</td>
+            <td class="">0</td>
+            <td class="">125.53</td>
+            <td class="">6044.68</td>
+            <td class="">-5919.15</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">25.53</td>
+            <td class="">0.00</td>
+            <td class="">295</td>
+            <td class="">141</td>
+            <td class=""><a href="https://logs.tf/3323051">3323051</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:132987261]</td>
+            <td class="">rico suave</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">0</td>
+            <td class="">101.47</td>
+            <td class="">10160.42</td>
+            <td class="">-10058.95</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">9.42</td>
+            <td class="">0.00</td>
+            <td class="">323</td>
+            <td class="">191</td>
+            <td class=""><a href="https://logs.tf/3323051">3323051</a>, <a href="https://logs.tf/3317060">3317060</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:173350930]</td>
+            <td class="">*****YBT</td>
+            <td class="">2</td>
+            <td class="">0</td>
+            <td class="">0</td>
+            <td class="">114.60</td>
+            <td class="">5669.21</td>
+            <td class="">-5554.61</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">19.05</td>
+            <td class="">0.00</td>
+            <td class="">361</td>
+            <td class="">189</td>
+            <td class=""><a href="https://logs.tf/3317060">3317060</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:84963494]</td>
+            <td class="">BULK//Fart strong Frankie 1957</td>
+            <td class="">6</td>
+            <td class="">3</td>
+            <td class="">2</td>
+            <td class="">246.19</td>
+            <td class="">1729.51</td>
+            <td class="">-1483.32</td>
+            <td class="">2.00</td>
+            <td class="">2.67</td>
+            <td class="">24.22</td>
+            <td class="">12.11</td>
+            <td class="">1830</td>
+            <td class="">446</td>
+            <td class=""><a href="https://logs.tf/3324374">3324374</a>, </td>
           </tr>
       </tbody>
       </table>
@@ -2964,25 +3689,25 @@
           <tr>
             <td></td>
             <td class="">[U:1:193807220]</td>
-            <td class="">BULK.dinkolaw</td>
-            <td class="">0</td>
-            <td class="">9</td>
-            <td class="">16</td>
-            <td class="">27</td>
-            <td class="">1</td>
-            <td class="">1114.99</td>
-            <td class="">14.81</td>
-            <td class="">0.55</td>
-            <td class="">4.13</td>
-            <td class="">108.74</td>
-            <td class="">-104.61</td>
-            <td class="">0.00</td>
-            <td class="">1.78</td>
-            <td class="">0.00</td>
-            <td class="">4.94</td>
-            <td class="">226</td>
-            <td class="">3282</td>
-            <td class=""><a href="https://logs.tf/3313277">3313277</a>, <a href="https://logs.tf/3313276">3313276</a>, <a href="https://logs.tf/3313273">3313273</a>, <a href="https://logs.tf/3313269">3313269</a>, </td>
+            <td class="">BULK.dinkolaw, bulk//Dinkolaw</td>
+            <td class="">2</td>
+            <td class="">40</td>
+            <td class="">84</td>
+            <td class="">90</td>
+            <td class="">4</td>
+            <td class="">1136.04</td>
+            <td class="">14.09</td>
+            <td class="">0.63</td>
+            <td class="">6.09</td>
+            <td class="">112.47</td>
+            <td class="">-106.38</td>
+            <td class="">0.05</td>
+            <td class="">2.15</td>
+            <td class="">0.31</td>
+            <td class="">6.26</td>
+            <td class="">1167</td>
+            <td class="">11498</td>
+            <td class=""><a href="https://logs.tf/3313277">3313277</a>, <a href="https://logs.tf/3313276">3313276</a>, <a href="https://logs.tf/3313273">3313273</a>, <a href="https://logs.tf/3313269">3313269</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3320670">3320670</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -3011,24 +3736,24 @@
             <td></td>
             <td class="">[U:1:119712757]</td>
             <td class="">anti-nuke rat trebuchet</td>
-            <td class="">4</td>
-            <td class="">37</td>
-            <td class="">60</td>
-            <td class="">46</td>
-            <td class="">4</td>
-            <td class="">1001.45</td>
-            <td class="">10.14</td>
-            <td class="">0.88</td>
-            <td class="">7.09</td>
-            <td class="">123.61</td>
-            <td class="">-116.52</td>
-            <td class="">0.11</td>
-            <td class="">1.73</td>
-            <td class="">0.88</td>
-            <td class="">8.16</td>
-            <td class="">965</td>
-            <td class="">8166</td>
-            <td class=""><a href="https://logs.tf/3315585">3315585</a>, </td>
+            <td class="">7</td>
+            <td class="">79</td>
+            <td class="">117</td>
+            <td class="">97</td>
+            <td class="">5</td>
+            <td class="">986.63</td>
+            <td class="">11.13</td>
+            <td class="">0.57</td>
+            <td class="">8.09</td>
+            <td class="">142.67</td>
+            <td class="">-134.58</td>
+            <td class="">0.09</td>
+            <td class="">1.57</td>
+            <td class="">0.80</td>
+            <td class="">9.06</td>
+            <td class="">2115</td>
+            <td class="">15688</td>
+            <td class=""><a href="https://logs.tf/3315585">3315585</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3320670">3320670</a>, <a href="https://logs.tf/3323051">3323051</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -3079,25 +3804,25 @@
           <tr>
             <td></td>
             <td class="">[U:1:108821041]</td>
-            <td class=""> pom</td>
-            <td class="">0</td>
-            <td class="">15</td>
-            <td class="">28</td>
-            <td class="">27</td>
-            <td class="">7</td>
-            <td class="">1042.24</td>
-            <td class="">13.05</td>
-            <td class="">3.38</td>
-            <td class="">0.00</td>
-            <td class="">122.46</td>
-            <td class="">-122.46</td>
-            <td class="">0.00</td>
-            <td class="">1.87</td>
-            <td class="">0.00</td>
-            <td class="">7.25</td>
-            <td class="">0</td>
-            <td class="">3725</td>
-            <td class=""><a href="https://logs.tf/3313279">3313279</a>, </td>
+            <td class=""> pom, pom</td>
+            <td class="">2</td>
+            <td class="">61</td>
+            <td class="">111</td>
+            <td class="">98</td>
+            <td class="">11</td>
+            <td class="">1053.09</td>
+            <td class="">12.86</td>
+            <td class="">1.44</td>
+            <td class="">3.82</td>
+            <td class="">123.51</td>
+            <td class="">-119.69</td>
+            <td class="">0.03</td>
+            <td class="">1.85</td>
+            <td class="">0.26</td>
+            <td class="">8.00</td>
+            <td class="">873</td>
+            <td class="">13721</td>
+            <td class=""><a href="https://logs.tf/3313279">3313279</a>, <a href="https://logs.tf/3323051">3323051</a>, <a href="https://logs.tf/3317060">3317060</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -3121,6 +3846,29 @@
             <td class="">362</td>
             <td class="">3725</td>
             <td class=""><a href="https://logs.tf/3313279">3313279</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:119238860]</td>
+            <td class="">hyly, tree alert!</td>
+            <td class="">1</td>
+            <td class="">50</td>
+            <td class="">76</td>
+            <td class="">81</td>
+            <td class="">3</td>
+            <td class="">1058.25</td>
+            <td class="">13.69</td>
+            <td class="">0.51</td>
+            <td class="">8.70</td>
+            <td class="">129.26</td>
+            <td class="">-120.56</td>
+            <td class="">0.02</td>
+            <td class="">1.54</td>
+            <td class="">0.17</td>
+            <td class="">8.45</td>
+            <td class="">1544</td>
+            <td class="">10650</td>
+            <td class=""><a href="https://logs.tf/3317060">3317060</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
           </tr>
       </tbody>
       </table>
@@ -3208,37 +3956,37 @@
             <td></td>
             <td class="">[U:1:123870274]</td>
             <td class="">thehogslammer</td>
-            <td class="">14</td>
-            <td class="">12</td>
-            <td class="">4</td>
-            <td class="">250.30</td>
-            <td class="">1103.76</td>
-            <td class="">-853.46</td>
-            <td class="">1.17</td>
-            <td class="">1.50</td>
-            <td class="">17.24</td>
-            <td class="">14.77</td>
-            <td class="">6099</td>
-            <td class="">1462</td>
-            <td class=""><a href="https://logs.tf/3315585">3315585</a>, </td>
+            <td class="">24</td>
+            <td class="">21</td>
+            <td class="">7</td>
+            <td class="">263.50</td>
+            <td class="">1437.82</td>
+            <td class="">-1174.32</td>
+            <td class="">1.14</td>
+            <td class="">1.48</td>
+            <td class="">18.91</td>
+            <td class="">16.54</td>
+            <td class="">10035</td>
+            <td class="">2285</td>
+            <td class=""><a href="https://logs.tf/3315585">3315585</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3320670">3320670</a>, <a href="https://logs.tf/3323051">3323051</a>, </td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:204344441]</td>
             <td class="">MoisDM_pe</td>
             <td class="">0</td>
-            <td class="">1</td>
+            <td class="">2</td>
             <td class="">0</td>
-            <td class="">63.38</td>
-            <td class="">11741.83</td>
-            <td class="">-11678.45</td>
+            <td class="">90.91</td>
+            <td class="">14519.09</td>
+            <td class="">-14428.18</td>
             <td class="">0.00</td>
             <td class="">0.00</td>
             <td class="">0.00</td>
-            <td class="">12.68</td>
-            <td class="">150</td>
-            <td class="">142</td>
-            <td class=""><a href="https://logs.tf/3315585">3315585</a>, </td>
+            <td class="">18.18</td>
+            <td class="">300</td>
+            <td class="">198</td>
+            <td class=""><a href="https://logs.tf/3315585">3315585</a>, <a href="https://logs.tf/3323051">3323051</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -3261,20 +4009,200 @@
           <tr>
             <td></td>
             <td class="">[U:1:173350930]</td>
-            <td class=""> ploopyYBT</td>
+            <td class=""> ploopyYBT, *****YBT</td>
             <td class="">0</td>
+            <td class="">3</td>
+            <td class="">0</td>
+            <td class="">34.09</td>
+            <td class="">11213.52</td>
+            <td class="">-11179.43</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">30.68</td>
+            <td class="">100</td>
+            <td class="">176</td>
+            <td class=""><a href="https://logs.tf/3313279">3313279</a>, <a href="https://logs.tf/3317060">3317060</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:129383694]</td>
+            <td class="">raphaim #bb</td>
+            <td class="">8</td>
+            <td class="">4</td>
+            <td class="">1</td>
+            <td class="">263.40</td>
+            <td class="">2451.72</td>
+            <td class="">-2188.31</td>
+            <td class="">2.00</td>
+            <td class="">2.25</td>
+            <td class="">23.11</td>
+            <td class="">11.56</td>
+            <td class="">2735</td>
+            <td class="">623</td>
+            <td class=""><a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:88513379]</td>
+            <td class="">hhaha</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">0</td>
+            <td class="">462.86</td>
+            <td class="">40594.29</td>
+            <td class="">-40131.43</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">64.29</td>
+            <td class="">0.00</td>
+            <td class="">216</td>
+            <td class="">28</td>
+            <td class=""><a href="https://logs.tf/3323051">3323051</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:187480830]</td>
+            <td class="">tinguspingus</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">1</td>
+            <td class="">175.15</td>
+            <td class="">8609.09</td>
+            <td class="">-8433.94</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">18.18</td>
+            <td class="">0.00</td>
+            <td class="">289</td>
+            <td class="">99</td>
+            <td class=""><a href="https://logs.tf/3323051">3323051</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:132987261]</td>
+            <td class="">rico suave</td>
+            <td class="">0</td>
+            <td class="">3</td>
+            <td class="">1</td>
+            <td class="">80.18</td>
+            <td class="">8702.42</td>
+            <td class="">-8622.24</td>
+            <td class="">0.00</td>
+            <td class="">0.33</td>
+            <td class="">0.00</td>
+            <td class="">24.22</td>
+            <td class="">298</td>
+            <td class="">223</td>
+            <td class=""><a href="https://logs.tf/3323051">3323051</a>, <a href="https://logs.tf/3317060">3317060</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:48897782]</td>
+            <td class="">KutchKutch</td>
+            <td class="">5</td>
+            <td class="">3</td>
+            <td class="">1</td>
+            <td class="">348.82</td>
+            <td class="">3378.28</td>
+            <td class="">-3029.46</td>
+            <td class="">1.67</td>
+            <td class="">2.00</td>
+            <td class="">26.63</td>
+            <td class="">15.98</td>
+            <td class="">1965</td>
+            <td class="">338</td>
+            <td class=""><a href="https://logs.tf/3317060">3317060</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:93702050]</td>
+            <td class="">Merry Math #PLAYOFFSMODE</td>
+            <td class="">5</td>
+            <td class="">0</td>
+            <td class="">0</td>
+            <td class="">505.38</td>
+            <td class="">7203.85</td>
+            <td class="">-6698.47</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">57.69</td>
+            <td class="">0.00</td>
+            <td class="">1314</td>
+            <td class="">156</td>
+            <td class=""><a href="https://logs.tf/3317060">3317060</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:255294112]</td>
+            <td class="">mel KUSH</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">0</td>
+            <td class="">138.43</td>
+            <td class="">8354.90</td>
+            <td class="">-8216.47</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">11.76</td>
+            <td class="">0.00</td>
+            <td class="">353</td>
+            <td class="">153</td>
+            <td class=""><a href="https://logs.tf/3317060">3317060</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:143242759]</td>
+            <td class="">THE BIG 3 #PLAYOFFSMODE</td>
+            <td class="">5</td>
             <td class="">2</td>
+            <td class="">2</td>
+            <td class="">177.44</td>
+            <td class="">3029.91</td>
+            <td class="">-2852.47</td>
+            <td class="">2.50</td>
+            <td class="">3.50</td>
+            <td class="">25.64</td>
+            <td class="">10.26</td>
+            <td class="">1038</td>
+            <td class="">351</td>
+            <td class=""><a href="https://logs.tf/3317060">3317060</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:159413592]</td>
+            <td class="">zacksofplymouth #PLAYOFFSMODE, joe #PLAYOFFSMODE</td>
+            <td class="">1</td>
+            <td class="">1</td>
             <td class="">0</td>
-            <td class="">0.00</td>
-            <td class="">9805.43</td>
-            <td class="">-9805.43</td>
-            <td class="">0.00</td>
-            <td class="">0.00</td>
-            <td class="">0.00</td>
-            <td class="">39.13</td>
+            <td class="">230.67</td>
+            <td class="">13409.78</td>
+            <td class="">-13179.11</td>
+            <td class="">1.00</td>
+            <td class="">1.00</td>
+            <td class="">13.33</td>
+            <td class="">13.33</td>
+            <td class="">519</td>
+            <td class="">135</td>
+            <td class=""><a href="https://logs.tf/3317060">3317060</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:84963494]</td>
+            <td class="">BULK//Fart strong Frankie 1957</td>
+            <td class="">1</td>
             <td class="">0</td>
-            <td class="">92</td>
-            <td class=""><a href="https://logs.tf/3313279">3313279</a>, </td>
+            <td class="">0</td>
+            <td class="">1952.73</td>
+            <td class="">70123.64</td>
+            <td class="">-68170.91</td>
+            <td class="">Infinity</td>
+            <td class="">Infinity</td>
+            <td class="">163.64</td>
+            <td class="">0.00</td>
+            <td class="">358</td>
+            <td class="">11</td>
+            <td class=""><a href="https://logs.tf/3324374">3324374</a>, </td>
           </tr>
       </tbody>
       </table>
@@ -3380,19 +4308,19 @@
             <td></td>
             <td class="">[U:1:204344441]</td>
             <td class="">MoisDM_pe</td>
-            <td class="">4</td>
-            <td class="">4</td>
+            <td class="">5</td>
+            <td class="">7</td>
             <td class="">0</td>
-            <td class="">242.51</td>
-            <td class="">4096.66</td>
-            <td class="">-3854.15</td>
-            <td class="">1.00</td>
-            <td class="">1.00</td>
-            <td class="">17.69</td>
-            <td class="">17.69</td>
-            <td class="">1645</td>
-            <td class="">407</td>
-            <td class=""><a href="https://logs.tf/3315585">3315585</a>, </td>
+            <td class="">259.12</td>
+            <td class="">6195.32</td>
+            <td class="">-5936.20</td>
+            <td class="">0.71</td>
+            <td class="">0.71</td>
+            <td class="">17.27</td>
+            <td class="">24.18</td>
+            <td class="">2250</td>
+            <td class="">521</td>
+            <td class=""><a href="https://logs.tf/3315585">3315585</a>, <a href="https://logs.tf/3320671">3320671</a>, <a href="https://logs.tf/3323051">3323051</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -3415,38 +4343,38 @@
           <tr>
             <td></td>
             <td class="">[U:1:93702050]</td>
-            <td class="">Merry Math #PLAYOFFSMODE</td>
-            <td class="">2</td>
-            <td class="">1</td>
+            <td class="">Merry Math #PLAYOFFSMODE, merry math #playoffsmode</td>
+            <td class="">3</td>
+            <td class="">3</td>
             <td class="">0</td>
-            <td class="">857.14</td>
-            <td class="">14250.48</td>
-            <td class="">-13393.34</td>
-            <td class="">2.00</td>
-            <td class="">2.00</td>
-            <td class="">57.14</td>
-            <td class="">28.57</td>
-            <td class="">900</td>
-            <td class="">63</td>
-            <td class=""><a href="https://logs.tf/3314141">3314141</a>, </td>
+            <td class="">460.23</td>
+            <td class="">18713.52</td>
+            <td class="">-18253.30</td>
+            <td class="">1.00</td>
+            <td class="">1.00</td>
+            <td class="">30.68</td>
+            <td class="">30.68</td>
+            <td class="">1350</td>
+            <td class="">176</td>
+            <td class=""><a href="https://logs.tf/3314141">3314141</a>, <a href="https://logs.tf/3317060">3317060</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
           </tr>
           <tr>
             <td></td>
             <td class="">[U:1:143242759]</td>
-            <td class="">MIKE_HUNT #PLAYOFFSMODE</td>
+            <td class="">MIKE_HUNT #PLAYOFFSMODE, THE BIG 3 #PLAYOFFSMODE, steve alert!</td>
             <td class="">1</td>
-            <td class="">1</td>
+            <td class="">4</td>
             <td class="">0</td>
-            <td class="">519.23</td>
-            <td class="">19791.92</td>
-            <td class="">-19272.69</td>
-            <td class="">1.00</td>
-            <td class="">1.00</td>
-            <td class="">34.62</td>
-            <td class="">34.62</td>
+            <td class="">116.88</td>
+            <td class="">14494.81</td>
+            <td class="">-14377.92</td>
+            <td class="">0.25</td>
+            <td class="">0.25</td>
+            <td class="">7.79</td>
+            <td class="">31.17</td>
             <td class="">450</td>
-            <td class="">52</td>
-            <td class=""><a href="https://logs.tf/3314141">3314141</a>, </td>
+            <td class="">231</td>
+            <td class=""><a href="https://logs.tf/3314141">3314141</a>, <a href="https://logs.tf/3317060">3317060</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
           </tr>
           <tr>
             <td></td>
@@ -3465,6 +4393,114 @@
             <td class="">56</td>
             <td class="">67</td>
             <td class=""><a href="https://logs.tf/3313279">3313279</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:187480830]</td>
+            <td class="">tinguspingus</td>
+            <td class="">0</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">0.00</td>
+            <td class="">17046.00</td>
+            <td class="">-17046.00</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">36.00</td>
+            <td class="">0</td>
+            <td class="">50</td>
+            <td class=""><a href="https://logs.tf/3323051">3323051</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:132987261]</td>
+            <td class="">rico suave</td>
+            <td class="">1</td>
+            <td class="">3</td>
+            <td class="">0</td>
+            <td class="">158.82</td>
+            <td class="">11415.53</td>
+            <td class="">-11256.71</td>
+            <td class="">0.33</td>
+            <td class="">0.33</td>
+            <td class="">10.59</td>
+            <td class="">31.76</td>
+            <td class="">450</td>
+            <td class="">170</td>
+            <td class=""><a href="https://logs.tf/3323051">3323051</a>, <a href="https://logs.tf/3317060">3317060</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:159413592]</td>
+            <td class="">zacksofplymouth #PLAYOFFSMODE, joe #PLAYOFFSMODE</td>
+            <td class="">1</td>
+            <td class="">3</td>
+            <td class="">0</td>
+            <td class="">167.05</td>
+            <td class="">10285.91</td>
+            <td class="">-10118.86</td>
+            <td class="">0.33</td>
+            <td class="">0.33</td>
+            <td class="">10.23</td>
+            <td class="">30.68</td>
+            <td class="">490</td>
+            <td class="">176</td>
+            <td class=""><a href="https://logs.tf/3317060">3317060</a>, <a href="https://logs.tf/3324374">3324374</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:38619095]</td>
+            <td class="">ṽ⧉ cookie</td>
+            <td class="">0</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">0.00</td>
+            <td class="">15413.25</td>
+            <td class="">-15413.25</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">22.50</td>
+            <td class="">0</td>
+            <td class="">80</td>
+            <td class=""><a href="https://logs.tf/3317060">3317060</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:129383694]</td>
+            <td class="">raphaim #bb</td>
+            <td class="">0</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">0.00</td>
+            <td class="">15085.30</td>
+            <td class="">-15085.30</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">21.69</td>
+            <td class="">0</td>
+            <td class="">83</td>
+            <td class=""><a href="https://logs.tf/3324374">3324374</a>, </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="">[U:1:84963494]</td>
+            <td class="">BULK//Fart strong Frankie 1957</td>
+            <td class="">0</td>
+            <td class="">1</td>
+            <td class="">0</td>
+            <td class="">57.86</td>
+            <td class="">9182.86</td>
+            <td class="">-9125.00</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">0.00</td>
+            <td class="">21.43</td>
+            <td class="">81</td>
+            <td class="">84</td>
+            <td class=""><a href="https://logs.tf/3324374">3324374</a>, </td>
           </tr>
       </tbody>
       </table>
