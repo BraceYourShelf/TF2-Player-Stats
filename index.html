@@ -21,6 +21,8 @@
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    <script id="log-template" type="text/x-handlebars-template">
+    </script>
 
     <script>
     </script>
@@ -60,11 +62,8 @@
             })
             .then(data => {
               console.log(data);
-              const template = Handlebars.compile(template);
-              const html = compiledTemplate(data);
-
-              const container = document.getElementById("inputStats");
-              container.innerHTML = html;
+              let renderedStats = render('./templates/statsPage.hbs', data);
+              
             })
             .catch(error => console.log('error', error))
        });
