@@ -57,12 +57,16 @@
             })
             .then(data => {
               console.log(data);
-              Papa.unparse(data, {
-                download: true,
-                complete: results => {
-                    console.log(results);
-                }
-            })
+              Papa.unparse(data);
+
+              // Create a Blob object with the CSV string as its content
+              let blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+
+              // Create a link element to trigger the download
+              let link = document.createElement("a");
+              link.href = URL.createObjectURL(blob);
+              link.download = "data.csv";
+              link.click();
             })
             .catch(error => console.log('error', error))
        });
