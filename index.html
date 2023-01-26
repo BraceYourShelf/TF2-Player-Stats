@@ -45,7 +45,7 @@
         myHeaders.append("Content-Type", "application/json");
 
         var body = JSON.stringify({
-          "logs": [document.getElementById('logList').value]
+          "logs": document.getElementById('logList').value
         })
         var requestOptions = {
             method: 'POST',
