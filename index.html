@@ -13,69 +13,20 @@
 
     <script src="sort-table.min.js"></script>
     <script src="index.js"></script>
-    <script src="papaparse.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/searchbuilder/1.3.4/js/dataTables.searchBuilder.min.js"></script>
     <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+
+    <script>
+    </script>
   </head>
   <body>
 	  <div class="pad-left pad-right">
       <center><h1><a href="https://braceyourshelf.github.io/TF2-Player-Stats/" style="text-decoration: none;color: black;">TF2 Player Stats</a></h1></center>
-      <h2>Input</h2>
 
-      <form id="logForm">
-        <textarea id="logList" form="logForm" rows="5" columns="40" placeholder="Add list of logs ids here"></textarea>
-        <br>
-        <button id="logSubmit" style="indexButton">Process Logs</button>
-      </form>
-      <script>
-       document.getElementById("logSubmit").addEventListener("click", function (event) {
-        event.preventDefault();
-
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-
-        var body = JSON.stringify({
-          "logs": document.getElementById('logList').value
-        })
-        var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: body,
-            redirect: 'follow'
-        };
-
-        fetch("https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-98a6c20a-eca1-46a9-a0cc-aba7302c8166/default/calculatePlayerStats", requestOptions)
-            .then(response => {
-              console.log(response);
-              if (response.ok) {
-                return response.text();
-              }
-            })
-            .then(data => {
-              console.log(data);
-              let csv = Papa.unparse(data);
-              console.log(csv);
-
-              // Create a Blob object with the CSV string as its content
-              let blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
-
-              // Create a link element to trigger the download
-              let link = document.createElement("a");
-              link.href = URL.createObjectURL(blob);
-              link.download = "data.csv";
-              link.click();
-            })
-            .catch(error => console.log('error', error))
-       });
-    </script>
-    <div id="inputStats"></div>
-      
-      <br>
-      <h2>Archive</h2>
       <p>
         <a href="rglLogs/s10/main/mainLogs_output.json.html">S10 Main Logs</a>
         <br>
