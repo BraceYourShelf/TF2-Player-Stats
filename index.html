@@ -63,7 +63,7 @@
             })
             .then(data => {
               console.log(data);
-              Papa.unparse('state_wise_data.csv', {
+              Papa.unparse(data, {
                 download: true,
                 complete: results => {
                     console.log(results);
