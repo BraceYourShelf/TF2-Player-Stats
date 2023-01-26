@@ -40,10 +40,13 @@
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
+        var body = JSON.stringify({
+          "logs": document.getElementById('logList').value
+        })
         var requestOptions = {
             method: 'GET',
             headers: myHeaders,
-            body: document.getElementById('logList').value,
+            body: body,
             redirect: 'follow'
         };
 
