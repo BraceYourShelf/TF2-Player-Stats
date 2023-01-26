@@ -26,7 +26,36 @@
   <body>
 	  <div class="pad-left pad-right">
       <center><h1><a href="https://braceyourshelf.github.io/TF2-Player-Stats/" style="text-decoration: none;color: black;">TF2 Player Stats</a></h1></center>
+      <h2>Input</h2>
 
+      <form id="logForm">
+        <textarea id="logList" form="logForm" rows="5" columns="40" placeholder="Add list of logs here"></textarea>
+        <br>
+        <button id="logSubmit" style="indexButton">Process Logs</button>
+      </form>
+      <script>
+       document.getElementById("logSubmit").addEventListener("click", function (event) {
+        event.preventDefault();
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            body: document.getElementById('logList').value,
+            redirect: 'follow'
+        };
+
+        fetch("https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-98a6c20a-eca1-46a9-a0cc-aba7302c8166/default/calculatePlayerStats", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error))
+       });
+    </script>
+      
+      <br>
+      <h2>Archive</h2>
       <p>
         <a href="rglLogs/s10/main/mainLogs_output.json.html">S10 Main Logs</a>
         <br>
