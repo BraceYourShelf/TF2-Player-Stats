@@ -57,7 +57,8 @@
             })
             .then(data => {
               console.log(data);
-              Papa.unparse(data);
+              let csv = Papa.unparse(data);
+              console.log(csv);
 
               // Create a Blob object with the CSV string as its content
               let blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
