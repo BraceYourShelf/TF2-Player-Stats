@@ -20,6 +20,8 @@
     <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+
     <script>
     </script>
   </head>
@@ -29,7 +31,7 @@
       <h2>Input</h2>
 
       <form id="logForm">
-        <textarea id="logList" form="logForm" rows="5" columns="40" placeholder="Add list of logs here"></textarea>
+        <textarea id="logList" form="logForm" rows="5" columns="40" placeholder="Add list of logs ids here"></textarea>
         <br>
         <button id="logSubmit" style="indexButton">Process Logs</button>
       </form>
@@ -41,7 +43,7 @@
         myHeaders.append("Content-Type", "application/json");
 
         var body = JSON.stringify({
-          "logs": document.getElementById('logList').value
+          "logs": [document.getElementById('logList').value]
         })
         var requestOptions = {
             method: 'POST',
@@ -51,11 +53,23 @@
         };
 
         fetch("https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-98a6c20a-eca1-46a9-a0cc-aba7302c8166/default/calculatePlayerStats", requestOptions)
-            .then(response => response.text())
-            .then(result => console.log(result))
+            .then(response => {
+              if (response.ok) {
+                return response.json();
+              }
+            })
+            .then(data => {
+              console.log(data);
+              const template = Handlebars.compile(template);
+              const html = compiledTemplate(data);
+
+              const container = document.getElementById("inputStats");
+              container.innerHTML = html;
+            })
             .catch(error => console.log('error', error))
        });
     </script>
+    <div id="inputStats"></div>
       
       <br>
       <h2>Archive</h2>
